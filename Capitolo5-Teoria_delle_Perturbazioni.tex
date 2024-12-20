@@ -281,7 +281,7 @@ Le prime osservazioni della divisione delle linee spettrali di un atomo per via 
 
 Abbiamo un sistema costituito da un nucleo attorno al quale orbita un solo elettrone, ignorando lo spin delle particele, vogliamo studiare lo stato fondamentale dell'atomo d'idrogeno.
 
-L'atomo a singolo elettrone viene modellato usando Hamiltoniana che esprime un sistema a forza centrale 
+L'atomo a singolo elettrone viene modellato usando la Hamiltoniana che esprime un sistema a forza centrale 
 \begin{equation}
 	\hat{H}_0 = \frac{p^2}{2m} + V_0(r)
 \end{equation}
@@ -289,6 +289,47 @@ dove per l'idrogeno abbiamo che
 \begin{equation*}
 	V_0 (r) = - \frac{e^2}{r}
 \end{equation*}
+Prima di iniziare a descrivere il sistema perturbato, abbiamo bisogno di capire il comportamento di quello imperturbato, a partire dalle sue energie, autostati e degenerazioni. Nel modello elettrostatico, i livelli di energia del sistema imperturbato sono descritti dalla formula Bohr
+\begin{equation*}
+	E_n = - \frac{1}{2n^2}\frac{e^2}{a_0} = -\frac{E_0}{n^2} \quad n \in \mathbb{N}
+\end{equation*}
+dove il termine $a_0$ indica il raggio di Bohr ed $E_0 = 13,6 \; eV$ l'energia associata allo stato fondamentale. Per l'atomo d'idrogeno gli atuovalori hanno una degenerazione di $n^2$. Gli autostati associati sono dati da 
+\begin{equation*}
+	|nlm \rangle = \psi_{nlm}(\bold{x}) = R_{nl}Y_{lm}(\theta,\phi)
+\end{equation*}
+dove le funzioni $Y_{lm}(\theta, \phi)$ sono armoniche sferiche.
+
+\subsection{Potenziale}
+Scriviamo la forza esterna $\bold{F}$ dovuta al campo elettrico esterno ed assumiamo che abbia orientazione lungo l'asse $\hat{u}_{z}$,
+\begin{equation*}
+	\bold{F} = F \hat{u}_{z}
+\end{equation*}
+Di conseguenza il potenziale della perturbazione ha forma
+\begin{equation*}
+	V_1 = q \phi = - q\bold{F} \cdot \bold{x} = eFz
+\end{equation*}
+dove si \`e considerato $q = -e $. Il potenziale imperturbato $V_0$ dipende da $r$, mentre quello perturbato $V_1$ dipende da $z$, di conseguenza abbiamo che la perturbazione del sistema rompe la simmetria di rotazione $SO(3)$ presente nel sistema imperturbato.
+
+\subsection{Effetto Stark nello stato fondamentale}
+
+Iniziamo la trattazione del caso perturbativo partendo dallo stato fondamentale dell'atomo di idrogeno; in notazione chimica coincide con la configurazione $1s$ che corrisponde all'autostato $| 100\rangle $. Siccome allo stato fondamentale non \`e presente degenerazione la correzione di energia al prima ordine \`e data da 
+\begin{equation*}
+	E^1_{0} = \langle 100|V |100 \rangle = 0 
+\end{equation*}
+che risulta essere nulla poich\`e 
+\begin{equation*}
+	\langle 100| eEz | 100 \rangle = eE \langle 100|z|100 \rangle  = eE\frac{1}{4 \pi} \int_{-\infty}^{\infty}dz z = 0 
+\end{equation*}
+dato che $z$ \`e una funzione dispari. Quindi possiamo concludere che al primo ordine per lo stato fondamentale dell'idrogeno non \`e presente una perturbazione al primo ordine dell'energia e di conseguenza nessun effetto Stark.
+
+\subsection{Effetto Stark negli stati eccitati dell'idrogeno}
+
+Gli stati eccitati dell'idrogeno per $n \geq 2$ hanno una degenerazione tra gli stati con opposta parti\`a, dato che $l = 0,...,n-1$ e la parti\`a \`e pari per $l$ parti e dispari per $l$ dispari.  In accordo con la teoria descritta in precedenza per le perturbazioni di secondo ordine, la variazione dei livelli di energia $E_n$ \`e data dagli autovalori della matrice $n^2 \times n^2$, indicizzata da $(lm)$ e $(l'm')$
+\begin{equation*}
+	\langle nlm| eFz|nl'm' \rangle 
+\end{equation*}
+
+
 
 
 
