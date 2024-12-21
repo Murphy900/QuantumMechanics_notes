@@ -312,7 +312,7 @@ dove si \`e considerato $q = -e $. Il potenziale imperturbato $V_0$ dipende da $
 
 \subsection{Effetto Stark nello stato fondamentale}
 
-Iniziamo la trattazione del caso perturbativo partendo dallo stato fondamentale dell'atomo di idrogeno; in notazione chimica coincide con la configurazione $1s$ che corrisponde all'autostato $| 100\rangle $. Siccome allo stato fondamentale non \`e presente degenerazione la correzione di energia al prima ordine \`e data da 
+Iniziamo la trattazione nel caso del sistema perturbato partendo dallo stato fondamentale dell'atomo di idrogeno; in notazione chimica coincide con la configurazione $1s$ che corrisponde all'autostato $| 100\rangle $. Siccome allo stato fondamentale non \`e presente degenerazione la correzione di energia al prima ordine \`e data da 
 \begin{equation*}
 	E^1_{0} = \langle 100|V |100 \rangle = 0 
 \end{equation*}
@@ -321,15 +321,140 @@ che risulta essere nulla poich\`e
 	\langle 100| eEz | 100 \rangle = eE \langle 100|z|100 \rangle  = eE\frac{1}{4 \pi} \int_{-\infty}^{\infty}dz z = 0 
 \end{equation*}
 dato che $z$ \`e una funzione dispari. Quindi possiamo concludere che al primo ordine per lo stato fondamentale dell'idrogeno non \`e presente una perturbazione al primo ordine dell'energia e di conseguenza nessun effetto Stark.
-
+Osserviamo per\`o che  esiste una perturbazione del secondo ordine dello stato fondamentale, determinando
+\begin{equation*}
+	E_p^{(2)} = \sum_{q \neq p} \frac{|\langle \phi_q|V|\phi_p \rangle |^2}{(E_p^0-E_q^0)} = \sum_{nlm \neq 100} \frac{\langle nlm | eEz|100 \rangle|^2}{E_0/n^2-E_0} < 0
+\end{equation*}
+e quindi il livello $1s$ dell'atomo d'idrogeno viene abbassato di un ordine $\mathcal{O}(E^2)$. Resta comunque valida l'osservazione che non esista nessun effetto Stark per l'atomo d'idrogeno al livello fondamentale dato che questo coinvolge solo le perturbazioni del primo ordine delle energie.
 \subsection{Effetto Stark negli stati eccitati dell'idrogeno}
 
 Gli stati eccitati dell'idrogeno per $n \geq 2$ hanno una degenerazione tra gli stati con opposta parti\`a, dato che $l = 0,...,n-1$ e la parti\`a \`e pari per $l$ parti e dispari per $l$ dispari.  In accordo con la teoria descritta in precedenza per le perturbazioni di secondo ordine, la variazione dei livelli di energia $E_n$ \`e data dagli autovalori della matrice $n^2 \times n^2$, indicizzata da $(lm)$ e $(l'm')$
 \begin{equation*}
 	\langle nlm| eFz|nl'm' \rangle 
 \end{equation*}
+La matrice che si ottiene \`e di grandi dimensioni, ma molti elementi risultano essere nulli per motivi di simmetria. Consideriamo come esempio il caso per $n = 2 $. Abbiamo quattro stati degeneri inclusi nei livelli $2s$ con autostati $|nlm \rangle = |200 \rangle $ e il livello $2p$ con autostati $|21m \rangle $ con $m = 0, \pm 1$. 
 
+Otterremo una matrice di  dimensione $4 \times 4$ i cui elementi si calcolano usando la relazione  $\langle \phi_i|V|\phi_j \rangle $ con $\phi_i = \{ \underbrace{ |211 \rangle, |21-1\rangle ,|210 \rangle }_{2p}, \underbrace{|200 \rangle}_{2s} \}$. Complessivamente la matrice possiede 16 elementi, per evitare di calcolarli tutti possiamo riassumerli sinteticamente nel seguente modo
+\begin{equation*}
+	\langle 200|z|200 \rangle  \sim \int_{-\infty}^{+\infty}dz  \; z = 0
+\end{equation*}
+per parit\`a della funzione $z$. 
+\begin{equation*}
+	\langle 21m|z|21m'\rangle \sim \int_{- \infty} ^{+ \infty}d\bold{x} \; Y_{1m}^*zY_{1m'} = 0 \quad m' \neq 0
+\end{equation*}
+gli elementi sono nulli per parit\`a. Gli unici termini non nulli della matrice sono dati da 
+\begin{equation*}
+	\langle 21m|z|200 \rangle \sim \int_{\mathbb{R}^3} d\theta() \int_{0}^{2\pi} d\varphi e^{im \phi} \sim \delta_{m0}
+\end{equation*}
 
+per $m = 0$ e dunque $\langle 210 |z|200 \rangle  = \alpha \in \mathbb{R}$. Dato che $\alpha$ \`e un numero reale anche $\langle 200| z |210 \rangle = \alpha$ che \`e il complesso coniugato di $\langle 210|z|200\rangle  $. Quindi possiamo concludere che la matrice di correzione \`e data da 
+\begin{equation*}
+	W = eE\left [ \begin{array}{cccc}
+		0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 \\ 
+		0 & 0 & 0 & \alpha \\ 
+		0 & 0 & \alpha & 0 \\
+	\end{array} \right]
+\end{equation*}
+Procedendo a diagonalizzare la matrice si determinano i rispettivi autovettori
+\begin{equation*}
+	\left [ \begin{array}{c}
+		1 \\ 0 \\ 0 \\ 0
+	\end{array}\right ]
+	;\quad 
+		\left [ \begin{array}{c}
+		0 \\ 1 \\ 0 \\ 0
+	\end{array}\right ]
+	;\quad 
+	\underbrace{\frac{1}{\sqrt{2}}	\left [ \begin{array}{c}
+		0 \\ 0 \\ 1 \\ 1
+	\end{array}\right ]
+	;\quad \frac{1}{\sqrt{2}}
+		\left [ \begin{array}{c}
+		0 \\ 0 \\ 1 \\ -1
+	\end{array}\right ]}_{\text{autovettori della matrice di Pauli}\; \sigma_1}
+\end{equation*}
+i cui autovalori associati sono dati da $\Delta E = 0,0,eE,-eE$ e quindi i livelli energetici si dividono nel seguente modo.
+\vspace{0.5cm}
+\begin{center}
+\begin{tikzpicture}
+    % Draw all levels
+    \text{2p} \draw[level] (0,0) -- node[above] {$|200 \rangle $} (4,0);
+    \node[level,right] at (-1,0){2s};
+    \draw[level] (4,0) -- node[above] {} (5,-0.25);
+    \draw[level] (5,-0.25) -- node[below] {$\frac{|210 \rangle - |200 \rangle }{\sqrt{2}}$} (8,-0.25);
+    
+    \draw[level] (0,1) -- node[above] {$|21-1 \rangle$} (4,1);
+    \draw[level] (4,1) -- node[above] {} (8,1);
+    
+    \draw[level] (0,2) -- node[above] {$|211 \rangle$} (4,2);
+    \draw[level] (4,2) -- node[above] {} (8,2);
+    \node[level,right] at (-1,2) {2p  };
+    
+    \draw[level] (0,3) -- node[above] {$|210 \rangle $} (4,3);
+    \draw[level] (4,3) -- node[above] {}(5,3.25);
+    \draw[level] (5,3.25) --node[above] {$\frac{|210 \rangle + |200 \rangle }{\sqrt{2}}$} (8,3.25);  
+\end{tikzpicture}
+\end{center}
+Abbiamo rispettivamente che due livelli si alzano e abbassano e altri due restano imperturbati.
+Lo splitting dei livelli \`e lineare rispetto alla perturbazione al primo ordine $\mathcal{O}(E)$.
 
+\section{Forze di Van der Waals per due atomi d'idrogeno}
 
+La caratteristica delle forze esercitate tra due atomi neutri cambia in funzione della distanza R che separa i due atomi. Consideriamo per esempio due atomi di idrogeno, quando R \`e dell'ordine atomico, la funzione d'onda dei due elettroni si sovrappongo, facendo attrarre i due atomi creando una molecola di $H_2$. L'energia potenziale del sistema ha un punto di minimo per un certo valore $R_e$ della distanza R tra gli atomi. L'origine dell'attrazione tra i due atomi \`e dovuta al fatto che i due elettroni oscillano tra di essi. In sostanza la funzione d'onda che descrive gli elettroni non \`e pi\`u localizzata attorno ad uno solo dei nuclei; una conseguenza di questo stato \`e che l'energia di stato fondamentale risulta essere pi\`u basse dei singoli atomi disaccoppiati.
+
+A grandi distanza il fenomeno cambia completamente. Gli elettroni non possono pi\`u spostarsi tra i due atomi, dato che l'ampiezza di probabilit\`a del processo diminuisce al diminuire della sovrapposizione delle funzioni d'onda. L'effetto principale \`e dato dall'interazione elettrostatica tra i momenti di dipolo elettrico dei due atomi. Questo da luogo ad un energia complessiva dovuta a forze attrattive e decresce come $1/R^6$.  Tali forze prendono il nome di \textit{forze di Van der Waals} e sono responsabili per i legami chimici.
+
+\subsection{Hamilotniana delle interazione elettrostatiche}
+
+\begin{wrapfigure}{r}{0.5\textwidth} % 'r' for right, 'l' for left
+    \centering
+    \includegraphics[width=0.48\textwidth]{waals} % Adjust width as needed
+\end{wrapfigure}
+
+Dato che i due atomi sono sono neutri, a grande distanza l'interazione Coulombiana risulta essere nulla, dato che due elementi a carica neutra non si attraggono o respingono. Essendo per\`o composti da  particelle di carica opposta questi possiedono un momento di dipolo elettrico non nullo
+\begin{equation*}
+	\bold{d}_{A} = e\bold{r}_{A} \quad \text{e} \quad \bold{d}_{B} = e\bold{r}_{B}
+\end{equation*}
+Un atomo che possiede un momento di dipolo genera un potenziale elettromagnetico rilevabile anche a grande distanza e quindi l'atomo A risente del campo magnetico di B e viceverso. Di conseguenza abbiamo un interazione elettrostatica tra i due dipoli:
+\begin{equation*}
+	\Delta \phi = \frac{\bold{d}_{A} \bold{d}_{B}}{R^3} - \frac{3(\bold{d}_{A} \cdot \bold{R})(\bold{d}_{B} \cdot \bold{R})}{R^5}
+\end{equation*}
+dove $|\bold{r}_{A}, \bold{r}_{B}| \ll R$. Da cui il potenziale d'interazione \`e 
+\begin{equation}
+	V = \frac{e^2}{R^3}[\bold{r}_{A} \cdot \bold{r}_{B} - 3 (\bold{r}_{A} \cdot \bold{n})(\bold{r}_{B} \cdot \bold{n})]
+\end{equation}
+con $\bold{n} = \bold{R}/\parallel \bold{R}\parallel $. Se ipotizziamo che $\bold{R}$  parallelo alla direzione $\hat{u}_{z} $ possiamo scrivere (5.38) nella seguente forma
+\begin{equation*}
+	V = \frac{e^2}{R^3}[x_{A}x_{B} + y_{A}y_{B} -2z_{A}z_{B}]
+\end{equation*}
+La Hamiltoniana che descrive la dinamica del sistema \`e duque data da 
+\begin{equation*}
+	H_0 = - \frac{\hbar^2}{2m}(\nabla_{A}^2 + \nabla_{B}^2) - \frac{e^2}{r_{A}} - \frac{e^2}{r_{B}}
+\end{equation*}
+che descrive il sistema imperturbato e la somma del potenziale d'interazione V
+\begin{equation*}
+	H = H_0 + V
+\end{equation*}
+Lo stato fondamentale per il sistema imperturbato $H_0$ \`e dato dal prodotto tensoriale degli stati fondamentali dei corrispettivi atomi A e B, ovvero
+\begin{equation*}
+	|0 \rangle  = |100 \rangle_{A} \otimes |100 \rangle_{B}
+\end{equation*}
+\newpage 
+\subsection{Correzioni al primo ordine $\mathcal{O}(E)$ per lo stato fondamentale}
+
+Per determinare le correzioni al primo ordine calcoliamo
+\begin{equation*}
+	 \langle 0 | V | 0 \rangle  = 0
+\end{equation*}
+e risulta essere nulla, in quanto per come abbiamo definito il potenziale V, i termini $\langle 100|x_A|100 \rangle,\ldots, ecc \ldots$ hanno come armonica sferica $Y_{00} = 1/\sqrt{4 \pi }$ e dato che i fattori di V sono funzioni dispari si ha per parit\`a che tutti gli elementi sono nulli.
+
+\subsection{Correzioni al secondo ordine $\mathcal{O}(E)$ per lo stato fondamentale}
+Le correzioni al secondo ordine sono date da 
+\begin{equation*}
+	E^{(2)} = \frac{e^4}{R^6} \sum_{\substack{nlm  \\[0.1cm]  n'l'm'}} \frac{|\langle nlm|_{A}\otimes \langle n'l'm'|_{B})V(|100 \rangle_{A} \otimes |100 \rangle_{B})|^2}{2E_1 -E_n - E_{n'}}
+\end{equation*}
+abbiamo che in generale la sommatoria restituisce un termine negativo, e quindi un energia negativa di conseguenza si ha una forza di natura attrattiva. Possiamo dunque riassumere che le forze di Van der Waals hanno un ordine di grandezza rispetto alla distanza di $\simeq 1 / R^6$ e sono un effetto al secondo ordine della teoria delle perturbazioni.
+
+\section{Struttura fine dell'atomo d'idrogeno}
 
