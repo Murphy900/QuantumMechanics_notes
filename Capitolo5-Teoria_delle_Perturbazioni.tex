@@ -458,3 +458,446 @@ abbiamo che in generale la sommatoria restituisce un termine negativo, e quindi 
 
 \section{Struttura fine dell'atomo d'idrogeno}
 
+\subsection{Ripasso sull'atomo d'idrogeno}
+
+Sappiamo che la Hamiltoniana di un atomo d'idrogeno in un sistema imperturbato \`e data da
+\begin{equation*}
+	H_0 = \frac{\bold{p}^2}{2m} - \frac{e^2}{r}
+\end{equation*} 
+di cui conosciamo sia autostati e autovalori associati, ovvero $|nlm \rangle$ e $E_n = -E_0/n^2$. La Hamiltoniana $H_0$ che descrive l'interazione elettrone-protone \`e non relativistica, ovvero non consideriamo velocit\`a prossime a quella della luce e l'energia cinetica \`e quella data dalla meccanica Newtoniana.
+
+Nella descrizione dell'atomo d'idrogeno del modello di Bohr la quantizzazione della velocit\`a cattura gli ordini di grandezza con cui si splittano i livelli di energia, infatti se consideriamo la velocit\`a al livello fondamentale abbiamo che 
+\begin{equation*}
+	v_1 = \frac{e^2}{\hbar } \equiv \frac{q^2}{4\pi \varepsilon \hbar}
+\end{equation*}
+se vogliamo considerare le correzioni relativistiche introduciamo la grandezza 
+\begin{equation*}
+	\frac{v_1}{c} = \frac{e^2}{c \hbar} \equiv \frac{q^2}{4 \pi \varepsilon c \hbar} \equiv \alpha = \frac{1}{137}
+\end{equation*}
+e prende il nome di \textit{costante di struttura fine}. Mentre l'energia allo stato fondamentale 
+\begin{equation*}
+	\frac{e^2}{a_0} = \frac{me^2}{\hbar^2} = \frac{m \alpha^2 \hbar^2 c^2}{\hbar^2} = \alpha^2 mc^2
+\end{equation*}
+Tali risultati ci dicono che la scala di energia dell'idrogeno \`e di un fattore $\alpha^2$ pi\`u piccola dell'energia a riposo dell'elettrone. Tenendo conto delle correzioni relativistiche possiamo riscrivere i livelli energetico come 
+\begin{equation}
+	E_n = - \frac{1}{2}\alpha^2 mc^2 \frac{1}{n^2}
+\end{equation}
+Il momento angolare associato all'idrogeno \`e 
+\begin{equation*}
+	p \simeq \frac{\hbar}{a_0} = \frac{me^2}{\hbar} = \frac{e^2}{\hbar c}mc \quad \rightarrow \quad p \simeq \alpha(mc)
+\end{equation*}
+
+La degenerazione dello spettro dell'atomo d'idrogeno \`e data dalla relazione
+\begin{equation*}
+	n = N+l+1
+\end{equation*}
+dove $N \geq $ \`e un polinomio di grado r che compare nella funzione d'onda dove la dipendenza di r in prossimit\`a dell'origine viene eliminata. Il numero quantistico $l \geq 0$ rappresenta il momento angolare dello stato. Per ogni $n$ fissato, il valore di $l$ \`e compreso tra zero e $n-1$. Per ogni valore fissato di $l$ l'autovalore di $L_z$ \`e $m \hbar$ con m che varia tra $-l$ ed $l$:
+\begin{align*}
+	& n = 1,2,... \quad \quad l = 0,1, \ldots, n-1 \\[0.5cm]
+	& m = -l,\ldots,l \quad \quad \text{\# stati di energia } E_n = \sum_{l=0}^{n-1}(2l+1) = n^2
+\end{align*}  
+Gli stati dell'idrogeno possono essere riassunti nel seguente diagramma 
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 8cm]{hydrogen_states}	
+\centering
+\vspace{0.1in}
+\end{figure}
+
+Ogni autostato dell'atomo d'idrogeno \`e specificato dai tre numeri quantistici $n,l,m$ descritti dalle funzione d'onda
+\begin{equation*}
+	|nlm \rangle = A\left (\frac{r}{a_0}\right)^l \cdot \left ( \text{Polinomio in } \frac{r}{a_0}  \text{ di grado N}\right) \cdot e^{-r/na_0}Y_{l,m}(\theta ,\phi)
+\end{equation*}
+dove A \`e la costante di normalizzazione e $N = n - (l+1)$. Per lo stato fondamentale con $n=1,l=0$ e $m=0$ la funzione d'onda normalizzata \`e data da
+\begin{equation*}
+	|100 \rangle = \frac{1}{\sqrt{\pi a_0^3}}e^{-r/a_0}
+\end{equation*}
+Fino a questo punto nell'analisi di $H_0$ abbiamo ignorato lo spin dell'elettrone. Dato che un elettrone possiede spin $1/2$ \`e presente una degenerazione in pi\`u: ogni autostato di $H_0$ ha due stati di degenerazione, uno in cui si ha spin su e uno in cui si ha spin gi\`u. Questi stati sono degeneri perch\`e $H_0$ non ha termini dipendenza dallo spin.
+
+Consideriamo due scelte differenti per la base degli stati dell'atomo d'idrogeno, entrambi che includono lo spin dell'elettrone.
+
+Ricordiamo dalla trattazione dei momenti angolari accoppiati, che in generale per un momento $j$ accoppiato di due sistemi, abbiamo le coppie di stati $(j,m_j)$, dove $m_j$ varia da $-j$ a $j$ con incremento intero. Tutti gli stati composti sono autostati di $\bold{\hat{J}}^2$ con autovalori $\hbar^2j(j+1)$ e, per ogni stato, $\hbar m_j$ \`e l'autovalore di $\hat{J}_{z}$.
+
+Dato che l'elettrone ha spin $1/2$ gli stati vengono indicati nel seguente modo
+\begin{equation*}
+	(s,m_s) \quad \text{con} \quad s=\frac{1}{2}, \quad m_{s} = \pm \frac{1}{2}
+\end{equation*} 
+Nell'atomo d'idrogeno il momento angolare $l$ pu\`o assumere diversi valori, ma lo spin dell'elettrone \`e sempre $1/2$. Per stati della base, questi sono descritti dai numeri quantici $n,l,m_l$ e $m_s$. Dato che non combiniamo lo spin dell'elettrone con il suo momento angolare, gli stati forma una base disaccoppiata
+\begin{equation*}
+	\mathcal{B} = \{|nlm_lm_s \rangle \} 
+\end{equation*}
+die elementi ortonormali tra loro.
+
+Spesso \`e utile utilizzare una base alternativi dove gli stati sono autostati di $\hat{\bold{J}}^2$ e $\hat{J}_{z}$, dove il momento angolare totale $\bold{\hat{J}}$ \`e dato dalla somma del momento angolare orbitale $\bold{\hat{L}}$ e dallo spin della particella $\bold{\hat{S}}$:
+\begin{equation*}
+	\hat{\bold{J}} = \bold{\hat{L}} + \bold{\hat{S}}
+\end{equation*}
+Quando formiamo il prodotto tensoriale $l \otimes s$ stiamo considerando tutti i valori possibili di entrambi i numeri quantici. Tutti gli statti $l \otimes s$ sono autostati di $\hat{\bold{L}}^2$ e di $\bold{\hat{S}}^2$. Anche se gli stati non sono pi\`u autostati di $\hat{L}_{z}$ ed $\hat{S}_{z}$ lo sono ancora di $\hat{\bold{L}^2}$, quindi il numero quantistico $l$ sopravvive. La base accoppiata \`e descritta dai numeri quantici $(n,l,j,m_j)$.  I numeri $(m_l,m_s)$ della base disaccoppiata sono stati sostituiti da $(j,m_j)$. Gli stati accoppiati sono combinazione lineare di quelli disaccoppiati per cui si hanno differsi valori di $m_s$ e $m_l$, tali combinazioni restituisco lo stesso valore $m_j = m_l + m_s$.
+
+Per determinare tutti gli stati accoppiati dobbiamo calcolare il prodotto tensoriale di ogni multicoppia $l$ dell'idrogeno con la coppia dello spin $1/2$. Le regole di addizione del momento angolare fanno si che il prodotto tensoriale assuma la forma
+\begin{equation*}
+	l \otimes \frac{1}{2} = \left (j=l + \frac{1}{2} \right ) \oplus \left (j = l-\frac{1}{2} \right )
+\end{equation*}
+PEr $l = 0$ otteniamo solo $j = 1/2$. Usando la notazione $L_j$ della tabella precedente con $L_j = S,P,D,F$ per $l = 0,1,2,3$. Il cambio della base \`e dato da 
+\begin{equation*}
+	l \otimes \frac{1}{2} \quad \rightarrow \quad L(l)_{j=l+ 1/2} \oplus L(l)_{j=l- 1/2}
+\end{equation*}
+o pi\`u esplicitamente
+\begin{align*}
+	& 0 \otimes 1/2 \quad \rightarrow \quad S_{1/2} \\[0.5cm]
+	& 1 \otimes 1/2 \quad \rightarrow \quad P_{3/2} \oplus P_{1/2}\\[0.5cm]
+	& 2 \otimes 1/2 \quad \rightarrow \quad D_{5/2} \oplus D_{3/2} \\[0.5cm]
+	& 3 \otimes 1/2 \quad \rightarrow \quad F_{7/2} \oplus F_{5/2} 
+\end{align*}
+Usando questa notazione i multistati della base accoppiata, il diagramma dell'energia degli autostati dell'atomo d'idrogeno diventa 
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 8cm]{coupled_hydrogen_basis}	
+\centering
+\caption{Il numero di stati per ogni livello \`e segnato in parentesi}
+\vspace{0.1in}
+\end{figure}
+\subsection{L'equazione di Pauli}
+
+Nell'atomo d'idrogeno l'accoppiamento tra spin e momento orbitale nasce dal fatto che l'elettrone di muove nel campo elettrico del protone. Dato che l'elettrone si muove relativamente al riferimento dove si ha il campo elettrico, nel riferimento dell'elettrone questo risulta essere soggetto ad un campo magnetico $\bold{B}$. L'accoppiamento tra spin-momento \`e dovuto all'interazione tra momento di dipolo magnetico dell'elettrone $\boldsymbol{\mu}$ e il campo magnetico $\bold{B}$, dato da $- \boldsymbol{\mu} \cdot \bold{B}$. In unit\`a di Gauss, il momento magnetico per una spira in un piano attraversata da una corrente I \`e data da $\boldsymbol{\mu} = \frac{I}{c}\bold{a}$, dove $\bold{a}$ \`e il vettore dell'area racchiusa dalla spira. Pert una particella di carica q e massa $m$, questa possiede momento magnetico equivalente a quello della spira e dunque 
+\begin{equation*}
+	\boldsymbol{\mu} = \frac{q}{2mc} \bold{L}
+\end{equation*}
+dove $\bold{L}$ \`e il momento angolare orbitale dovuto alla rotazione. Per una particella elementare, lo spin della particella e il momento magnetico si associano similmente al momento angolare, ma con un fattore di proporzionalit\`a $g$
+\begin{equation*}
+	\boldsymbol{\mu} = g \frac{q}{2mc}\hat{\bold{S}}
+\end{equation*} 
+dove $g = 2$ per un elettrone. Dato che $q = -e$, abbiamo che il momento di dipolo \`e dato da 
+\begin{equation*}
+	\boldsymbol{\mu} = 2 \frac{-e}{2m_ec}\hat{\bold{S}} = -2 \frac{e \hbar}{2m_ec}\frac{\hat{\bold{S}}}{\hbar} = -2 \frac{e \hbar}{2m_ec} \frac{1}{2}\boldsymbol{\sigma} = - \frac{e \hbar }{2m_ec}\boldsymbol{\sigma}
+\end{equation*}
+In termine numerici il fattore di proporzionalit\`a \`e il \textit{magnetone di Bohr} $\mu_B$ definito come
+\begin{equation*}
+	\mu_{B} = \frac{e \hbar}{2m_ec} \simeq 9.274 \times 10^{-21} \frac{erg}{gauss} = 5.79 \times 10^{-9} \frac{eV}{gauss}
+\end{equation*} 
+(nel sistema internazionale 1 Teslata = $10^4$ gauss). L'effetto di accoppiamento tra elettrone e campo magnetico esterno \`e quindi descritto dalla Hamiltoniana $H_B$ data da
+\begin{equation*}
+	H_B = - \boldsymbol{\mu} \cdot \bold{B} = \frac{e\hbar}{2m_ec}\boldsymbol{\sigma} \cdot \bold{B}
+\end{equation*}
+Ora vogliamo dimostra che l'accoppiamento, e il valore $g=2$, compaiono naturalmente dall'equazione non relativistica di Pauli per un elettrone.
+
+Consideriamo l'equazione indipendente dal tempo di Schr\"odinger per una particella libera
+\begin{equation*}
+	\frac{\bold{p}^2}{2m}|\psi \rangle = E|\psi \rangle
+\end{equation*}
+Dato che una particella con spin $1/2$ ha due gradi di libert\`a, l'equazione precedente pu\`o essere espressa in forma vettoriale come
+\begin{equation*}
+	\frac{\bold{p}^2}{2m} \mathbb{I}_{2 \times 2} \chi = E \chi \quad \text{con} \quad \chi = \left [\begin{array}{c}
+		\chi_1 \\ \chi_2
+	\end{array}\right]
+\end{equation*}
+dove $\chi$ viene anche chiamato \textit{spinore di Pauli}. Possiamo riscrivere la Hamiltoniana usando le matrici di Pauli ricordando l'identit\`a
+\begin{equation*}
+	(\boldsymbol{\sigma} \cdot \bold{a})(\boldsymbol{\sigma} \cdot \bold{b}) = \bold{a} \cdot \bold{b} \; \mathbb{I}_{2 \times 2} + i \boldsymbol{\sigma} \cdot (\bold{a} \times \bold{b})
+\end{equation*}
+considerando $\bold{a} = \bold{p} = \bold{\hat{p}}$, dove $\hat{\bold{p}}$ \`e l'operatore momento, e dato che $\hat{\boldsymbol{p}} \times \bold{\hat{p}} = 0$ abbiamo che la relazione precedente diventa
+\begin{equation*}
+	(\boldsymbol{\sigma} \cdot \hat{\boldsymbol{p}})(\boldsymbol{\sigma} \cdot \hat{\boldsymbol{p}}) = \bold{\hat{p}^2} \;\mathbb{I}_{2 \times 2}
+\end{equation*}
+di conseguenza possiamo riscrivere la Hamiltoniana nel seguente modo
+\begin{equation}
+	H = \frac{1}{2m} (\boldsymbol{\sigma} \cdot \hat{\boldsymbol{p}})(\boldsymbol{\sigma} \cdot \hat{\boldsymbol{p}})
+\end{equation}
+Fino a questo punto ci siamo solo occupati di scrivere la fisica in un altra forma, ma nuovi fenomeni emergono quando accoppiamo una particella carica ad un campo elettromagnetico esterno. In meccanica quantistica per tenere conto dell'accoppiamento sostituiamo la quanti\`a di moto canonica con 
+\begin{equation*}
+	 \hat{\bold{p}} \quad \rightarrow \quad \hat{\boldsymbol{\pi}} \;  \equiv \hat{\bold{p}} - \frac{q}{c} \bold{A}
+\end{equation*}
+dove q \`e la carica della particella ed $\bold{A}$ il potenziale vettore, che \`e una funzione della posizione che diventa un operatore dato che la posizione \`e un operatore. Inoltre, se \`e presente un potenziale elettromagnetico scalare $\Phi$ questo contribuisce alla Hamiltoniana con un termine aggiuntivo $q \Phi(\bold{\hat{x}})$. 
+
+Sostituendo in (5.40) abbiamo che e con i termini aggiuntivi otteniamo quella che viene definita \textit{Hamiltoniana di Pauli}
+\begin{equation}
+	H_{Pauli} = \frac{1}{2m}(\boldsymbol{\sigma} \cdot \hat{\boldsymbol{\pi}})(\boldsymbol{\sigma} \cdot \hat{\boldsymbol{\pi}})+q \Phi(\hat{\mathbf{x}}) .
+\end{equation}
+utilizzando l'identit\`a delle matrici di Pauli usata in precedenza il termine di prodotto vettoriale sopravvive e possiamo esprimerla esplicitamente come
+\begin{equation*}
+H_{\text {Pauli }}=\frac{1}{2 m}[(\hat{\boldsymbol{\pi}} \cdot \hat{\boldsymbol{\pi}}) \mathbb{1}+i \boldsymbol{\sigma} \cdot(\hat{\boldsymbol{\pi}} \times \hat{\boldsymbol{\pi}})]+q \Phi(\hat{\mathbf{x}}) .
+\end{equation*}
+Abbiamo che $\boldsymbol{\hat{\pi}}\times \boldsymbol{\hat{\pi}} \neq 0$ perch\`e le singole componenti non commutano tra loro. Infatti
+\begin{equation*}
+	(\hat{\boldsymbol{\pi}} \times \hat{\boldsymbol{\pi}})_k=\epsilon_{i j k} \hat{\pi}_i \hat{\pi}_j=\frac{1}{2} \epsilon_{i j k}\left[\hat{\pi}_i, \hat{\pi}_j\right] .
+\end{equation*}
+dove il commutatore \`e dato da
+\begin{equation*}
+	\left[\pi_i, \pi_j\right]=\left[p_i-\frac{q}{c} A_i, p_j-\frac{q}{c} A_j\right] 
+\end{equation*}
+Le componenti dell'operatore $\bold{\hat{p}}$ possono essere viste come delle derivate agenti sulle corrispettive componenti spazialmente dipendenti di $\bold{A}$. Inoltre le componenti $A_i$, essendo funzioni della posizione, commutano tra di loro.
+\begin{equation*}
+	[\pi_i , \pi_j] = - \frac{\hbar}{i}\frac{q}{c}(\partial_i A_j - \partial_j A_i) = \frac{i \hbar q}{c}(\partial_i A_j - \partial_j A_i)
+\end{equation*}
+Possiamo scrivere esplicitamente le componenti del prodotto vettoriale sostituendo il risultato orrenuto 
+\begin{equation*}
+	(\boldsymbol{\pi} \times \boldsymbol{\pi})_k=\frac{1}{2} \epsilon_{i j k} \frac{i \hbar q}{c}\left(\partial_i A_j-\partial_j A_i\right)=\frac{i \hbar q}{c} \epsilon_{i j k} \partial_i A_j=\frac{i \hbar q}{c}(\nabla \times A)_k
+\end{equation*}
+riassumibile come 
+\begin{equation*}
+	\boldsymbol{\hat{\pi}} \times \boldsymbol{\hat{\pi}} = \frac{i \hbar q}{c} \bold{B}
+\end{equation*}
+In conclusione la Hamiltoniana di Pauli diventa
+\begin{equation*}
+	H_{Pauli} = \frac{1}{2m} \left( \bold{\hat{p}} + \frac{e}{c} \bold{A} \right)^2 + \frac{e \hbar }{2mc} \boldsymbol{\sigma} \cdot \bold{B} - e \Phi(\bold{\hat{x}})
+\end{equation*}
+Il secondo termine nella Hamiltoniana di Pauli espansa fornisce informazioni sull'accoppiamento tra lo spin dell'elettrone e il campo magnetico come discusso ad inizio sezione.
+
+\subsection{L'equazione di Dirac }
+
+Anche se l'equazione di Pauli incorpora nella sua espressione l'accoppiamento tra lo spin dell'elettrone e il campo magnetico, non \`e un equazione relativistica. Per poter includere la relativit\`a al suo interno, bisogna modificare le matrici e lo spinore di Pauli, portandole ad uno spinore a quattro componenti. Questo \`e dovuto al fatto che nella teoria relativistica si deve tenere conto delle antiparticelle.
+
+Iniziamo con l'analizzare le relazioni tra le energie e le quantit\`a di moto relativistiche
+\begin{equation*}
+	E^2 - \bold{p}^2c^2 = m^2c^4 \quad \rightarrow \quad E = \sqrt{\bold{p}^2c^2 + m^2 c^4}
+\end{equation*}
+Tale relazioni ci suggerisce che un Hamiltoniana che tiene conto di fattori relativistici per una particella libera debba essere espressa come
+\begin{equation*}
+	H = \sqrt{\bold{\hat{p}}^2c^2 + m^2 c^4}
+\end{equation*}
+la cui equazione di Schr\"odinger associata \`e data da
+\begin{equation*}
+	i \hbar \frac{\partial \psi }{\partial t} = \sqrt{\bold{\hat{p}}^2c^2 + m^2c^4} \psi
+\end{equation*}
+Ipotizziamo che $p \ll mc$, e quindi espandiamo la Hamiltoniana utilizzando Taylor
+\begin{align*}
+	H & = mc^2 \sqrt{1 + \frac{\bold{\hat{p}}^2}{m^2c^2}} = mc^2 \left [1 + \frac{\bold{\hat{p}}^2}{2m^2c^2} - \frac{1}{8} \left ( \frac{\bold{\hat{p}}^2}{m^2c^2}\right)^2 + \ldots \right] = \\[0.5cm]
+	& = mc^2 + \frac{\bold{\hat{p}}}{2m} - \frac{1}{8}\frac{\bold{\hat{p}}^4}{m^3c^2} + \ldots
+\end{align*}
+Se si ignora la massa costante a riposo, il primo termine coincide con quello della Hamiltoniana non relativistica e quello successivo \`e una correzione relativistica. Per piccoli valori della quantit\`a di moto possiamo considerare il termine correttivo come una perturbazione.
+
+Dirac voleva determinare una Hamiltoniana lineare rispetto ai momenti e privi di radici quadrate. Questo \`e possibile se si scrivono le energie relativistiche come quadrato di una funzione lineare rispetto ai momenti:
+\begin{equation}
+	c^2 \bold{\hat{p}}^2 + m^2 c^4 = (c \boldsymbol{\alpha} \cdot \bold{\hat{p}} + \beta mc^2)^2 = (c \alpha_1 \hat{p}_1 + c \alpha_2 \hat{p}_2 + c \alpha_3 \hat{p}_3 + \beta mc^2)^2
+\end{equation} 
+\newpage
+Espandendo i termine di destra ed uguagliando i coefficienti si trova che le seguenti relazioni sono verficate
+\begin{align*}
+	& \alpha_1^2 = \alpha_2^2 = \alpha_3^2 = \beta^2 = 1 \\[0.1cm]
+	& \alpha_i\alpha_j + \alpha_j\alpha_i = \{ \alpha_i , \alpha_j \} = 0 \quad i \neq j  \\[0.1cm]
+	& \alpha_i \beta + \beta \alpha_i = \{\alpha_i,\beta\} = 0
+\end{align*}
+Le relazione alla seconda e terza riga ci dicono che $\alpha$ e $\beta$ non possono essere numeri, perch\`e devono essere nulle. Di conseguenza si ha che $\alpha$ e $\beta$ sono matrici hermitiane $2 \times 2$
+\begin{equation*}
+	\boldsymbol{\alpha} = \left [ \begin{array}{cc}
+		0 & \boldsymbol{\sigma} \\ \boldsymbol{\sigma} & 0
+	\end{array} \right]  
+	,\quad 
+	\beta =  \left [ \begin{array}{cc}
+		\mathbb{I} & 0 \\ 0 & -\mathbb{I}
+	\end{array} \right]  
+\end{equation*}
+Usando la relazione (5.42) la Hamiltoniana di Dirac coincide con la funzione lineare del momento che \`e la radice quadrata di $c^2 \bold{\hat{p}}^2 + m^2 c^4$. Dunque abbiamo che
+\begin{equation*}
+	H_{Dirac} = c \boldsymbol{\alpha} \cdot \bold{p} + \beta m c^2
+\end{equation*}
+L'equazione di Dirac associata \`e 
+\begin{equation*}
+	i \hbar \frac{\partial \Psi}{\partial t} = (c \boldsymbol{\alpha} \cdot \bold{p} + \beta m c^2) \Psi
+\end{equation*}
+dove $\Psi$ \`e lo \textit{spinore di Dirac}, che corrisponde a un vettore colonna costituito da quattro componenti che pu\`o essere visto come composizione di due spinori di Pauli $\chi$ e $\eta$ a due componenti
+\begin{equation*}
+	\Psi = \left [ \begin{array}{c}
+		\chi \\ \eta 
+	\end{array}\right]
+	,\quad
+	\chi = \left [ \begin{array}{c}
+		\chi_1 \\ \chi_2 
+	\end{array}\right]
+	 ,\quad
+	 \eta = \left [ \begin{array}{c}
+		\eta_1 \\ \eta_2 
+	\end{array}\right]
+\end{equation*}
+L'accoppiamento al campo elettromagnetico viene tenuto conto considerando la trasformazione definita nella sezione precedente e quindi abbiamo che l'equazione di Schr\"odinger diventa
+\begin{equation*}
+	i \hbar \frac{\partial \Psi}{\partial t} = \left [ c \boldsymbol{\alpha} \cdot \left ( \bold{\hat{p}} + \frac{e}{c}\bold{A}\right) + \beta mc^2 + V(r) \right]\Psi
+\end{equation*}
+dove l'accoppiamento dell'elettrone viene introdotto considerando un potenziale scalare $\Phi(r)$
+\begin{equation*}
+	V(r) = - e \Psi(r) =- \frac{e^2}{r}
+\end{equation*}
+Il grande vantaggio dell'equazione di Dirac \`e che le correzioni della Hamiltoniana $H_0$ dell'idrogeno possono essere derivate in modo sistematica trovando l'appropriata Hamiltoniana H che agisce sullo spinore di Pauli $\chi$. L'analisi pu\`o essere fatta considerando $\bold{A} = 0$, dato che la stazionariet\`a del protone non genere vettore potenziale. Il risultato dell'analisi dimostra che 
+\begin{equation*}
+	H \chi = E \chi
+\end{equation*} 
+dove 
+\begin{equation}
+	H = \underbrace{ \frac{\hat{\bold{p}}^2}{2m} + V}_{H_0} - \underbrace{\frac{\bold{\hat{p}}^4}{8m^3c^2}}_{\delta H_{rel}} + \underbrace{\frac{1}{2m^2c^2r} \frac{1}{r} \frac{dV}{dr} \bold{S} \cdot \bold{L}}_{\delta H_{spin-orbita}} + \underbrace{\frac{\hbar^2}{8m^2c^2}\nabla^2 V}_{\delta H_{Darwin}}
+\end{equation}
+Il primo termine correttivo corrisponde a quello dell'energia relativistica come visto in precedenza. Il secondo termine rappresenta l'accoppiamento spin-orbita ed infine abbiamo la correzione di \textit{Darwin}, che come vedremo interagisce solo lo stato $l = 0$.
+
+Ricordiamo che la scala energetica per gli autostati di $H_0$ \`e data da $\alpha^2 mc^2$. Vedremo che tutte le correzioni per alti livelli di energia sono dell'ordine di $\alpha^4 m c^2$ mentre di un fattore $\alpha^2$ le pi\`u piccole. Questo ci suggerisce che per l'atomo d'idrogeno , il ruolo del parametro $\lambda$ della teoria delle perturbazioni \`e dato dalla costante di struttura fine $\lambda \sim \alpha^2$.
+
+Per le correzioni relativistiche, dove $p \simeq \alpha mc $, abbiamo che il primo termine diventa 
+\begin{equation*}
+	\delta H_{rel} = - \frac{\bold{p}^4}{8m^3 c^2} \sim - \alpha^4mc^2
+\end{equation*}
+Per la componente spin-orbita, riscriviamo il termine
+\begin{equation*}
+	\frac{1}{r}\frac{dV}{dr} = \frac{1}{r} \frac{d}{dr} \left( -\frac{e^2}{r}\right) = \frac{e^2}{r^3}
+\end{equation*}
+e quindi
+\begin{equation*}
+	\delta H_{spin-orbita} = \frac{e^2}{2m^2c^2} \frac{1}{r^3} \bold{S} \cdot \bold{L}
+\end{equation*}
+Stimiamo il proddotto spin e momento orbitale come $\bold{S} \cdot \bold{L} \sim \hbar^2 $, $r \sim a_0$, dove $a_0 = \hbar / mc \alpha$ e corrisponde al raggio di Bohr:
+\begin{equation*}
+	\delta H_{spin-orbita} \sim \frac{e^2}{m^2c^2} \frac{\hbar^2}{a_0^3} = \frac{\alpha \hbar c}{m^2 c^2}\frac{\hbar^2}{a_0^3} = \alpha \left( \frac{\hbar}{mca_0} \right )^3 mc^2 = \alpha^4 mc^2
+\end{equation*}
+Possiamo valutare il termine di Darwin ponendo $V = - e^2/r$:
+\begin{equation*}
+	\delta H_{Darwin} = - \frac{e^2 \hbar^2}{8 m^2 c^2} \nabla^2 \left( \frac{1}{r}\right) = \frac{e^2 \hbar^2}{8 m^2 c^2}(-4 \pi \delta(\bold{r})) = \frac{\pi}{2} \frac{e^2 \hbar^2}{m^2 c^2}\delta(\bold{r})
+\end{equation*}
+Per stimare questo termine correttivo notiamo che data la funzione $\delta $, l'integrale del valore di aspettazione introduce un fattore $|\psi(\bold{0})|^2 \sim a_0^{-3}$, e quindi abbiamo che
+\begin{equation*}
+	\delta H_{Darwin} \sim \frac{e^2 \hbar^2}{m^2 c^2 a_0^3} \sim \alpha^4 mc^2
+\end{equation*}
+che coincide esattamente con la stessa combinazione di costanti che otteniamo per il termine correttivo spin-orbita.
+
+\subsection{Calcolo delle correzioni delle energie}
+
+La struttura fine dell'atomo di idrogeno \`e lo spettro dell'atomo che tiene in considerazione i termini correttivi determinati fino ad ora. Date le semplificazioni viste nella sezione precedente 
+\newpage
+abbiamo che il sistema \`e descritto dalla Hamiltoniana 
+\begin{equation}
+	H=\underbrace{\frac{\hat{\mathbf{p}}^2}{2 m}+V}_{H^{(0)}}-\underbrace{\frac{\hat{\mathbf{p}}^4}{8 m^3 c^2}}_{\delta H_{\text {rel}}}+\underbrace{\frac{e^2}{2 m^2 c^2} \frac{\mathbf{S} \cdot \mathbf{L}}{r^3}}_{\delta H_{\text {spin-orbita }}}+\underbrace{\frac{\pi}{2} \frac{e^2 \hbar^2}{m^2 c^2} \delta(\mathbf{r})}_{\delta H_{\text {Darwin }}} .
+\end{equation}
+in questa sezione studieremo ciascuno dei singoli termini  e combineremo i risultati per determinare la struttura fine dell'atomo d'idrogeno.
+
+Consideriamo i livelli energetici $|n\;l\;m\;s \;m_s \rangle $ dove $s = 1/2$ e $m_s = \pm 1$. Per l'atomo d'idrogeno sono presenti livelli di energia degeneri, senza spin la degenerazione \`e dell'ordine $n^2$, ma introducendolo abbiamo una degenerazione di $2n^2$ e quindi lo stato fondamentale \`e degenere due volte.
+
+Calcoliamo i termini correttivi al primo ordine dell'energia determinando le componenti della matrice perturbativa $2n^2 \times 2n^2$ date da
+\begin{equation*}
+	\langle n' \; l' \; m' \; s \; m_s' \mid V \mid n \; l \; m \; s \; m_s \rangle 
+\end{equation*}
+diagonalizzandola otteniamo gli autovalori che correggono l'energia.
+
+Per semplificare i conti possiamo scegliere una base particolare data dalle costanti del moto del sistema. La Hamiltoniana del sistema imperturbato $H_0$ \`e ha come costanti del moto 
+\begin{equation*}
+	[L,H] = [S,H] = 0
+\end{equation*}
+Dato che H in riferimento al sistema perturbato contiene il termine $\bold{L} \cdot \bold{S}$, abbiamo che $\bold{L}$ e $\bold{S}$ non sono pi\`u costanti del moto.  La costante del moto diventa il momento angolare totale del sistema $\bold{J} = \bold{L}+ \bold{S}$ poich\`e
+\begin{align*}
+	& [\bold{L}^2,H] = 0 \quad \rightarrow \quad [\bold{L}^2,L_i] = 0 \\[0.2cm]
+	& [\bold{S}^2,H] = 0 \quad \rightarrow \quad [\bold{S}^2,S_i] = 0 \\[0.2cm]
+	& [\bold{J}^2,H] = 0 \\[0.2cm]
+	& [\bold{J}_i,H] = 0 \quad \rightarrow \quad [J_i,\bold{J}^2] = 0  
+\end{align*}
+Le prime due righe ci dicono che $\bold{L} \cdot \bold{S}$ commuta con $\bold{L}^2$ e $\bold{S}^2$. Dall'ultimo termine possiamo definire 
+\begin{equation*}
+	\bold{L} \cdot \bold{S} = \frac{(\bold{S} + \bold{L})^2- \bold{S}^2 - \bold{L}^2}{2} = \frac{\bold{J}^2 - \bold{S}^2-\bold{L}^2}{2}
+\end{equation*}
+Le costanti del moto sono dunque date da $\{\bold{J}^2,\bold{L}^2,\bold{S}^2,J_i,H\}$ e questo ci suggerisce di passare ad una base in cui consideriamo il momento angolare 
+\begin{equation*}
+	|n \; l \; s \; j \; m_j \rangle 
+\end{equation*}
+L'utilizzo di osservabili compatibili, fa s\`i che possano essere diagonalizzate simultaneamente e in modo equivaalente gli autostati della Hamiltoniana si organizzano in modo da essere autostati di ciascun osservabile.
+Se prendiamo un certo livello $n$ a cui \`e associato un determinatore valore $l$, avremo che 
+\begin{equation*}
+	m = -l,\ldots,l \quad \text{e per} \quad s = \frac{1}{2} \rightarrow m_s = \pm \frac{1}{2} \quad \Rightarrow \quad |l-s| \leq j \leq l+s 
+\end{equation*}
+Complessivamente abbiamo $2(2l+1)$ stati di split del livello energetico.
+\vspace{1cm}
+\begin{center}
+\begin{tikzpicture}
+	\draw[level] (0,0) -- node[above]{l $m_l = -l, \ldots,l$} node[below]{s $m_s = -1/2,1/2$} (5,0);
+	\draw[level] (5,0) -- node[above]{} (6,0.5);
+	\draw[level] (6,0.5) -- node[above]{$j = l + 1/2 \quad m_j = -j,\ldots,j $} (13,0.5);
+	\draw[level] (5,0) -- node[]{} (6,-0.5);
+	\draw[level] (6,-0.5) -- node[below]{$j = l - 1/2 \quad m_j = -j, \ldots, j$} (13,-0.5);
+\end{tikzpicture}
+\end{center}
+Lo spin si combina aumentando o diminuendo il momento angolare di $\pm 1/2$ e ogni livello si suddivide in due. In generale uno stato \`e dato da 
+\begin{equation*}
+	|nlsjm_j \rangle = R_{nl}(r) \{\text{momento angolare + spin}\}
+\end{equation*}
+dunque bisogna prendere le armoniche sferiche e gli stati con gli spin $\uparrow \downarrow$ e fare le opportune combinazioni lineari, gli elementi della matrice di perturbazione dipenderanno dalla componente radiale degli autostati.
+
+Consideriamo il primo termine corretivo dato da $\delta H_{rel}$ il contributo al termine matriciale sar\`a dato da 
+\begin{align*}
+	\langle \ldots \mid - \frac{\bold{p}^4}{8m^3c^4}\mid \ldots \rangle & = \langle \ldots \mid -\frac{1}{2mc^2}\left( \frac{\bold{p}^2}{2m}\right)^2 \mid \ldots \rangle  = \\[0.3cm]
+	& = \langle \ldots \mid - \frac{1}{2mc^2} \left ( E_n + \frac{e^2}{r}\right)^2 \mid \ldots \rangle = \\[0.3cm]
+	& = \delta_{jj'}\delta_{m_jm_{j'}}\delta_{ll'} \left( \frac{4n}{l + 1/2} -3\right)\left( - \frac{E_n}{2mc^2}\right)
+\end{align*}
+Per il secondo termine correttivo $\delta H_{spin-orbita}$ dato dall'accoppiamento spin-orbita abbiamo che 
+\begin{align*}
+	\langle \ldots \mid \frac{1}{2m^2c^2}\frac{e^2}{r^3} \bold{L} \cdot \bold{S}|\ldots \rangle & = \langle \ldots \mid \frac{1}{2m^2c^2}\frac{e^2}{r^3} \frac{\bold{J}^2 - \bold{L}^2 - \bold{S}^2}{2} |\ldots \rangle = \\[0.4cm]
+	& = \frac{\hbar^2}{2}[j(j+1)-l(l+1)-s(s+1)]\langle \ldots \mid \frac{1}{2m^2c^2}\frac{e^2}{r^3} \mid \ldots \rangle = \\[0.4cm]
+	& = \frac{E_n^2}{mc^2} \frac{n(j(j+1)-l(l+1)-s(s+1)}{l(l+1)(l+1/2)}\delta_{jj'}\delta_{ll'}\delta_{m_j m_{j'}}
+\end{align*}
+Infine il terzo termine correttivo dato da $\delta H_{Darwin}$ ci restituisce un contributo all'elemento matriciale 
+\begin{equation*}
+	\langle \ldots | \frac{\hbar^2}{8 m^2 c^2}4 \pi e^2 \delta(\bold{r}) \mid \ldots \rangle = \frac{E_n^2}{mc^2}2n \delta_{jj'}\delta_{ll'}\delta_{m_j m_{j'}} \delta_{l0} 
+\end{equation*}
+dove il termine $\delta_{l0}$ \`e dovuto al fatto che si valuta la funzione in $\bold{r} = 0$, di conseguenza il contributo \`e non nullo solo per $l=0$ e quindi per $j = 1/2$.
+
+
+Tutti i termini trovati sono diagonali rispetto alla base del momento angolare totale $\bold{J}$. Per l'atomo d'idrogeno i termini si combinano in modo tale che l'energia complessiva dipenda solo da $j$ e non da $l$. La formula per un livello di energia \`e 
+\begin{equation}
+	E_{nj} = - \frac{E_0}{n^2} \left[1 + \frac{\alpha^2}{n^2}\left(\frac{n}{j + 1/2} - \frac{3}{4} \right) \right]
+\end{equation}
+che corrisponde ad una correzione dell'ordine di $\alpha^2$ dei livelli energetici.
+
+L'equazione di Dirac ammette soluzione esatta e la formula esatta degli autostati energetici \`e data da 
+\begin{equation*}
+	E_{nj} = mc^2 \left \{ \left [ 1 + \left( \frac{\alpha}{n-(j+1/2) + \sqrt{(j+1/2)^2-\alpha^2}}\right)^2\right]^{-1/2}-1 \right \}
+\end{equation*}
+
+\subsubsection{Esempio}
+ Consideriamo il livello fondamentale per $n=1,l=0,j =1/2$ e $m_j = \pm 1/2$ si ha degenerazione, ovvero il livello energetico si splitta in due 
+ \vspace{1cm}
+\begin{center}
+\begin{tikzpicture}
+	\draw[level] (0,0) -- node[above]{$1S$}  (5,0);
+	\draw[level] (5,0) -- node[above]{} (6,0.5);
+	\draw[level] (6,0.5) -- node[above]{$j = 1/2  $} (13,0.5) node[right]{$1S_{1/2}$};
+	\draw[level] (5,0) -- node[]{} (6,-0.5);
+	\draw[level] (6,-0.5) -- node[below]{$j =  -1/2 $} (13,-0.5) node[right]{$1S_{-1/2}$};
+\end{tikzpicture}
+\end{center}
+ Se consideriamo invece $n=2$ avremo due valori possibili del momento angolare $l = 0 ,1$ che in notazione spettroscopica sono i livelli $2S$ e $2P$. Per il livello 2s abbiamo che questo coincide con il livello $1S_{1/2}$, ottenendo una degenerazione in due livelli energetici. Per il caso $2P$ abbiamo una degenerazione di sei livelli energetici dato che per $l =1$ e $s = 1/2$ si ha $j = 1/2 , 3/2$, di conseguenza il livello 2P si spezza  in due a seconda del valore del momento 
+ \vspace{1cm}
+\begin{center}
+\begin{tikzpicture}
+	\draw[level] (0,0) -- node[above]{$2P$}  (5,0);
+	\draw[level] (5,0) -- node[above]{} (6,0.5);
+	\draw[level] (6,0.5) -- node[above]{$j = 3/2  $} (13,0.5) node[right]{$2P_{3/2}$};
+	\draw[level] (5,0) -- node[]{} (6,-0.5);
+	\draw[level] (6,-0.5) -- node[below]{$j =  1/2 $} (13,-0.5) node[right]{$2P_{1/2}$};
+\end{tikzpicture}
+\end{center} 
+a loro volta il livello energetico $2P_{3/2}$ si divide in altri quattro livelli di energia dato che $m_j = -3/2,-1/2,1/2,3/2$, mentre $2P_{1/2}$ in altri due dato che $m_j = - 1/2,1/2$.
+
+Che graficamente possiamo rappresentare come 
+\newpage
+
+\vspace{1cm}
+\begin{center}
+\begin{tikzpicture}
+	\draw[level] (0,0) -- node[above]{$2P$}  (3,0);
+	\draw[level] (3,0) -- node[above]{} (4,0.5);
+	\draw[level] (4,0.5) -- node[above]{$2P_{3/2}$}(6,0.5) ;
+	\draw[level] (6,0.5) -- node[right]{}(7.5,1.5);
+	\draw[level] (7.5,1.5) -- (9.5,1.5)node[right]{$m_j = 3/2$};
+	\draw[level] (6,0.5) -- (7.5,1);
+	\draw[level] (7.5,1) -- (9.5,1) node[right]{$m_j = 1/2$};
+	\draw[level] (6,0.5) -- node[right]{}(7.5,-0.5);
+	\draw[level] (7.5,-0.5) -- (9.5,-0.5)node[right]{$m_j = -3/2$};
+	\draw[level] (6,0.5) -- (7.5,-0.);
+	\draw[level] (7.5,-0.) -- (9.5,0.) node[right]{$m_j = - 1/2 $};
+	\draw[level] (3,0) -- node[]{} (4,-2);
+	\draw[level] (4,-2) -- node[below]{$2P_{1/2}$} (6,-2) ;
+	\draw[level] (6,-2) -- (8,-1.5);
+	\draw[level] (8,-1.5) -- (9.5,-1.5) node[right]{$m_j = 1/2$};
+	\draw[level] (6,-2) -- (8,-2.8);
+	\draw[level] (8,-2.8) -- (9.5,-2.8) node[right]{$m_j = - 1/2$};
+\end{tikzpicture}
+\end{center} 
+La struttura fine separa i livelli energetici dell'atomo d'idrogeno, ma li lascia degeneri. La degenerazione \`e dovuta al fatto che il numero quantico $m_j$ essendo la proiezione del momento angolare in una direzione, fino a quando non viene rotta la simmetria sferica del problema, questo viene conservato. 
+
+Il modulo del momento pu\`o essere arbitrario, ma la proiezione nello spazio \`e rilevante e l'assenza di $m_j$ nell'equazione dell'energia \`e spiegata dall'invarianza per rotazioni del problema.
+
+\section{Teoria delle perturbazioni dipendenti dal tempo }
+
+ 
