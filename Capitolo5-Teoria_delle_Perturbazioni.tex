@@ -900,4 +900,136 @@ Il modulo del momento pu\`o essere arbitrario, ma la proiezione nello spazio \`e
 
 \section{Teoria delle perturbazioni dipendenti dal tempo }
 
- 
+Abbiamo discusso fin'ora della meccanica quantistica di sistema la cui Hamiltoniana \`e indipendente dal tempo, in questi casi la dipendenza temporale dei pacchetti d'onda pu\`o essere espressa mediante l'operatore di evoluzione temporale $\hat{U} = e^{-i \hat{H}t/\hbar}$ e poi sviluppato rispetto agli autostati della Hamiltoniana, $\hat{H}|n \rangle = E_n |n \rangle $, come $|\psi(t) \rangle = e^{-i \hat{H}t/\hbar}|\psi(0) \rangle  = \sum_{n} e^{-iE_nt/\hbar}c_n(0)|n \rangle$. Questa trattazione ci permette di descrivere la meccanica di un qualsiasi sistema quantistico isolato, ma non l'interazione con l'ambiente come per esempio la presenza di un campo elettromagnetico esterno. In questi casi \`e pi\`u conveniente descrivere le interazioni indotte di un piccolo sistema isolato, $\hat{H}_0$, attraverso un interazione dipendente dal tempo $V(t)$. Casi possibili sono per esempio quelli della risonanza magnetica, che descrive  l'interazione dello spin di un sistema quantistico con campo magnetico esterno dipendente dal tempo, oppure possiamo considerare l'interazione di un atomo con un campo elettromagnetico esterno. In questa sezione ci occuperemo di sviluppare il formalismo necessario a studiare le perturbazioni dipendenti dal tempo.
+
+\subsection{Potenziali dipendenti dal tempo: Formalismo generale}
+
+Consideriamo la Hamiltoniana $\hat{H} = \hat{H}_0 + V(t)$ dove la dipendenza da tempo \`e descritta completamente dal potenziale $V(t)$. Dato che consideriamo un potenziale dipendente dal tempo abbiamo che l'energia del sistema non si conserva e di conseguenza l'equazione di Schr\"odinger \`e quella generale.
+\begin{equation}
+	i \hbar \frac{\partial }{\partial t}|\psi(t) \rangle = H |\psi(t) \rangle 
+\end{equation}
+Assumiamo che il sistema si trovi inizialmente al tempo $t=0$ in uno stato stazionario $|\varphi_i \rangle $, autostato del sistema imperturbato descritto dalla Hamiltoniana $\hat{H}_0$ e con autovalore $E_i$. 
+\newpage 
+
+Se a un tempo $t > 0$ applichiamo una perturbazione, il sistema evolve passando dallo stato $|\varphi_i \rangle $ ad uno stato $|\varphi_f \rangle $ appartenente agli autostati della Hamiltoniana $\hat{H}$ che descrive il sistema perturbato.
+
+A differenza del caso di perturbazioni stazionarie non consideriamo pi\`u come cambiano i livelli energetici, ma la probabilit\`a del passaggio di stato una volta introdotta una perturbazione $V(t)$ nel sistema.
+La soluzione $|\psi(t) \rangle$ dell'equazione differenziale (5.46) corrisponde alla condizione iniziale 
+\begin{equation}
+	|\psi(t=0) \rangle = | \varphi_i \rangle 
+\end{equation}
+ed \`e unica. La probabilit\`a che il sistema si trovi nello stato $\mathcal{P}_{if}(t)$ \`e data da
+\begin{equation*}
+	\mathcal{P}_{if}(t) = |\langle \varphi_f|\psi(t) \rangle|^2
+\end{equation*}
+Il nostro problema da risolvere consiste nel trovare una soluzione di (5.46) che soddisfi le condizioni iniziale imposte da (5.47). Ipotizzando che la perturbazione $V(t) = \lambda \hat{W}(t)$ per un parametro $\lambda \in \mathbb{R}$, siccome in generale (5.46) non ha soluzioni esatte, vogliamo trovare delle soluzioni approssimate che possano essere espresse come serie di potenze in $\lambda$.
+
+\subsection{Soluzione approssimata dell'equazione di Schr\"odinger}
+
+Siano $c_n (t)$ i coefficienti della funzione d'onda $|\psi(t) \rangle$ espressa rispetto ad una base $\{|\varphi_n \rangle \}$ autostati di $\hat{H}_0$:
+\begin{equation*}
+	|\psi(t) \rangle = \sum_{n}c_n(t)|\varphi_n \rangle
+\end{equation*}
+dove 
+\begin{equation*}
+	c_n(t) = \langle \varphi_n|\psi(t) \rangle 
+\end{equation*}
+L'equazione di Schr\"odinger diventa 
+\begin{align}
+	i \hbar \sum_{n} \dot{c}_{n}(t)|\varphi_n \rangle & = \hat{H}_0 \sum_{n}c_n(t)|\varphi_n \rangle + \lambda \hat{W}(t) \sum_{n}c_n(t)|\varphi_n \rangle \notag \\[0.3cm]
+	& = \sum_{n}c_n(t)E_n|\varphi_n \rangle + \lambda \sum_{n}c_n(t) \hat{W}(t)|\varphi_n \rangle
+\end{align}
+Poich\`e la rappresentazione di un vettore dipende dai coefficienti espressi rispetto ad una base, procediamo a determinarli, calcolando
+\begin{align}
+	 \langle \varphi_m|i \hbar \sum_{n}\dot{c}_{n}(t)|\varphi_n \rangle & = \sum_{n}c_n(t)E_n\langle \varphi_m |\varphi_n \rangle + \lambda \sum_{n}c_n(t) \langle \varphi_m \mid \hat{W}(t) \mid \varphi_n \rangle \quad \Rightarrow \quad \notag \\[0.3cm]
+	& \Rightarrow i \hbar \; \dot{c}_{m}(t) = c_m(t)E_m + \lambda \sum_{n}c_n(t) \langle \varphi_m \mid \hat{W}(t) \mid \varphi_m \rangle 
+\end{align}
+dove i termini $\langle \varphi_m \mid \hat{W}(t) \mid \varphi_m \rangle$ sono gli elementi $W_{mn}(t)$ della matrice di perturbazione $\hat{W}(t)$. Quando $\lambda \hat{W}(t) = 0$, l'equazione (5.48) non \`e pi\`u legata al termine perturbativo e la sua soluzione si semplifica. 
+\newpage
+
+Da (5.49) coefficienti diventano un equazione differenziale ordinaria al primo ordine con soluzione:
+\begin{equation*}
+	c_n(t) = b_n(t)e^{-iE_n t/\hbar }
+\end{equation*}
+Possiamo dunque riscrive i coefficienti generici $c_m(t)$ in (5.49) come
+\begin{equation}
+	i \hbar \; \dot{b}_m(t)e^{-iE_m t/\hbar } = \lambda \sum_{n}\hat{W}_{mn}(t)b_n(t)e^{-iE_nt/\hbar}
+\end{equation}
+moltiplichiamo ambo i membri dell'equazione per un termine $e^{iE_mt/\hbar}$, ed introduciamo la frequenza angolare di Bohr:
+\begin{equation*}
+\omega_{mn} = \frac{E_m-E_n}{\hbar}	
+\end{equation*}
+relativa alla coppia di stati $E_m$ e $E_n$. La frequenza angolare definita coincide con quella di un fotone che cambia livello energetico. L'equazione (5.50) assume la forma:
+\begin{equation}
+	i \hbar \; \dot{b}_m(t)e^{-iE_m t/\hbar } = \lambda \sum_{n}\hat{W}_{mn}(t)b_n(t)e^{i \omega_{mn}t}
+\end{equation}
+
+\subsection{Equazioni della perturbazione}
+
+Il sistema di equazioni (5.51) \`e equivalente all'equazione di Schr\"odinger (5.46). In generale non siamo in grado di trovarne la soluzione, per questo motivo usiamo il fatto che $\lambda \ll 1$ per determinare una soluzione in forma di serie di potenze in $\lambda$:
+\begin{equation*}
+	b_n(t) = b_n^{(0)}(t)+ \lambda b_n^{(1)}(t) + \lambda^2b_{n}^{(2)}(t)+\ldots
+\end{equation*} 
+Sostituendo in (5.51) e raccogliamo gli elementi per gli stessi ordini in $\lambda^r$ abbiamo che:
+\begin{enumerate}
+	\item Per $r =0$:
+	\begin{equation}
+		i\hbar \; \frac{d}{dt}b_m^{(0)}(t) = 0 
+	\end{equation}
+	di conseguenza possiamo concludere che $b_n^{0}$ sia indipendente dal tempo e dunque una costante.
+	\item per $r \neq 0 $
+	\begin{equation}
+		i \hbar \; \frac{d}{dt}b_m^{(r)}(t) = \sum_{n}\hat{W}_{mn}(t)b_{n}^{(r-1)}(t)e^{i \omega_{mn}t}
+	\end{equation} 
+\end{enumerate} 
+Con la soluzione per l'ordine zero determinata in (5.52) e le condizioni iniziali, la relazione (5.53) ci permette di ottenere le soluzioni al primo ordine per $r=1$, che quindi successivamente ci permette di ottenere quelle al secondo ordine e cos\`i via in modo ricorrenza fino all'ordine $r$-simo.
+
+\subsection{Soluzioni al primo ordine $\mathcal{O}(\lambda)$}
+
+Dato che vogliamo risolvere il problema con condizioni iniziali $|\psi(0) \rangle = | \varphi_1 \rangle $, essendo il generico stato nel tempo esprimibile come 
+\begin{equation*}
+	|\psi(t) \rangle = \sum_{m}c_m(t)|\varphi_m \rangle
+\end{equation*}
+imponendo la condizione iniziale abbiamo la seguente equazione
+\begin{equation}
+	c_m(0) = \delta_{mi} = b_{m}(0) = \sum_{r} \lambda^r b_{m}^{(r)}(0)  
+\end{equation}	
+ la cui soluzione \`e data imponendo che $b_m^{(0)}(0) = \delta_{mi}$ coincidendo con la condizione iniziale, mentre i termini $b_m^{(r)}(0)=0$ per $r > 0$. Le nuove condizioni iniziali saranno dunque date da
+ \begin{equation*}
+ 	\begin{array}{l}
+ 		b_m^{(0)}(0) = \delta_{mi} \\[0.3cm]
+ 		b_m^{(k)}(0) = 0  \quad r>0
+ 	\end{array}
+ \end{equation*}
+Dalla condizione (5.52) sappiamo che $b_m^{0}(t)$ \`e una costante di conseguenza dai risultati ottenuti per (5.54) possiamo concludere che
+\begin{equation}
+	b_m^{(0)}(t) = \delta_{mi} \quad \forall t > 0
+\end{equation}
+Questo risultato ci permette di scrivere (5.53) nel seguente modo
+\begin{equation}
+	i\hbar \; \frac{d}{dt} b_m^{(1)}(t) = \sum_{n}\hat{W}_{mn}\delta_{ni}e^{i \omega_{mn}t} =e^{i \omega_{mi}t} \hat{W}_{mi}(t) 
+\end{equation}
+tale equazione ci permette di determinare i termini $b^{(1)}_{m}(t)$ integrando rispetto al tempo
+\begin{equation}
+	b_m^{(1)}(t) = \frac{1}{i \hbar} \int_{0}^{t} e^{i \omega_{mi}t'}\hat{W}_{mi}(t')dt'
+\end{equation}
+Se ora sostituiamo (5.55) e (5.57) nell'equazione dei $c_m(t)$ iniziali e poi li inseriamo nell'equazione che descrive lo stato al tempo t come combinazione lineare di autostati, otteniamo l'espressione di $|\psi(t) \rangle $ calcolato al primo ordine in $\lambda$.
+
+\subsection{La probabilit\`a di transizione $\mathcal{P}_{if}(t)$}
+
+La probabilit\`a che un sistema passi dallo stato iniziale $|\varphi_i \rangle$ allo stato finale $|\varphi_f \rangle$ \`e descritta dai coefficienti ottenuti a partire da (5.57). Dato che $c_f(t)$ e $b_f(t)$ hanno lo stesso modulo possiamo definire 
+\begin{equation*}
+	\mathcal{P}_{if}(t) = |b_f(t)|^2
+\end{equation*}
+Dato che $b_{f}^{(0)}(t) = 0$ abbiamo che 
+\begin{equation*}
+	\mathcal{P}_{if}(t) = \lambda^2|b_{f}^{(1)}(t)|^2
+\end{equation*}
+Utilizzando la relazione (5.57) dove sostituiamo $\lambda \hat{W}$ con $\hat{W}(t)$, otteniamo che
+\begin{equation}
+	\mathcal{P}_{if}(t) = \frac{1}{\hbar^2} \left | \int_0^t e^{i\omega_{fi}t'}W_{fi}(t')dt' \right|^2
+\end{equation}
+La probabilit\`a coincide con il modulo della trasformata di Fourier considerando la frequenza angolare uguale alla frequenza angolare di Bohr associata alla transizione di stato presa in considerazione.
+\newpage
+\section{Perturbazioni costanti (o sinusoidali)}
+
