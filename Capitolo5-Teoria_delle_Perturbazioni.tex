@@ -1033,3 +1033,43 @@ La probabilit\`a coincide con il modulo della trasformata di Fourier considerand
 \newpage
 \section{Perturbazioni costanti (o sinusoidali)}
 
+Assumiamo che un sistema subisca una perturbazione del tipo 
+\begin{equation*}
+	\hat{W}(t) = \frac{\hat{W}}{2}e^{i\omega t}+ \frac{\hat{W}^{\dag}}{2}e^{-i \omega t}
+\end{equation*}
+dove $\omega >0 $ \`e la frequenza angolare costante del sistema. Partendo da uno stato iniziale $|\varphi_i \rangle$ al tempo $\overline{t}$ vogliamo determinare la probabilit\`a che un sistema si trovi nello stato $|\varphi_f \rangle $ ad un tempo $t > \overline{t}$.
+
+L'elemento della matrice $\hat{W}(t)$, dato da $W_{fi}(t)$ assume la forma
+\begin{align}
+	\hat{W}_{fi}(t) & =\frac{1}{2}e^{i \omega t}\langle \varphi_f \mid \hat{W} \mid \varphi_i \rangle + \frac{1}{2}e^{-i \omega t}\langle \varphi_f \mid W^{\dag} \mid \varphi_i \rangle  = \notag \\[0.3cm]
+	& = \frac{1}{2}e^{i \omega t} \hat{W}_{fi} + \frac{1}{2}e^{-i \omega t}\hat{W}_{fi}^{\dag}
+\end{align}
+dove $W_{if}$ \`e un numero complesso indipendente dal tempo. Calcoliamo il vettore di stato approssimandolo al primo ordine in $\lambda$. Sostituendo (5.59) in (5.57) calcoliamo il termine $b_n^{(1)}(t)$ che ci permette di calcolare la probabilit\`a di transizione di stato
+\begin{align}
+	\mathcal{P}_{if}(t) & = \frac{1}{\hbar^2} \left | \int_0^t e^{i\omega_{fi}t'}W_{fi}(t')dt' \right|^2 = \frac{1}{\hbar^2} \left| \int_0^t dt' \; \frac{1}{2}e^{i (\omega + \omega_{fi})t'}W_{fi}(t') + \frac{1}{2}e^{i(\omega_{fi}-\omega)t'}W^{\dag}_{fi}(t')\right|^2 = \notag \\[0.3cm]
+	& = \frac{1}{\hbar^2} \left | \underbrace{\frac{e^{i(\omega_{fi}+\omega)t}-1}{2i(\omega + \omega_{fi})}}_{A}\omega_{fi} +  \underbrace{\frac{e^{i(\omega_{fi}-\omega)t}-1}{2i(\omega_{fi}-\omega)}}_{B}\omega_{fi}^{\dag} \right|^2
+\end{align}
+Da un punto di vista fisico se consideriamo $|\varphi_i \rangle $ e $|\varphi_f \rangle$ come livelli appartenenti ad uno spettro discreto, la probabilit\`a $\mathcal{P}_{if}(t,\omega)$ rappresenta la probabilit\`a di transizione tra i due livelli energetici corrispettivi, dove per tempi sufficientemente lunghi la particella oscilla tra di essi.
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 12cm]{state_transition}	
+\centering
+\end{figure}
+
+Se il livello di energia $E_i > E_f$ la transizione da $|\varphi_i \rangle $ a $|\varphi_f \rangle $ avviene dall'assorbimento di una quanto di energia $\hbar \omega$. Nel caso $(b)$ in figura abbiamo che il passaggio di stato avviene per via dell'emissione di radiazione indotta da un quanto di energia $\hbar \omega$.
+\newpage
+
+\subsection{Natura della risonanza per la probabilit\`a di transizione}
+
+Se fissiamo il tempo $t$, la probabilit\`a di transizione $\mathcal{P}_{if}(\omega)$ diventa funzione solo della variabile $\omega$. La probabilit\`a risulta essere massima quando 
+\begin{equation*}
+	\omega \simeq \omega_{fi} \quad \text{o} \quad \omega \simeq - \omega_{if}
+\end{equation*}
+dove il primo caso \`e per l'assorbimento di radiazione e il secondo per l'emissione. Quando la frequenza angolare di Bohr associata alla coppia degli stati $|\varphi_i \rangle$ e $|\varphi_f \rangle$ coincide con quella della perturbazione si ottiene un fenomeno di risonanza.
+
+Consideriamo il caso (a) in figura dove $\omega >0 $ e quindi $\omega_{fi} = (E_{f}-E_i)/\hbar >0$ e di conseguenza $E_{f} > E_i$. In questa casistica il termine B in (5.60) predomina e quindi possiamo approssimare la probabilit\`a come 
+\begin{align}
+	\mathcal{P}_{if}(\omega) & = \frac{|W_{fi}|^2}{4 \hbar^2} \left | \frac{e^{i(\omega_{fi}-\omega)t/2}}{\omega_{fi}-\omega} \left[ e^{i(\omega_{fi}-\omega)t/2}-e^{-i(\omega_{fi}-\omega)t/2}\right]\right|^2 = \notag \\[0.3cm]
+	& = \frac{|W_{fi}|^2}{4 \hbar^2}  \left[ \frac{\sin\left( \frac{(\omega_{fi}-\omega)t}{2}\right)}{\frac{\omega_{fi}-\omega}{2}} \right]^2
+\end{align}
+
