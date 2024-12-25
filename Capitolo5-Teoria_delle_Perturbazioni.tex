@@ -1072,4 +1072,30 @@ Consideriamo il caso (a) in figura dove $\omega >0 $ e quindi $\omega_{fi} = (E_
 	\mathcal{P}_{if}(\omega) & = \frac{|W_{fi}|^2}{4 \hbar^2} \left | \frac{e^{i(\omega_{fi}-\omega)t/2}}{\omega_{fi}-\omega} \left[ e^{i(\omega_{fi}-\omega)t/2}-e^{-i(\omega_{fi}-\omega)t/2}\right]\right|^2 = \notag \\[0.3cm]
 	& = \frac{|W_{fi}|^2}{4 \hbar^2}  \left[ \frac{\sin\left( \frac{(\omega_{fi}-\omega)t}{2}\right)}{\frac{\omega_{fi}-\omega}{2}} \right]^2
 \end{align}
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 9cm]{resonance}	
+\centering
+\end{figure}
+
+In figura abbiamo la funzione di probabilit\`a rispetto alla frequenza angolare, per un tempo t fissato. Abbiamo che la probabilit\`a \`e massima quando $\omega = \omega_{fi}$ ed \`e uguale a $\frac{|W_{fi}|^2t^2}{4 \hbar^2}  $. Prendendo valori distanti da $\omega_{fi}$, la probabilit\`a diminuisce, tendendo a zero per $|\omega - \omega_{fi}|= 2 \pi /t$. Quando $|\omega-\omega_{fi}|$ incrementa, questa oscilla tra i valori $|W_{fi}|^2/\hbar^2(\omega-\omega_{fi})^2$ e zero. 
+
+L'ampiezza di risonanza $\Delta \omega $ \`e aprossimabile alla distanza tra i primi due punti di zero della funzione $\mathcal{P}_{fi}(t,\omega)$, simmetrici rispetto $\omega_{fi}$. All'interno di questo intervallo la transizione di probabilit\`a assume i suoi valori maggiori. Dunque abbiamo che
+\begin{equation}
+	\Delta \omega \simeq \frac{4 \pi}{t}
+\end{equation}
+Maggiore \`e il tempo $t$ considerato e pi\`u piccola \`e l'ampiezza di risonanza.
+
+\subsection{Indeterminazione tempo-energia}
+
+Assumiamo di misurare una differenza di energia $E_f - E_i = \hbar w_{fi}$ applicando una perturbazione sinusoidale con frequenza angolare $\omega$ al sistema e procediamo a variare $\omega$ fino a quando non troviamo la frequenza di risonanza. Se effettuiamo l'esperimento in un arco di tempo $\Delta t$, l'incertezza $\Delta E$ della differenza $E_f -E_i$, usando (5.62), \`e dell'ordine di
+\begin{equation*}
+	\Delta E = \hbar \Delta \omega \simeq \frac{\hbar}{\Delta t} \quad \Rightarrow \quad \Delta E \Delta t \sim \hbar
+\end{equation*}
+Abbiamo che il prodotto $\Delta E \Delta t$ non pu\`o essere pi\`u piccolo di $\hbar$. In apparenza sembrerebbe il principio d'indeterminazione tra tempo ed energia, ma in questo caso l'intervallo di tempo non \`e una caratteristica dell'evoluzione libera del sistema, ma una grandezza esternamente imposta.
+
+Se la perturbazione agisce per un tempo molto piccolo, esiste una probabilit\`a che il sistema salti dal livello iniziale a quello finale per valori di $\omega$ che non sono necessariamente prossima alla frequenza di risonanza. Se $\Delta t $ \`e molto grande allora $\Delta E \to 0$, di conseguenza la frequenza da applicare al sistema diventa uguale alla differenza di energia tra i livelli.
+
+\subsection{Limiti dell'approssimazione di risonanza}
+
 
