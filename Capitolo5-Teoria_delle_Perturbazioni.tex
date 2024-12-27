@@ -1114,9 +1114,152 @@ e quindi dalla condizione (5.62) abbiamo che
 \end{equation*}
 In conclusione si osserva che il risultato (5.61) \`e dunque valido solo se la perturbazione sinusoidale agisce per un tempo $t$ maggiore di $1/\omega$. Fisicamente abbiamo che nell'intervallo di tempo $[0,t]$, la perturbazione deve compiere un certo numero di oscillazioni per apparire al sistema come una perturbazione sinusoidale. Se $t < 1 \omega$, la perturbazione appare al sistema come una variazione lineare rispetto al tempo o costante; in questi casi \`e necessario passare agli ordini successivi di perturbazione.
 
-\subsection{Esempio: assorbimento ed emissione di radiazione}
+\subsection{Interazione di un atomo con un onda elettromagnetica}
+Consideriamo una radiazione elettromagnetica che si propaga nel vuoto, definito un certo potenziale vettore $\bold{A}$ l'equazione delle onde che descrive l'evoluzione dell'onda \`e data da
+\begin{equation}
+	\nabla^2\bold{A} - \frac{1}{c^2}\frac{\partial^2 \bold{A}}{\partial^2 t} = 0
+\end{equation}
+Dato il vettore di polarizzazione $|\boldsymbol{\varepsilon}|=1$, la soluzione dell'equazione (5.64) \`e data da
+\begin{equation*}
+	\bold{A} = A_0 \boldsymbol{\varepsilon}e^{i(\bold{k} \cdot \bold{x}-\omega t)} + A_0^*\boldsymbol{\varepsilon}^*e^{-i(\bold{k} \cdot \bold{x} - \omega t)}
+\end{equation*}
+dove $\omega = c  |\bold{k}|$ e per cui vale la propriet\`a $\nabla \cdot \bold{A} = 0$ a condizione che $\bold{k} \cdot \boldsymbol{\varepsilon} = 0$, ovvero la polarizzazione dell'onda \`e contenuta all'interno del piano ortogonale alla sua direzione di propagazione.	
+Ipotizziamo che il vettore d'onda $\bold{k} = \hat{e}_{y}$ e la frequenza angolare sia $\omega = ck$, inoltre il campo elettrico si propaga lungo $\hat{e}_{z}$ e anche la polarizzazione, mentre quello magnetico \`e parallelo alla direzione $\hat{e}_{x}$; sotto tali ipotesi possiamo riscrivere la soluzione dell'equazione (5.64) come
+\begin{align*}
+	\bold{A}(\bold{r},t) & = A_0 \bold{e}_{z}e^{i(ky-\omega t)}+A_0^*\bold{e}_{z}e^{-i(ky-\omega t)} = \\[0.3cm]
+	& = A_0 \bold{e}_{z}\sin(ky-\omega t)
+\end{align*}
+Il termine $A_0 \in \mathbb{C}$ il cui valore dipende dalla condizione iniziale del tempo. Abbiamo che  campo magnetico ed elettrico sono espressi come
+\begin{align*}
+	& \bold{E}(\bold{r},t) = - \frac{\partial }{\partial t}\bold{A}(\bold{r},t) = 2i\omega A_0 \cos(ky-\omega t)\bold{e}_{z} \\[0.2cm]
+	& \bold{B}(\bold{r},t) = \nabla \times \bold{A}(\bold{r},t) = 2ikA_0 \cos(ky-\omega t) \bold{e}_x
+\end{align*}
+Scegliamo come riferimento iniziale per il tempo affinch\`e la costante $A_0$ sia un numero immaginario puro, e definiamo le costanti
+\begin{align*}
+	 & \mathcal{E} = 2i\omega A_0 \\[0.3cm] 
+	 & \mathcal{B} = 2ikA_0
+\end{align*}
+dove $\mathcal{E}$ e $\mathcal{B}$ sono due grandezze reali tali per cui
+\begin{equation}
+	\frac{\mathcal{E}}{\mathcal{B}} = \frac{\omega}{k} = c
+\end{equation}
+Le componenti del campo elettromagnetico assumono l'espressione
+\begin{align*}
+& \bold{E}(\bold{r},t) = \mathcal{E} \cos(ky-\omega t) \bold{e}_{z} \\[0.3cm]
+& \bold{B}(\bold{r},t) = \mathcal{B} \cos(ky - \omega t) \bold{e}_{x}
+\end{align*}
+fisicamente $\mathcal{E}$ e $\mathcal{B}$ rappresentano l'ampiezza del campo elettrico e del campo magnetico dell'onda planare considerata. Il vettore di Poynting $\bold{G}$ associata all'onda piana \`e dato dall'equazione 
+\begin{equation*}
+	\bold{G} = \varepsilon_0 c^2 \bold{E} \times \bold{B}
+\end{equation*}
+Considerando il tempo medio, otteniamo che il valore medio del vettore di Poynting \`e dato da
+\begin{equation*}
+	\overline{\bold{G}} = \varepsilon_0 c \frac{\mathcal{E}^2}{2}\bold{e}_y
+\end{equation*}
+dove $I = \parallel\overline{\bold{G}} \parallel $ \`e l'intensit\`a della radiazione in un punto.
 
-			
+\subsubsection{La Hamiltoniana d'interazione}
+ 
+Consideriamo un sistema in cui l'onda elettromagnetica precedentemente descritta interagisce con  l'elettrone di un atomo situato ad una distanza $r$ dall'origine $O$ in cui \`e posto il nucleo.  L'elettrone mantiene la sua distanza fissata per via del potenziale centrale $V(r)$ che il nucleo esercita su di esso. La Hamiltoniana che descrive la dinamica del sistema \`e data da
+\begin{equation}
+	\hat{H} = \frac{1}{2m}[\bold{p}-q\bold{A}(\bold{R},t)]^2 + V(R)-\frac{q}{m}\bold{S} \cdot \bold{B}(\bold{R},t)
+\end{equation}
+l'ultimo termine rappresenta l'interazione tra lo spin dell'elettrone e del campo magnetico oscillante dell'onda piana. Sviluppando il quadrato abbiamo che i termini di ordine superiore al primo in A, possono essere trascurati in quanto l'intensit\`a dei termini di ordine superiore \`e trascurabile rispetto a quelli di primo e quindi possiamo approssimare nel seguente modo 
+\begin{equation*}
+	[\bold{p} - q \bold{A}]^2 \simeq \bold{p}^2 - q \bold{p} \cdot \bold{A} 
+\end{equation*}
+dove il prodotto tra momenti e potenziale vettore \`e commutativo.
+Di conseguenza l'equazione (5.66) diventa
+\begin{equation}
+	\hat{H} = H_0 - \frac{q}{m} \bold{p} \cdot \bold{A}(\bold{R},t) - \frac{q}{m}\bold{S} \cdot \bold{B}(\bold{R},t)
+\end{equation}
+dove 
+\begin{equation*}
+	H_0 = \frac{\bold{p}^2}{2m} + V(r)
+\end{equation*}
+e 
+\begin{equation*}
+	W(t) \simeq W_{I}(t) + W_{II}(t)  = - \frac{q}{m} \bold{p} \cdot \bold{A}(\bold{R},t) - \frac{q}{m}\bold{S} \cdot \bold{B}
+\end{equation*}
+perturbazione periodica del sistema. Sostituendo in (5.67) la forma esplicita di potenziale vettore e campi definiti nella sezione precedente abbiamo la seguente espressione
+\begin{equation*}
+	\hat{H} = H_0 - \frac{q \mathcal{E}}{m\omega}p_{z}\cos(ky-\omega t) - \frac{q \mathcal{B}}{m}S_x \cos(ky- \omega t)
+\end{equation*}
+Valutiamo gli ordini di grandezza relativi agli elementi $W_{I}$ e $W_{II}$ confrontandoli tra loro
+\begin{equation*}
+	\frac{W_{II}}{{W}_{I}} \simeq \frac{\frac{q \mathcal{B}}{m}S_{x}}{\frac{q\mathcal{E}}{m \omega}p_z} = \frac{\hbar \omega}{c p_z} = \frac{k}{k_e } = \frac{\lambda}{\lambda_e} 
+\end{equation*}
+dove $\lambda $ \`e la lunghezza d'onda della radiazione e $\lambda_e$ quella dell'elettrone. Nello spettro considerato dalla fisica atomica, $\lambda $ \`e molto pi\`u grande dell raggio di Bohr $a_0$, dunque
+\begin{equation}
+	\frac{W_{II}(t)}{W_{I}(t)}  \simeq  \frac{a_0}{\lambda} \ll 1
+\end{equation}
+ovvero la lunghezza d'onda $\lambda$ della radiazione \`e molto pi\`u grande della dimensione di un atomo.
+
+Se consideriamo $y$ dell'ordine dell'atomo possiamo applicare la relazione (5.68), dove 
+\begin{equation*}
+	ky \simeq \frac{a_0}{\lambda} \ll 1
+\end{equation*}
+In questo modo possiamo approssimare la perturbazione periodica $W(t)$ con Taylor, dove
+\begin{equation*}
+	\sin(ky - \omega t) = - \sin(\omega t) + ky \cos(\omega t) + o(ky)^2 \quad \text{e} \quad \cos(\omega t) = \cos(ky - \omega t)
+\end{equation*}
+e quindi 
+\begin{equation}
+	W(t) = \frac{q \mathcal{E}}{m \omega}p_z \sin(\omega t) - \frac{q\mathcal{E}}{m c}p_zy\cos(\omega t)- \frac{q \mathcal{B}}{m}S_x \cos(\omega t) 
+\end{equation}
+usando la relazione 
+\begin{equation*}
+	p_zy = \frac{1}{2}(yp_z-zp_y)+ \frac{1}{2}(yp_z+zp_y)
+\end{equation*}
+riscriviamo (5.69) come 
+\begin{equation*}
+	W(t) = \underbrace{\frac{q \mathcal{E}}{m \omega}p_z \sin(\omega t)}_{= W_{DE}} - \underbrace{\frac{q \mathcal{E}}{2mc}(yp_z - p_yz) \cos(\omega t)}_{=W_{QE}} - \underbrace{\frac{q \mathcal{B}}{2m}(L_x+2S_x)\cos(\omega t)}_{= W_{DM}}
+\end{equation*}
+dove il primo termine $W_{DE}$ \`e dato dall'approssimazione di dipolo elettrico, il secondo $W_{QE}$ \`e l'approssimazione di quadripolo elettrico, mentre l'ultimo termine $W_{DM}$ \`e l'approssimazione di dipolo magnetico.
+Data la condizione (5.68) e il suo derivato possiamo trascurare i termini legati a $W_{II}(t)$ e di conseguenza identificare la matrice di perturbazione come 
+\begin{equation*}
+	W(t) \simeq W_{DE}(t)
+\end{equation*}
+L'elemento della matrice di perturbazione associato al passaggio da uno stato iniziale ad uno finale \`e dato da
+\begin{equation}
+	\langle \varphi_{f} \mid W(t) \mid \varphi_i \rangle = \frac{q \mathcal{E}}{m \omega} \sin(\omega t) \langle \varphi_f \mid p_z \mid \varphi_i \rangle
+\end{equation}
+dove possiamo sostituire $p_z$ usando la relazione
+\begin{equation*}
+	[z,H_0] = i \hbar \frac{\partial H_0}{\partial p_z} = i \hbar \frac{p_z}{m} \quad \Rightarrow \quad p_{z} = \frac{m}{i \hbar}[z,H_0]
+\end{equation*}
+di conseguenza il prodotto scalare tra stato iniziale e finale rispetto alla componente del momento lungo z pu\`o essere definito come
+\begin{equation*}
+	\langle \varphi_f \mid p_z \mid \varphi_i \rangle = \frac{m}{i \hbar} \langle \varphi_f \mid zH_0 - H_0z \mid \varphi_i \rangle =-(E_f -E_i) \langle \varphi_f \mid z \mid \varphi_i \rangle 
+\end{equation*}
+dove $E_f$ ed $E_i$ sono autovalori di $H_0$ ed inoltre introducendo la velocit\`a angolare di Bohr $w_{fi} = (E_f - E_i)/\hbar$, possiamo riscrivere il prodotto come
+\begin{equation*}
+	\langle \varphi_f \mid p_z \mid \varphi_i \rangle = im\omega_{fi} \langle \varphi_{f} \mid z \mid \varphi_i \rangle 
+\end{equation*}
+di conseguenza l'espressione (5.70) diventa 
+\begin{equation}
+	\langle \varphi_{f} \mid W(t) \mid \varphi_i \rangle  = \frac{q \mathcal{E}}{m}\sin(\omega t) \frac{\omega_{fi}}{\omega}im\langle \varphi_{f} \mid z \mid \varphi_i \rangle
+\end{equation}
+La probabilit\`a di transizione dallo stato iniziale a quello finale \`e descritta dall'equazione
+\begin{equation}
+	\mathcal{P}_{if}(t,\omega) = \frac{|W_{fi}|^2}{4 \hbar^2} \left [ \frac{\sin(\frac{\omega_{fi}-\omega}{2})t}{\frac{\omega_{fi} - \omega}{2}}\right]^2 = \frac{q^2 \mathcal{E}^2}{4 \hbar^2}\left ( \frac{\omega_{fi}}{\omega}\right)^2\left [ \frac{\sin(\frac{\omega_{fi}-\omega}{2})t}{\frac{\omega_{fi} - \omega}{2}}\right]^2|\langle \varphi_f \mid z \mid \varphi_i \rangle|^2
+\end{equation}
+tale relazione \`e valida se ipotizziamo che la radiazione emessa sia perfettamente monocromatica, ma nel mondo reale questo non \`e possibile, in quanto le radiazioni in generale sono collezione di frequenze diverse la cui intensit\`a \`e data da 
+\begin{equation*}
+	I(\omega) = \frac{\varepsilon_0c}{2}\mathcal{E}^2(\omega)
+\end{equation*}
+Se non si conosce la frequenza esatta della radiazione, l'equazione (5.72) va mediata rispetto alle frequenze possibili
+\begin{equation}
+	\mathcal{P}_{fi}(t) = \frac{q^2}{2 \varepsilon_0 c \hbar^2}|\langle \varphi_{f} \mid z \mid \varphi_i \rangle|^2 \int_{0}^{+\infty} d \omega \;\left ( \frac{\omega_{fi}}{\omega}\right)^2\left [ \frac{\sin(\frac{\omega_{fi}-\omega}{2})t}{\frac{\omega_{fi} - \omega}{2}}\right]I(\omega)
+\end{equation}
+Assumendo che la funzione integranda in (5.73) sia non nulla solo quando $\omega \simeq \omega_{fi}$, ovvero in presenza di risonanza, possiamo approssimare la probabilit\`a come 
+\begin{equation}
+ \mathcal{P}_{fi}(t) = \frac{q^2t}{4 \varepsilon_0 c \hbar^2}|\langle \varphi_{f} \mid z \mid \varphi_i \rangle|^2 I(\omega_{fI}) \underbrace{\int_{0}^{+\infty} dx \; \frac{\sin^2(x)}{x^2}}_{= \pi} =  \frac{4 \pi}{\hbar^2}|\langle \varphi_{f} \mid z \mid \varphi_i \rangle|^2 I(\omega_{fi}) \alpha t
+\end{equation}
+dove $\alpha $ \`e la costante di struttura fine. Solitamente si definisce un rate di transizione $P(t)/t = a \in \mathbb{R}$. Nel caso in cui si abbia una condizione di parit\`a per il termine $|\langle \varphi_{f} \mid z \mid \varphi_i \rangle|^2 = 0$ si ha di conseguenza che $P(t) = 0$, in queste casistiche si considera un approssimazione al secondo termine $W_{QE}$ della perturbazione periodica.
+
+\subsection{Transizioni nello spettro continuo}
+
 
 
 
