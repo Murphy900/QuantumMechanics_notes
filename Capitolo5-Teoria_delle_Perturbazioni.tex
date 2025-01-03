@@ -1258,8 +1258,134 @@ Assumendo che la funzione integranda in (5.73) sia non nulla solo quando $\omega
 \end{equation}
 dove $\alpha $ \`e la costante di struttura fine. Solitamente si definisce un rate di transizione $P(t)/t = a \in \mathbb{R}$. Nel caso in cui si abbia una condizione di parit\`a per il termine $|\langle \varphi_{f} \mid z \mid \varphi_i \rangle|^2 = 0$ si ha di conseguenza che $P(t) = 0$, in queste casistiche si considera un approssimazione al secondo termine $W_{QE}$ della perturbazione periodica.
 
-\subsection{Transizioni nello spettro continuo}
+\subsection{Transizioni di stato nello spettro continuo: densit\`a di stati}
+Nel caso in cui l'energia finale $E_f $ sia	 un elemento dello spettro continuo di $H_0$, non possiamo misurare direttamente la probabilit\`a di trovare il sistema in uno stato $|\varphi_f \rangle $ ben definito al tempo $t$. In questo caso la quantit\`a $|\langle \varphi_f \mid \psi(t) \rangle |^2$ corrisponde ad una densit\`a di probabili\`a $d \bold{f}$ che ci dice la probabilit\`a rispetto a cui partendo da un certo stato iniziale discreto, si finisce in uno stato finale, rappresentato da un intervallo di probabilit\`a di ampiezza $d\bold{f}$.
 
 
+Se consideriamo una perturbazione periodica o eventualmente costante $(\omega = 0)$
+\begin{equation*}
+	W(t) = \frac{W}{2}e^{i \omega t} + \frac{W^\dag}{2}e^{-i\omega t}
+\end{equation*}
+casi fisici in cui si parte da uno stato discreto e si finisce in un intervallo di porbabilit\`a sono dati da fenomeni come
+\begin{enumerate}
+	\item i decadimenti radioattivi;
+	\item assorbimento ed emissione di radiazione da un atomo;
+	\item scattering di particelle che interagiscono con potenziale.  
+\end{enumerate}
+Partiamo da uno stato iniziale $|i \rangle$ e ad un tempo $t$ raggiungiamo lo stato finale $|f \rangle$ appartenete allo spettro continuo, per calcolare la probabi\`a che al tempo $t$, il sistema evolva in quel determinato intervallo di probabilit\`a di stati finali, calcoliamo
+\begin{equation}
+	\mathcal{P}(t) = \int df \; |\langle f \mid \psi_i(t) \rangle|^2
+\end{equation}
+dove abbiamo integrato rispetto a $d \bold{f}$ la probabilit\`a che lo stato si trovi nella configurazione finale. Per ottenere la formula (5.75) si \`e assunto che gli stati finali $f$ siano una base per lo spettro continuo, $\langle f|f' \rangle = \delta(f - f')$. In generale (5.75) \`e una distribuzione che va normalizzata. Inoltre $|f \rangle =|E,\beta \rangle $, dove E \`e l'energia e $\beta$ altre grandezze come la quanti\`a di moto, dunque 
+\begin{equation*}
+	d\bold{f} = \rho(E,\beta) dE d\beta 	
+\end{equation*}
+dove $\rho(E,\beta)$ prende il nome di \textit{densit\`a degli stati}. Utilizzando quato definto nella sezione sulle perturbazioni sinusoidali, possiamo riscrivere $(5.75)$ nel seguente modo:
+\newpage
+
+\begin{equation}
+	\mathcal{P}(\omega,t) = \frac{1}{4 \hbar^2} \int  \; |\langle f|W|i \rangle|^2 \left(  \frac{\sin \left (\frac{\omega_{fi}-\omega)t}{2}\right )}{\frac{\omega_{fi}-\omega}{2}}\right)^2 \rho(E,\beta)dE d\rho
+\end{equation}
+possiamo ulteriormente semplificare l'equazione osservando che 
+\begin{equation*}
+	\lim_{t \to \infty} \int dxf(x) \left(\frac{\sin(xt)}{x}\right)^2 = \lim_{t \to \infty} t \int dy \; f\left (\frac{y}{t} \right )\left( \frac{\sin y}{y}\right)^2 \simeq  tf(0) \int dy\; \left(\frac{\sin y}{y}\right)^2 = tf(0)\pi 
+\end{equation*}
+e quindi (5.76) diventa 
+\begin{equation*}
+	\mathcal{P}(\omega,t) = \frac{\pi t}{4 \hbar^2}\int dEd\beta \;\rho(E,\beta)|\langle E \;\beta|W|i \rangle|^2\delta \left(\frac{(\omega_{fi}-\omega)t}{2}\right)=
+\end{equation*}
+dove 
+\begin{equation*}
+	\delta \left( \frac{(\omega_{fi}-\omega)t}{2}\right) = \delta \left( \frac{E_{f}-E_{i} - \hbar \omega}{2 \hbar}\right) 
+\end{equation*}
+ricordando che $\delta(ax) = \frac{\delta(x)}{|a|}$ abbiamo che $\delta(f(x)) = \sum_{x_i} \frac{\delta(x-x_i)}{|f'(x_i)|}$ e quindi (5.76) assume l'espressione
+\begin{equation}
+	\frac{2\pi t}{ \hbar } \int d\beta \; |\langle E_f \;\beta|W|i \rangle|^2 \rho(E_f,\beta) \Bigg \vert_{E_f = E_i + \hbar \omega}
+\end{equation}
+Per tempi molto grandi $t \to \infty$ la probabilit\`a diventa lineare rispetto al tempo, di conseguenza possiamo definire la probabilit\`a di transizione per unit\`a di tempo 
+\begin{equation}
+	\mathcal{W}(i,f) = \frac{2\pi}{ \hbar}|\langle E_{f} \; \beta_f | W|i \rangle |^2 \rho(\beta_f,E_f)
+\end{equation}
+tale equazione prende il nome di \textit{regola d'oro di Fermi}. Inoltre per tempi molto grandi abbiamo che l'energia viene conservata.
+
+\subsubsection{Approssimazione di Born}
+ 
+ Consideriamo un potenziale $V(\bold{x})$  indipendente dal tempo, che perturba un sistema di una particella libera. La particella che interagisce con il potenziale viene diffusa in una certa direzione con angoli $\theta,\phi$; qual \`e la probabilit\`a che la particella finisca nell'elemento infinitesimo di angolo solido $d \Omega = \sin \theta d\theta d \phi$ ?
+ 
+ Assumiamo che la stato iniziale \`e descritto da un onda piana in tre dimensioni
+ \begin{equation*}
+ 	|\bold{p} \rangle = \frac{1}{(2\pi \hbar)^{3/2}}e^{i/\hbar \;\bold{p} \cdot \bold{x}}
+ \end{equation*}
+ e che lo stato finale sia dato da 
+ \begin{equation*}
+ 	|\bold{p}'\rangle = \frac{1}{(2\pi \hbar)^{3/2}}e^{i/\hbar \;\bold{p}' \cdot \bold{x}}
+ \end{equation*}
+ assumendo che i due stati siano ortonormali tra loro, ovvero
+ \begin{equation*}
+ 	\langle \bold{p} \mid \bold{p}' \rangle = \int \frac{d \bold{x}}{(2\pi \hbar)^3} e^{i/\hbar(\bold{p}'- \bold{p}) \cdot \bold{x}} = \frac{1}{(2\pi)^3} \int dy \; e^{i(\bold{p}'-\bold{p})\cdot \bold{y}} = \delta(\bold{p}'-\bold{p})
+ \end{equation*}
+ e quindi adeguatamente normalizzati.
+ 
+ Definiamo la densit\`a di probabilit\`a che l'evoluto temporale finisca in un intervallo di stati finali
+ \begin{equation*}
+ 	|\langle \bold{p}' \mid \psi(t) \rangle |^2 d \bold{p}'
+ \end{equation*}
+ dove $d \bold{p}' = (p')^2dp'd\Omega$ in coordinate sferiche, e che possiamo riscrivere come 
+ \begin{equation*}
+ 	d\bold{p}' = (p')^2d\Omega \frac{dp'}{dE'}dE' = dE'd\Omega(p'm) 
+ \end{equation*}
+ considerando $(p')^2/2m = E$. Il termine $p'm = \rho(E,\beta) = m \sqrt{2mE}$ e rappresenta la densit\`a di stati.
+ Applicando la regola d'oro di Fermi abbiamo che 
+ \begin{equation*}
+ 	\frac{2 \pi}{\hbar}|\langle \bold{p}'|V(x)|\bold{p} \rangle|^2 m\sqrt{2mE} \;\Bigg |_{E' =E}
+ \end{equation*}
+ dato che $E'=E \Rightarrow p' = p$, e l'equazione precedente diventa 
+ \begin{equation}
+ 	\frac{\mathcal{P}}{t d\Omega} = \frac{2\pi}{\hbar} m \sqrt{2mE} \left| \frac{1}{(2 \pi \hbar)^3}\int d\bold{x} \; V(\bold{x})e^{i\hbar (\bold{p}'-\bold{p}) \cdot \bold{x}}\right|^2 \Bigg |_{p'=p}
+ \end{equation}
+ dove il termine sotto modulo quadro \`e equivalente alla trasformata di Fourier.
+ 
+ Quando si calcola un processo di Scattering non serve calcolare il ratio definito in (5.79), ma la sezione d'urto. Ovvero 
+ \begin{equation*}
+ 	\frac{\#\; \text{di particelle diffuse nell'unit\`a di tempo}}{\frac{\# \; \text{di particelle incidenti}}{\text{Area di tempo}}} = \frac{rate}{|\bold{J}|}
+ \end{equation*}
+ dove $|\bold{J}|$ rappresenta la corrente di probabilit\`a 
+ \begin{equation*}
+ 	\bold{J} = |\text{ampiezza onda}|^2 \frac{\bold{p}}{m} = \frac{1}{(2 \pi\hbar)^3} \frac{\bold{p}}{m}
+ \end{equation*}
+ Quindi la sezione d'urto \`e data da
+ \begin{equation}
+ 	d \sigma = \frac{m^2}{4 \pi^2 \hbar^2}\left |\int d\bold{x} \; V(\bold{x})e^{i\hbar (\bold{p}'-\bold{p}) \cdot \bold{x}}\right|^2 \Bigg |_{p'=p}
+ \end{equation}
+ \newpage
+ 
+ \section{Stati Metastabili - Perturbazioni Casuali}
+ Ogni volta che un livello dello spettro discreto \`e accoppiato a dei livello dello spettro continuo per via di una perturbazione, si ha tipicamente che lo stato nello spettro discreto cambia.
+ 
+ \subsection{Decadimenti effetto tunnel}
+ \begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.38\textwidth]{dec_tunn} % Replace with your image
+\end{wrapfigure}
+Data una buca di potenziale da un lato non infinita, esiste una probabilit\`a non nulla che la particella possa uscire dalla buca passando dall'altro lato. Possiamo immaginare dei livelli energetici associati alla particella nella buca, tali stati non sono propriamente autostati della Hamiltoniana che descrive il sistema perch\`e non sono stabili, ma metastabili. La particella riesce a passare dall'altra parte della buca per l'effetto tunnel. 
+
+Dato $\overline{E}$ come in figura, il moto pu\`o avvenire per ragioni non spaziali dato che $\overline{E} >V$. Un sistema di questo tipo non ha autostati discreti.
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.38\textwidth]{holewave} % Replace with your image
+\end{wrapfigure}
+
+Quando $E>V$ si hanno soluzioni del sistema che oscillano e al di fuori della regione si hanno onde evanescenti che si annullano all'infinito. Se $E <V$ si hanno soluzioni con esponenziali reali che essendo definiti in una parte di spazio limitato non si azzerano mai, ma si raccordano ai bordi. 
+
+I processi di decadimento dei nuclei di una sostanza sono descritti nel medesimo modo dell'effetto tunnel. Se il picco del potenziale \`e molto grande allora possiamo vedere il sistema come costituito da due sistemi separati, dove in un sistema si ha la buca di potenziale con gli stati discreti e nell'altro un moto libero descritto da uno spettro continuo di stati. Nel caso in cui l'altezza \`e finita, anche se molto piccata, i due sistemi possono comunicare tra di loro e quindi si ha un livello discreto accoppiato ad un set di livelli continuo. Il livello inizialmente discreto si trasforma in un livello dello spettro continuo.
+
+\subsection{Descrizione del processo per un atomo}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{photon_emission} % Replace with your image
+\end{wrapfigure}
 
 
+Se si ha una particella che si trova in un livello energetico eccitato in un atomo, questa pu\`o decadere allo stato fondamentale del sistema e nel farlo emette un fotone con frequenza $\hbar \omega = \Delta E$.
