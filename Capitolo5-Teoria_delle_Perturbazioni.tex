@@ -1766,8 +1766,342 @@ Usando la teoria delle perturbazioni dipendenti dal tempo sinusoidali esprimiamo
 \subsubsection{Processo di Assorbimento ed Emissione}
 Per descrivere il processo di assorbimento ed emissione di un fotone utilizziamo la regola d'oro di Fermi, corrispondente alla probabilit\`a di transizione.
  Consideriamo l'assorbimento di un fotone con numero d'onda $\bold{k}$ e polarizzazione $r$. Assumiamo che nello stato iniziale ci sono $n_{\bold{k}r}$ fotoni  rispetto allo stato $|n \rangle_{\bold{k}r}$ allora dopo la transizione di stato ce ne saranno $n_{\bold{k}r}-1$. Dunque se lo stato iniziale \`e dato dato da $|i,n_{\bold{k}r} \rangle$ e lo stato finale da $|f,n_{\bold{k},r}-1\rangle$, l'ampiezza della probabilit\`a di transizione dipende dagli elementi di matrice 
-\begin{align*}
-	\langle f,n_{\bold{k}r}-1| W_{\bold{k}r} |i,n_{\bold{k}r}\rangle & = - \frac{2e}{m}\sqrt{\frac{\hbar}{2V\omega_\bold{k}}}\langle f,n_{\bold{k},t}-1|\bold{p} \cdot \boldsymbol{\varepsilon}_{\bold{k}r}e^{i \bold{k}\cdot \bold{x}}\hat{a}_{\bold{k}r}|i,n_{\bold{k}r} \rangle = \\[0.4cm] 
+\begin{align}
+	W_{fi}^{A}=\langle f,n_{\bold{k}r}-1| W_{\bold{k}r} |i,n_{\bold{k}r}\rangle & = - \frac{2e}{m}\sqrt{\frac{\hbar}{2V\omega_\bold{k}}}\langle f,n_{\bold{k},t}-1|\bold{p} \cdot \boldsymbol{\varepsilon}_{\bold{k}r}e^{i \bold{k}\cdot \bold{x}}\hat{a}_{\bold{k}r}|i,n_{\bold{k}r} \rangle = \notag \\[0.4cm] 
 	& = - \frac{2e}{m}\sqrt{\frac{\hbar n_{\bold{k}r}}{2V\omega_\bold{k}}}\langle f|\bold{p} \cdot \boldsymbol{\varepsilon}_{\bold{k}r}e^{i \bold{k}\cdot \bold{x}}|i \rangle
-\end{align*}
+\end{align}
 dove l'ultimo termine di destra \`e stato ottenuto usando l'uguaglianza $\hat{a}_{\bold{k}r}|n_{\bold{k}r}\rangle = \sqrt{n_{\bold{k}r}}|n_{\bold{k},r}-1\rangle $. Analogamente possiamo calcolare gli elementi matriciali per il processo di emissione, che a differenza di quello di assorbimento avr\`a uno stato iniziale $|i,n_{\bold{k}r} \rangle$ con un numero di fotoni $n_{\bold{k}r}$ e uno stato finale $|f,n_{\bold{k}+1 }\rangle$  dove il numero di fotoni \`e cresciuto di una unit\`a.
+\begin{align}
+	W_{fi}^E=\langle f, n_{\bold{k}r}+1|W_{\bold{k}r}^\dag |i,n_{\bold{k}r} \rangle  & = \frac{-2e}{m} \sqrt{\frac{\hbar}{2V \omega_{\bold{k}}}}\langle f, n_{\bold{k}r}+1|\bold{p}\cdot{\boldsymbol{\varepsilon}_{\bold{k}r}e^{-i \bold{k} \cdot \bold{x}}\hat{a}_{\boldsymbol{{k}r}}}^\dag|i,n_{\bold{k}r} \rangle = \notag \\[0.4cm]
+	& = \frac{-2e}{m}\sqrt{\frac{\hbar (n_{\bold{k}r}+1)}{2V \omega_{\bold{k}}}}\langle f | \bold{p} \cdot \boldsymbol{\varepsilon}_{\bold{k}r}e^{-i \bold{k}\cdot \bold{x}}|i \rangle 
+\end{align}
+che abbiamo ottenuto applicando $a_{\bold{k}r}^{\dag}|n_{\bold{k}r} \rangle = \sqrt{n_{\bold{k}r}+1}|n_{\bold{k}r}+1 \rangle$.
+Nelle equazioni (5.97) e (5.98) la fisica del sistema viene descritta dai termini $n_{\bold{k}r}$ e $n_{\bold{k}r}+1$ che esprimono i processi di assorbimento ed emissione. 
+
+Se partiamo da uno stato iniziale in cui non sono presenti fotoni $n_{\bold{k}r} = 0$ di conseguenza l'equazione $(5.98)$ \`e non nulla, ovvero si ha una probabilit\`a di emissione spontanea di fotoni. Utilizzando la regola d'oro di Fermi calcoliamo il rate totale con cui un fotone fotato di polarizzazione r \`e diffuso rispetto ad un angolo solido $d \Omega$. Definiamo il rate di transizione
+\begin{equation}
+	dw = \frac{\pi}{2\hbar}|W_{fi}^{E}|^2 \delta(E_f-E_i-\hbar \omega_{\bold{k}})d\alpha 
+\end{equation}
+se ipotizziamo che la radiazione sia contenuti in un volume finito si ha che 
+\begin{equation*}
+	\bold{k} = \frac{2 \pi}{L}[n_x,n_y,n_z]
+\end{equation*}
+e quindi nell'elemento di volume $d^3 k = k^2 dk d\Omega$, sono presenti $d \alpha = V/(2\pi)^3d^3k$ dove quest'ultima relazione \`e ottenuta considerando il numero di stati in un salto discreto $\Delta n_x \Delta n_y \Delta n_z = (L/2\pi)^3 \Delta k_x \Delta k_y \Delta k_z$. Con queste nuove informazioni possiamo riscrivere (5.99) nel seguente modo
+\newpage
+\begin{equation}
+	dw = \frac{\pi}{2\hbar}|W_{fi}^E|^2 \delta(E_f-E_i-\hbar \omega_{\bold{k}})\frac{V}{(2\pi)^3c^3}\omega_{\bold{k}}^2 d\omega_{\bold{k}}d\Omega
+\end{equation}
+dove si \`e usata la relazione $\omega_{\bold{k}} = c|\bold{k}|$ per definire $d\omega_{\bold{k}}$.  Usando la relazione $\delta(ax) = \delta(x)/|a|$  possiamo riscrivere (5.100) 
+\begin{equation*}
+	dw= \frac{V}{16 \pi^2 \hbar^2c^3}|W_{fi}^E|^2 \omega_{\bold{k}}^2d \Omega 
+\end{equation*}
+Il termine $\langle f | \bold{p} \cdot \boldsymbol{\varepsilon}_{\bold{k}r}e^{-i \bold{k} \cdot \bold{x}}|i \rangle$ pu\`o essere calcolando considerando l'approssimazione di dipolo dato che sulla distanza atomica la radiazione emessa ed assorbita  ha una lunghezza d'onda molto pi\`u grande delle dimensioni atomiche. In sostanza abbiamo che 
+\begin{equation*}
+	\frac{x}{\lambda} \simeq 10^{-3}
+\end{equation*}
+dunque il termine esponenziale $e^{-i \bold{k}\cdot \bold{x}} \simeq 1$ usando l'espansione di Taylor. Esprimiamo l'operatore di momento come 
+\begin{equation*}
+	\bold{p} = -\frac{im}{\hbar}[H,\bold{x}]
+\end{equation*}
+in questo modo 
+\begin{equation*}
+	\langle f | \bold{p} \cdot \boldsymbol{\varepsilon}_{\bold{k} r}e^{-i \bold{k} \cdot \bold{x}} |i \rangle \simeq - \frac{im}{\hbar} \langle f |H\bold{x} - \bold{x}H|i \rangle = -im \omega_{fi}\langle f|\bold{x}|i \rangle 
+\end{equation*}
+In conclusione il rate di transizione rispetto ad un angolo solido $d \Omega$ \`e dato da 
+\begin{equation}
+	dW^E  = \frac{e^2 \omega_{\bold{k}}^3}{8 \pi^2 c^3 \hbar} |\langle f| \boldsymbol{\varepsilon_{\bold{k}r}} \cdot \bold{x} |i \rangle |^2 d \Omega
+\end{equation}
+Se vogliamo calcolare la probabilit\`a di emettere un fotone in una qualsiasi direzione e polarizzazione, sommiamo su tutte le possibili polarizzazioni ed integriamo rispetto a tutti i possibili angoli solidi
+\begin{equation*}
+	\int_{d \Omega} \sum_{r} dW^{E}
+\end{equation*}
+Utilizziamo la condizione 
+\begin{equation*}
+	\sum_{r} \boldsymbol{\varepsilon}_{i}^{r} \cdot \boldsymbol{\varepsilon}_{j}^{r} = (\delta_{ij}-n_in_j)
+\end{equation*}
+dove $n_i = \bold{k}_i/||\bold{k}_i||$ sono i versori dell'onda. Integrando rispetto all'angolo solido infinitesimo si ha che 
+\begin{align*}
+	\int d\Omega \; \left (\sum_{r} \boldsymbol{\varepsilon}_{i}^{r} \cdot \boldsymbol{\varepsilon}_{j}^r \right) & = \int (\delta_{ij}-n_in_j)d \Omega \\[0.4cm]
+	& = \delta_{ij} \int d \Omega - \int d \Omega\;  n_i n_j = 4 \pi \delta_{ij} - \frac{4}{3}\pi \delta_{ij} = \frac{8}{3}\pi \delta_{ij}
+\end{align*}
+dove per calcolare il secondo integrale abbiamo considerato $\int d \Omega \; n_i n_j = \int \delta_{ij}k $ per ragioni di simmetria e $\int d\Omega = 3k \rightarrow k = (4/3) \pi$. In conclusione 
+\begin{equation}
+	\int_{d\Omega} \sum_{r}dW^{E} = \frac{e^2 \omega_{\bold{k}}^3}{3 \pi c^3 \hbar} |\langle f|\bold{x}|i \rangle|^2 = \frac{4 \alpha \omega_{\bold{k}}^3}{3c^2}|\langle f|\bold{x}|i \rangle|^2
+\end{equation}
+dove per ottenere l'ultimo termine abbiamo usato la definizione della costante di struttura fine $\alpha = e^2/(4 \pi c \hbar)$. Dall'equazione (5.102) deduciamo che il rate di transizione totale \`e grande quando $\omega_\bold{k}$ \`e molto grande e di conseguenza si ha una differenza dei livelli significativa. Gli elettroni presenti ai livelli energetici pi\`u hanno una maggiore probabilit\`a di decadere ai livelli di stato pi\`u bassi.
+
+\subsubsection{Propriet\`a di emissione e assorbimento}
+
+Se prendiamo in oggetto il rapporto tra la probabilit\`a di emissione e assorbimento abbiamo che 
+\begin{equation*}
+	\frac{W^E}{W^A} = \frac{n_{\bold{k}r}+1}{n_{\bold{k}r}} \frac{|\langle f|\bold{p} \cdot \boldsymbol{\varepsilon}e^{-i \bold{k} \cdot \bold{x}}|i \rangle|^2}{|\langle f|\bold{p} \cdot \boldsymbol{\varepsilon}e^{i \bold{k} \cdot \bold{x}}|i \rangle|^2} =  \frac{n_{\bold{k}r}+1}{n_{\bold{k}r}}
+\end{equation*}
+dove per definire il termine a denominatore abbiamo usato il fatto che gli stati iniziali e finali sono invertiti. Se consideriamo un numero di fotoni molto grande abbiamo che il rapporto $\frac{n_{\bold{k}r}+1}{n_{\bold{k}r}} \simeq 1$ e quindi la probabilit\`a che si abbia un assorbimento e un emissione \`e la medesima.
+
+Se vogliamo calcolare la densit\`a di energia del sistema, abbiamo che 
+\begin{equation*}
+	\rho(\omega) d\omega = 2 \underbrace{\frac{n_{\bold{k}r}}{V} \hbar \omega}_{(A)} \underbrace{\frac{V}{(2 \pi)^3}4 \pi k^2dk}_{(B)}
+\end{equation*} 
+il termine 2 \`e dovuto al fatto che si possono avere due polarizzazioni possibili, il termine (A) \`e dato dalla densi\`a di energia $\rho(\omega)=E/V$ che consideriamo l'energia trasportata da un numero $n_{\bold{k}r}$ di fotoni rispetto al volume, infine la componente del prodotto (B) \`e ottenuta considerando $d \omega = \frac{V}{(2 \pi)^3}d^3k =\frac{4 \pi V}{(2 \pi)^3} k^2dk $ integrando rispetto all'angolo solido $d \Omega$. 
+
+Utilizzando la relazione $\omega = c |\bold{k}|$ riscriviamo i termini in k rispetto ad $\omega$
+\begin{equation*}
+	\rho(\omega) d\omega = \frac{n_{\bold{k}r} \hbar \omega^3}{\pi^2c^3}d \omega
+\end{equation*}
+e quindi la densit\`a di energia \`e data da 
+\begin{equation}
+	\rho(\omega) = \frac{n_{\bold{k}r} \hbar \omega^3}{\pi^2c^3}
+\end{equation}
+che si lega alnumero di fotoni presenti nel sistema. L'intensit\`a della radiazione \`e esprimibile come $I(\omega) = \rho(\omega)c$ e di conseguenza possiamo ricavare il numero di fotoni in funzione della intensit\`a della radiazione
+\begin{equation}
+	n(\omega) = \frac{\pi^2 c^2}{\hbar \omega^3}I(\omega)
+\end{equation} 
+e con questa informazione possiamo infine riscrivere l'emissione o assorbimento di un fotone come
+\begin{equation}
+	W^{E/A} = n(\omega)W^{E \; spont} = \frac{4 \pi^2 \alpha}{3 \hbar}|\langle f |\bold{x} |i \rangle|^2 I(\omega)
+\end{equation}
+\newpage
+
+\section{Simmetria e leggi di conservazione}
+
+\subsection{Simmetrie in meccanica quantistica}
+
+In meccanica quantistica gli operatore unitari descrivono le trasformazioni di simmetria. Sono quegli operatori per cui vale la relazione 
+\begin{equation*}
+	U^{\dag}U = UU^{\dag}  = I
+\end{equation*} 
+ Per una trasformazione di simmetria(rotazione, traslazione) ha senso richiedere che l'ampiezza degli stati trasformati sia uguale a quella degli stati orginari. Se consideriamo il cambio
+ \begin{equation*}
+ 	|\alpha \rangle \to |\tilde{\alpha} \rangle  \quad |\beta \rangle \to |\tilde{\beta} \rangle
+ \end{equation*}
+ si dovr\`a avere che 
+ \begin{equation*}
+ 	\langle \alpha | \beta \rangle = \langle \tilde{\alpha}|\tilde{\beta} \rangle
+ \end{equation*}
+Tale condizione \`e soddisfatta in modo naturale se l'operatore che rappresenta la trasformazione \`e unitario, dato che per definizione questo preserva norma e prodotti scalari.
+\begin{equation*}
+	\begin{array}{l}
+		|\tilde{\alpha} \rangle = U|\alpha\rangle \\
+		|\tilde{\beta} \rangle = U |\beta \rangle 
+	\end{array}
+	\quad \Rightarrow \quad \langle \tilde{\alpha}|\tilde{\beta} \rangle = \langle U \alpha |U\beta \rangle = \langle \alpha |U^{\dag}U|\beta \rangle = \langle \alpha|\beta \rangle
+\end{equation*} 
+In realt\`a quello a cui siamo interessanti non \`e tanto preservare il prodotto scalare, ma la probabili\`a data da $|\langle \alpha |\beta \rangle|^2$ di conseguenza abbiamo bisogno d'imporre la condizione 
+\begin{equation*}
+	|\langle \alpha |\beta \rangle | = | \langle \tilde{\alpha}|\tilde{\beta}\rangle|
+\end{equation*} 
+Questa condizione \`e pi\`u generale in quanto ci permette di considerare il prodotto scalare coniugato
+\begin{equation*}
+	\langle \tilde{\alpha}|\tilde{\beta} \rangle = \langle \alpha |\beta \rangle^*
+\end{equation*}
+che definisce un operatore antiunitario. Il teorema di Wigney garantisce che operatori unitari e antiunitari siano gli le uniche categorie di operatori possibili che descrivono delle simmetrie in meccanica quantistica.  In generale gli operatori unitari sono quelli usati per la maggiore, anche se esiste una categoria di problemi come quella del time-reversal che richiede l'uso di operatori antiunitari.
+
+L'operatore di per s\`e non ha un significato fisico, ma il suo valore medio s\`i e quindi possiamo domandarci come questo cambi se effettuiamo su di esso una trasformazione con un operatore unitario.
+\begin{equation*}
+	\langle A \rangle_{trasf} = \langle \tilde{\alpha} | A|\tilde{\alpha} \rangle = \langle \alpha| U^{\dag}AU|\alpha \rangle  
+\end{equation*}
+questo ci suggerisce che se uno stato trasforma come $|\alpha \rangle \to U|\alpha \rangle$ allora un operatore cambia seguendo la legge
+\begin{equation*}
+	A \to U^{\dag} AU
+\end{equation*}
+Quando introduciamo la discussione dinamica del sistema mediante l'operatore Hamiltoniano $\hat{H}$, le simmetrie diventano interessati se la preservano 
+\begin{equation*}
+	\hat{H} = U^\dag \hat{H} U
+\end{equation*}
+
+\subsubsection{Esempio di simmetria discreta}
+Un esempio di operatore unitario \`e dato dalla parti\`a $\hat{P}: \bold{x} \to - \bold{x}$, che soddisfa le propriet\`a 
+\begin{equation*}
+\hat{P}^2 =I =PP^{\dag}=P^{\dag}P	
+\end{equation*}
+ovvero di essere unitario e inoltre \`e Hermitiano dato che preso uno stato $|\psi(\bold{x} \rangle$ si ha
+\begin{equation*}
+	\langle \psi | P \psi \rangle = \langle P \psi |\psi \rangle  
+\end{equation*}
+Essendo $\hat{P}$ una simmetria, questo deve preservare la Hamiltoniana
+\begin{align*}
+	P^\dag H P = & H   \Rightarrow H = PHP \\[0.4cm]
+	& \iff HP = PHP^2 =PH \\[0.4cm]
+	&\iff  HP-PH =0 \Rightarrow [P,H]=0
+\end{align*}
+ovvero su ha che P ed H si possono diagonalizzare simultaneamente, ovvero esiste una base di autofunzioni comuni ad H e a P. Dato che $P^2 = I$ l'operatore P ha autovalori $\pm 1$ e quindi $P|\psi \rangle = \pm |\psi \rangle $ identificando le autofunzioni pari e dispari
+\begin{equation*}
+	P|\psi \rangle = \left \{\begin{array}{l}
+		\psi(\bold{x}) = \psi(-\bold{x}) \quad \text{pari} \\
+		\psi(\bold{x}) =-  \psi(-\bold{x}) \quad \text{dispari}
+	\end{array}\right.
+\end{equation*} 
+La parit\`a rappresenter\`a una simmetria per potenziali come quello della doppia buca.
+  
+\begin{figure}[ht]
+\vspace{0.1in}
+\includegraphics[width = 8cm]{quartic1}	
+\centering
+\end{figure}
+Da $\bold{p} = -i\hbar \frac{d}{dx}$ oppure $[\bold{x},\bold{p}] =i \hbar$ si vede subito che l'operatore momento trasforma come $\bold{x}$
+\begin{equation*}
+	P^{\dag}pP = -p
+\end{equation*}
+cambiando segno.
+
+Un altro esempio notevole \`e dato dall'inversione temporale $t \to -t$. Nel caso classico se $\bold{x}(t)$ \`e una soluzione dell'equazione del moto anche $\bold{x}(t)$ lo \`e, dato che l'equazione del moto \`e  $m \ddot{\bold{x}} = - V(\bold{x}) $, assumendo che il potenziale non dipenda esplicitamente dal tempo. In meccanica quantistica la trattazione \`e pi\`u complicata in quanto l'equazione di Schr\"odinger \`e lineare nel tempo 
+\begin{equation*}
+	i \hbar \frac{\partial \psi}{\partial t} = \left( -\frac{\hbar^2}{2m}\nabla^2 +V(\bold{x}) \right) \psi
+\end{equation*}
+Anche se H \`e indipendente dal tempo, se $\psi (\bold{x},t)$ \`e soluzione in generale $\psi(\bold{x},-t)$ non lo \`e, tuttavia pu\`o esserlo $\psi^*(\bold{x},-t)$. L'inversione temporale in meccanica quantistica \`e implementata usando il complesso coniugato, quindi \`e necessario considerare un operatore antiunitario che soddisfi le condizioni
+\begin{align*}
+	& \bold{x} \to \bold{x} \\
+	&\bold{p} \to - \bold{p} \\
+	& \bold{L} \to - \bold{L}
+\end{align*}
+\subsection{Leggi di conservazione}
+
+Consideriamo il caso di simmetrie continue (rotazioni, traslazione, ecc...). In meccanica classica si \`e visto che ad ogni simmetria continua \`e associata una grandezza conservata, ovvero per un sistema indipendente dal tempo (tralsazioni temporali) si conserva l'energia, per uno invariante per traslazioni \`e conservata la quanti\`a di moto ed infine per uno che non cambia rispetto alle rotazioni si conserva il momento angolare. 
+
+In generale, in meccanica quantistica la simmetria sar\`a associata a degli operatori unitari $U(\alpha)$ dipendenti da un parametro continuo che caratterizzano la trasformazione (quantit\'a di moto, angoli di rotazione, ecc...) ed U dovr\`a soddisfare
+\begin{equation*}
+	U^\dag HU = H
+\end{equation*}
+Definiamo \textit{generatore infinitesimo} di una trasformazione la grandezza 
+\begin{equation}
+	U(\alpha) = e^{i/\hbar \alpha_i T_i}
+\end{equation}
+dove $\alpha_i$ \`e un insieme di parametri in grado di descrivere tutte le trasformazioni. Per $\alpha = 0$ abbiamo che $U=I$, mentre per $\alpha \ll 1$ possiamo sviluppare in serie di Taylor il termine (5.106)
+\begin{equation}
+	U = I - \frac{i}{\hbar}\alpha_i T_i + \mathcal{O}(\alpha^2)
+\end{equation}
+Dato che $U(\alpha)$ \`e unitario il terminine $T_i$ \`e Hermitiano
+\begin{equation*}
+	U^\dag U = e^{i/\hbar \alpha_i T_i^\dag}e^{-i/\hbar \alpha_iT_i} = I
+\end{equation*}
+\newpage
+e quindi dobbiamo avere che $T_i^\dag = T_i$.
+
+Consideriamo $\alpha \ll 1$ utilizzando la relazione (5.107) possiamo esprimere la condizione $U^\dag H U =H$ nel seguente modo
+\begin{align*}
+	& (I + \frac{i}{\hbar}\alpha_i T_i)H(I- \frac{i}{\hbar}\alpha_iT_i) = H + \mathcal{O}(\alpha^2) \iff \\[0.4cm] 
+	& \iff H + \frac{i}{\hbar}\alpha_i[T_i,H] + \mathcal{O}(\alpha^2) = H \quad \Rightarrow \quad [T_i,H] =0
+\end{align*}
+quindi per una simmetria i generatori commutano con la Hamiltoniana. Assumento che U non dipenda esplicitamente dal tempo i $T_i$ sono costanti del moto e possiamo definire il seguente teorema:
+\begin{theorem}
+	Ogni generatore di una simmetria continua in meccanica quantistica da orgine a una legge di conservazione  
+\end{theorem}
+
+Dato che $T_i$ \`e Hermitiano abbiamo che $[U,H] =0$ di conseguenza se abbiamo uno stato di energia definita per cui
+\begin{equation*}
+	H |n \rangle = E_n |n \rangle
+\end{equation*}
+anche $U|n \rangle$ \`e autostato di H con energia $E_n$. Infatti
+\begin{equation*}
+	H(U|n \rangle) = U(H|n \rangle) = E_{n}(U|n \rangle)
+\end{equation*}
+Se U non lascia invariato lo stato $U|n \rangle \neq c |n \rangle $, si ha un nuovo stato la stessa energia, quindi possiamo desumere che le simmetrie sono responsabili per la degenerazione dei livelli energetici.
+
+\subsubsection{Esempio: invarianza per traslazioni}
+Per definizione una traslazione di quanti\`a $a$ dovr\`a mandare lo stato corrispondente ad una particella in $\bold{x}$ nello stato corrispondente ad una particella in $\bold{x} + a$:
+\begin{equation*}
+	U(a)|x \rangle = |x+a \rangle 
+\end{equation*}
+definito l'operatore U come 
+\begin{equation*}
+	U(a) = e^{-i /\hbar (\hat{p}a) }
+\end{equation*}
+Formalmente abbiamo che $\hat{x}|x_o \rangle = x |x_0 \rangle$ e quindi $\hat{x}|x_0 +a\rangle = (x_0 + a)|x_0 +a \rangle $ se applichiamo l'operatore posizione allo stato $U|x_0 \rangle$ abbiamo che
+\begin{equation*}
+	\hat{x} (e^{-i/ \hbar a \hat{p}}|x_0\rangle ) = e^{-i/\hbar a \hat{p}}\hat{x}|x_0 \rangle + [\hat{x},e^{-i/\hbar a \hat{p}}]|x_0\rangle  = (x_0+a)e^{-i/\hbar a \hat{p}}|x_0 \rangle 
+\end{equation*}
+che mostra come $U|x_0 \rangle$ \`e un autostato della posizione con autovalore $x_0+a$. Presa una trasformazione infinesima con $a \ll 1$, abbiamo
+\begin{equation*}
+	U(a) = I - \frac{i}{\hbar}a\hat{p}
+\end{equation*}
+da cui concludiamo che il generatore delle trasformazioni \`e il momento $\hat{p}$. In un sistema quantistico invariante per traslazione nella direzione i-sima, il teorema precedente garantisce che $p_i$ \`e una grandezza conservata. 
+
+Per una particella libera, la Hamiltoniana $H = \frac{\bold{p}^2}{2m}$ \`e invariante rispetto all'operazione $x \to x+a$, poich\`e H non dipende esplicitamente da x e infatti il momento $p$ \`e una grandezza conservata.
+\subsection{Rotazioni }
+Per individuare una rotazione in tre dimensioni abbiamo bisogno di tre parametri (come per esempio gli angoli di Eulero). In generale ci basta pensare di definire una direzione nello spazio identificata da un versore $\bold{n}(\theta,\varphi)$ dipendente da due parametri e di descrivere la rotazione attorno al vettore unitario mediante il parametro $\psi$. 
+
+Definiamo il vettore unitario 
+\begin{equation*}
+	U(\alpha_i) = e^{- i/\hbar \alpha_i \hat{J}_i}
+\end{equation*}
+dove $\hat{J}_i$ \`e il momento angolare generalizzato e corrisponde al generatore delle rotazioni infinitesime. In modo concreto se prendiamo come versore l'asse $z$ e compiamo una rotazione infinitesima $\varphi$ attorno ad esso l'operatore $U(\alpha_i)$ diventa
+\begin{equation*}
+	U(\varphi) = e^{- i/\hbar \varphi \hat{J}_{z}}
+\end{equation*}
+Scelte delle funzioni d'onda rispettivamente lineari in $x,y$ e $z$ costruiamo una loro combinazione lineare affinch\`e si abbia
+\begin{align*}
+	& x \pm iy \sim Y_{1,\mp 1} \to |1,\pm1 \rangle \\[0.4cm]
+	& z \sim Y_{1,0} \to |10 \rangle
+\end{align*}
+In forma matriciale sono rappresentati come 
+\begin{align*}
+	x-iy  \to |11 \rangle = \left[\begin{array}{c}
+		1 \\ 0 \\ 0
+	\end{array}\right] \quad 	x+iy  \to |1-1 \rangle = \left[\begin{array}{c}
+		0 \\ 1 \\ 0
+	\end{array}\right] \quad 	z  \to |10 \rangle = \left[\begin{array}{c}
+		0 \\ 0 \\ 1
+	\end{array}\right]
+\end{align*}
+Il momento angolare rispetto all'asse $z$ \`e dato da 
+\begin{equation*}
+	\hat{J}_{z} |1m\rangle = \hbar|1m \rangle 
+\end{equation*} e ha rappresentazione matriciale 
+\begin{equation*}
+	\hat{J}_{z} = \hbar \left[\begin{array}{ccc}
+		1 & 0 & 0 \\
+		0 & -1 & 0 \\
+		0 & 0 & 0
+	\end{array}\right]
+\end{equation*}
+e quindi il generatore infinitesimo assume l'espressione
+\begin{equation*}
+	U(\varphi) = e^{- i/\hbar \varphi \hat{J}_{z}} = \left[\begin{array}{ccc}
+		e^{-i\varphi} & 0 & 0 \\
+		0 & e^{i \varphi} & 0 \\
+		0 & 0 & 1
+	\end{array}\right]
+\end{equation*}
+agendo diagonalmente sui tre stati, ovvero
+\begin{align*}
+	& x-iy \to (x-iy)e^{-i \varphi} \\[0.3cm]
+	& x+iy \to (x+iy)e^{i \varphi} \\[0.3cm]
+	& z \to z
+\end{align*}
+Il che equivale a compiere una rotazione di un angolo $\varphi$ nel piano (x,y).
+
+Per una direzione generico lungo $\bold{n}$ si ha che 
+\begin{equation*}
+	U(\bold{n},\psi) = e^{-i/\hbar \psi \hat{\bold{J}} \cdot \bold{n}} 
+\end{equation*}
+Dato che $[J_{i},J_{j}] = i \hbar \varepsilon_{ijk}J_{k}$ si ha che le rotazioni non commutando tra di loro fanno s\`i che non si torni mai al punto di partenza se concatenate nella loro applicazione.
+
+\subsubsection{Esempio: rotazione dello stato di una particella con spin 1/2}
+
+Una particella di spin 1/2 possiede due stati possibili 
+\begin{equation*}
+	|+ \rangle = \left[ \begin{array}{c}
+		1 \\ 0
+	\end{array}\right]
+	\quad
+	|- \rangle = \left[ \begin{array}{c}
+		0 \\ 1
+	\end{array}\right]
+\end{equation*}
+la cui combinazione lineare forma il generico stato di spin che prende il nome di \textit{spinore}
+\begin{equation*}
+	\alpha |+ \rangle + \beta |- \rangle = \left[ \begin{array}{c}
+		\alpha \\ \beta
+	\end{array}\right]
+\end{equation*}
+Per effettuare una rotazione di un angolo $\varphi$ rispetto all'asse z utilizziamo l'operatore unitario 
+\begin{equation*}
+	U(\varphi) = e^{i/\hbar \varphi J_{z}} = \left[ \begin{array}{cc}
+		e^{-\varphi/2} & 0\\ 0 & e^{\varphi/2}
+	\end{array}\right]
+\end{equation*}
+dove abbiamo usato la relazione $J_{z} = \frac{\hbar }{2} \sigma_3$. Se compiano una rotazione di $2 \pi$ lo spinore non torna in se stesso dato che $U(2\pi) = -I$. 
+
+\newpage
+
+\section{Esempi ed Esercizi}
