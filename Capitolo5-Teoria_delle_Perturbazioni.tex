@@ -1389,3 +1389,385 @@ I processi di decadimento dei nuclei di una sostanza sono descritti nel medesimo
 
 
 Se si ha una particella che si trova in un livello energetico eccitato in un atomo, questa pu\`o decadere allo stato fondamentale del sistema e nel farlo emette un fotone con frequenza $\hbar \omega = \Delta E$.
+Una fenomenologia di questo tipo pu\`o essere ricondotta ad un livello che si accoppia a molteplici fotoni liberi, ovvero tutti gli stati possibili che un fotone pu\`o assumere, essendo una particella libera. L'accoppiamento del livello energetico al campo magnetico quantizzato permette il decadimento e l'emissione spontanea.
+
+Il fatto che lo stato discreto quando viene accoppiato a dei livelli energetici dello spettro continuo cambia irreversibilmente il suo stato iniziale,fisicamente \`e interpretabile come il decadimento allo stato fondamentale.
+
+Se prendiamo un potenziale V costante e una Hamiltoniana $H = H_0+V$ dove $H_0$ \`e la Hamiltoniana imperturbata. Ipotizziamo che rispetto $H_0$ esistano due tipi di livelli energeti, quelli presenti all'interno della buca 
+\begin{equation*}
+	H_0|\varphi_i \rangle = E_i|\varphi_i \rangle
+\end{equation*}
+e quelli dello spettro continuo al di fuori della buca 
+\begin{equation*}
+	H_0 | \alpha \rangle = E_{\alpha}|\alpha \rangle
+\end{equation*}
+dove $\alpha $ rappresenta un indice continuo e $E_{\alpha} \in \Delta $ che indica l'intervallo continuo che contiene lo stato iniziale $E_i$ dello spettro discreto associato allo stato di partenza.
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{continumEnergy} % Replace with your image
+\end{wrapfigure}
+Assumiamo che $\langle \varphi_i |\varphi_i \rangle = 1$ e $\langle \alpha |\alpha' \rangle = \delta(\alpha - \alpha')$, inoltre stati discreti e continui rappresentano livelli distinti $\langle \varphi_i |\alpha \rangle = 0$. La perturbazione V accoppia i livelli discreti e quelli continui, di conseguenza $\langle \varphi_i |V|\alpha \rangle \neq 0$. Onde evitare che V faccia comunicare uno stato con se stesso generando un cambio di livello, ipotizziamo che 
+\begin{equation*}
+	\langle \varphi_i |V|\varphi_i \rangle = 0 \quad \text{e} \quad \langle \alpha |V|\alpha \rangle = 0
+\end{equation*}
+Per calcolare la probabilit\`a di transizione da un livello discreto ad uno continuo applichiamo la regola d'oro di Fermi. Al primo ordine abbiamo che
+\begin{equation*}
+	dw = \frac{2 \pi}{\hbar} |\langle \alpha|V|\varphi_i \rangle|^2\delta(E_i-E_\alpha)d\alpha = \frac{2 \pi}{\hbar} |\langle \alpha|V|\varphi_i \rangle|^2\delta(E_i-E_\alpha)\rho(E,\beta)d\beta 
+\end{equation*}
+e quindi
+\begin{equation*}
+	\frac{\mathcal{P}}{t} = \Gamma = \frac{2 \pi}{\hbar} \int |\langle \alpha|V|\varphi_i \rangle|^2 \rho(E_i,\beta)d\beta
+\end{equation*}
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{probFer} % Replace with your image
+\end{wrapfigure}
+Dalla regola di Fermi otteniamo la probabilit\`a che uno stato ad energia $E_i$ appartenente allo spettro discreto passi allo spettro continuo, ma mantenendo il medesimo livello energetico dato che si ha la conservazione dell'energia $E_{\alpha} = E_i$.
+
+Dato un tempo t , la probabilit\`a che la transizione avvenga \`e descritta da $\mathcal{P}(t) = \Gamma t$, mentre quella che non avvenga \`e data da $\mathcal{P} = 1-\Gamma t$ e fornisce una buona descrizione se $t \ll 1/\Gamma$. Una formula pi\`u accurata \`e data da
+\begin{equation*}
+	\mathcal{P} = e^{-\Gamma t}
+\end{equation*} 
+e descrive sufficientemente bene il decadimento per stati metastabili.
+\newpage
+Nella teoria delle perturbazioni dipendenti dal tempo si \`e sviluppato lo stato come 
+\begin{equation*}
+	|\varphi \rangle = \sum_{n}b_n(t)e^{-i/\hbar E_n t}|n\rangle 
+\end{equation*}
+dove $|n \rangle$ sono gli stati stazionari della Hamiltoniana imperturbata $H_0$. Per una Hamiltoniana perturbata $H = H_0 + V$ si \`e trovata l'equazione di Schr\"odinger 
+\begin{equation*}
+	i\hbar \dot{b}_{n}(t) = \sum_{m} \langle n | V | m \rangle e^{i\omega_{mn}t}b_m(t)
+\end{equation*}
+Applichiamo la medesima formula al caso $\langle \varphi_i |V|\alpha \rangle \neq 0$, determinando
+\begin{equation*}
+	\left \{ \begin{array}{l}
+		i \hbar \dot{b}_i(t) = \int d\alpha \; \langle \varphi_i |V|\alpha \rangle e^{i/\hbar (E_i-E_{\alpha})t}b_{\alpha}(t) \\[0.4cm]
+		i \hbar \dot{b}_{\alpha}(t) = \langle \alpha |V|\varphi_i \rangle e^{i/\hbar (E_{\alpha}-E_i)t}b_i(t) 
+	\end{array}\right.
+\end{equation*}
+da cui deriviamo
+\begin{equation*}
+	b_{\alpha}(t) = - \frac{1}{i \hbar} \int_{0}^{t} dt' \; \langle \alpha |V|\varphi_i \rangle e^{i/\hbar(E_\alpha - E_i)t'}b_i(t')
+\end{equation*}
+dove si sono prese le condizioni iniziali $b_i(0)=1$ e $b_{\alpha}(0) = 0$. Ricavato $b_\alpha (t)$ si procede a risolvere per $b_i(t)$.
+\begin{equation*}
+	\left \{ \begin{array}{l}
+		\dot{b}_i(t) = - \frac{1}{\hbar^2} \int d\alpha |\langle \alpha |V|\varphi_i \rangle|^2 \int_0^t dt' \; e^{i/\hbar(E_i-E_{\alpha})t'}b_i(t') \\[0.4cm]
+		b_i(0) =1
+	\end{array}\right.
+\end{equation*}
+Per risolvere l'equazione precedente, consideriamo $t \gg 1$, e osserviamo che ad integrando si ha un esponenziale, questo fa s\`i che l'integrale abbia delle grandi oscillazioni e punti in cui si annulla, l'unico caso in cui l'integrale \`e non nullo \`e quando $t' \sim t$. Assumendo che l'integrale sia definito nella regione in cui non si annulla, abbiamo che 
+\begin{equation}
+	\dot{b}_i(t) = - \Delta b_i(t)
+\end{equation}
+dove 
+\begin{equation*}
+	\Delta = \frac{1}{\hbar^2}\int d\alpha \; |\langle \alpha |V|\varphi_i \rangle|^2 \int_0^t dt' \; e^{i/\hbar (E_i - E_{\alpha})(t-t')}
+\end{equation*}
+risolvendo l'equazione differenziale in (5.81) si ha che
+\begin{equation}
+	b_i(t) = b_i(0)e^{-\Delta t} = e^{- \Delta t}
+\end{equation}
+Procediamo ora a calcolare esplicitamente $\Delta$, partendo dalla sua componente dipendente dal tempo 
+\begin{equation}
+	\Delta \sim \int_0^t dt' \;  e^{i\omega_{\alpha i}(t-t')} = \int_0^t d\tau \; e^{i\omega_{\alpha i}\tau} = - \frac{1}{i(\omega_{i\alpha}+i0)}
+\end{equation}
+
+\newpage
+Complessivamente avremo che 
+\begin{align}
+	\Delta & = - \frac{1}{i \hbar^2}\int d\alpha  \frac{|\langle \alpha |V|\varphi_i \rangle|^2}{\omega_{\alpha i}+i0} = \notag \\[0.5cm]
+	& = \frac{i}{\hbar^2}\;p.v. \left [ \int d \alpha \; \frac{|\langle \alpha |V|\varphi_i \rangle|^2}{\omega_{\alpha i}}\right] + \frac{\pi }{\hbar^2} \int d\alpha \; |\langle \alpha |V|\varphi_i \rangle|^2 \delta \left( \frac{E_i - E_{\alpha}}{\hbar} \right) =  \notag \\[0.5cm]
+	& = \frac{i}{\hbar^2}\;p.v. \left [ \int d \alpha \; \frac{|\langle \alpha |V|\varphi_i \rangle|^2}{\omega_{\alpha i}}\right] + \frac{\pi }{\hbar} \int d\alpha \; |\langle \alpha |V|\varphi_i \rangle|^2 \delta \left( E_i - E_{\alpha} \right) = \notag \\[0.5cm]
+	& = \frac{i}{\hbar^2}\;p.v. \left [ \int d \alpha \; \frac{|\langle \alpha |V|\varphi_i \rangle|^2}{\omega_{\alpha i}}\right] + \frac{\pi }{\hbar} \int d\beta \; |\langle \alpha |V|\varphi_i \rangle|^2 \rho(E_i,\beta) = i \frac{\delta E}{\hbar} + \frac{\Gamma}{2}
+\end{align}
+\begin{remark}
+Gli strumenti matematici usati per ottenere (5.83) e (5.84) sono spiegati in dettaglio nel complemento A.
+\end{remark}
+
+Utilizzando il risultato (5.84) esprimiamo (5.82) come
+\begin{equation}
+	b_i(t) = e^{-\Delta t} = \exp \left[ - \frac{\Gamma}{2}t -i \frac{\delta E}{\hbar}t\right]
+\end{equation}
+determinando in questo modo i coefficienti dello stato i-esimo.
+
+
+La probabilit\`a che si resti nel medesimo stato al tempo $t$ \`e data da 
+\begin{equation*}
+	\mathcal{P}_{|i \rangle \to |i \rangle }(t) = |b_i(t)|^2 = e^{- \Gamma t} \sim e^{-t/\tau}
+\end{equation*}
+Dato che ora conosciamo i coefficienti $b_i(t)$ possiamo determinare i coefficienti di uno stato rispetto agli stati del sistema imperturbato
+\begin{equation*}
+	|\varphi \rangle = \sum_{m} \underbrace{b_m(t)e^{-i/\hbar E_mt}}_{=c_m(t)}|m \rangle 
+\end{equation*}
+dove 
+\begin{equation*}
+	c_m(t) = e^{-\frac{i}{\hbar} (E_m+\delta E)- \frac{\Gamma}{2}t}
+\end{equation*}
+ottenuta utilizzando il risultato (5.84). Formalmente posto $E = E_m + \delta E + i \frac{\Gamma}{2}$ otteniamo lo stato stazionario \`e dato da $c_m(t) = e^{-\frac{i}{\hbar}E t}$. Quando uno stato \`e metastabile parte dell'energia ha una componente immaginaria data dal rate di decadimento. Il termine 
+\begin{equation*}
+	\delta E = p.v. \left[\int d\alpha \; \frac{|\langle \alpha |V|\varphi_i \rangle|^2}{E_i - E_{\alpha}}\right] 
+\end{equation*}
+\`e un termine di correzione dell'energia simile a quanto definito per le correzioni al secondo ordine per sistemi perturbati e con spettro continuo.
+\newpage
+
+\subsection{Spessore delle righe spettrali nel continuo}
+
+La regola d'oro di Fermi non esprime la grandezza delle righe spettrali dato che l'energia risulta essere conservata. Nell'approssimazione migliore ottenuta si considerano le correzioni sull'energia come descrizione della larghezza delle righe spettrali. 
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{jumpEnergy} % Replace with your image
+\end{wrapfigure}
+L'approssimazione di Fermi ci dice che lo stato finale per una perturbazione non dipendente dal tempo deve avere la stessa energia dello stato iniziale, ma da quanto ottenuto nella sezione precedente sappiamo che lo stato finale pu\`o trovarsi entro un certo intervallo dell'energia
+\begin{equation*}
+	\left \{ \begin{array}{l}
+		\dot{b}_{\alpha}(t)  = \frac{1}{i\hbar}\langle \alpha|V|\varphi_i \rangle = e^{i \omega_{\alpha i}t}b_i(t) = \frac{1}{i \hbar}\langle \alpha |V|\varphi_i \rangle e^{i \omega_{\alpha i}t - \frac{i}{\hbar}\delta E t-\frac{\Gamma}{2}t} \\[0.5cm]
+		b_{\alpha}(0) = 0
+	\end{array}\right.
+\end{equation*}
+risolvendo abbiamo che 
+\begin{equation*}
+	b_{\alpha}(t) = \frac{1}{i \hbar} \langle \alpha|V|\varphi_i \rangle \frac{e^{i \omega_{i \alpha}t - \frac{i}{\hbar}\delta E t-\frac{\Gamma}{2}t}-1}{i\omega_{\alpha i} -i\frac{\delta E}{\hbar}-\frac{\Gamma}{2}} =_{t \to \infty} \frac{|\langle \alpha|V|\varphi_i \rangle|^2}{E_{\alpha}-E_{i} -\delta E+ \frac{\Gamma}{2}} \neq 0 \quad \forall \alpha
+\end{equation*} 
+calcolando il quadrato della norma del coefficiente $b_{\alpha}(t)$
+\begin{equation*}
+	|b_{\alpha}(t)|^2 = \frac{|\langle \alpha |V|\varphi_i\rangle|^2}{(E_{\alpha}-E_i-\delta E)^2+\frac{\hbar^2\Gamma^2}{4}}
+\end{equation*}
+che rappresenta una distribuzione simile a quella di Cauchy(Lorentz).
+ 
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 7cm]{linespectr}	
+\centering
+\end{figure}
+Il grafico in figura rappresenta $|b_{\alpha}(t)|^2$ come larghezza di una riga spettrale fissata dal rate di decadimento $\hbar \Gamma$. L'unico caso in cui una riga spettrale \`e perfettamente monocromatica \`e quando $\Gamma =0$ e quindi la probabilit\`a di transizione ad un altro stato \`e $\mathcal{P} = 0$, di conseguenza lo stato iniziale \`e perfettamente stabile.
+
+\newpage
+
+\section{Teoria quantistica della radiazione}
+
+\subsection{Campo elettromagnetico classico}
+
+Per studiare i fenomeni di radiazione dobbiamo prima discutere le porpriet\`a dei vettori potenziale che soddisfano la propriet\`a 
+\begin{equation*}
+	\nabla \cdot \bold{A} = 0
+\end{equation*}
+I campi magnetici derivabili da un potenziale vettore che soddisfa la precedente condizione vengono definiti \textit{campi di radiazione}. Nella notazione cgs le trasformazioni di gauge hanno rappresentazione
+\begin{equation*}
+	\left \{ \begin{array}{l}
+		\phi \to \phi + \frac{1}{c}\frac{\partial \Lambda}{\partial t} \\[0.3cm]
+		\bold{A} \to \bold{A} + \nabla \bold{A}
+	\end{array}\right.
+\end{equation*}
+e scegliamo il potenziale $\phi = 0$, in modo che la trasformazione dipenda solo da $\Lambda(\bold{x})$, ma non dal tempo. In questo gauge il campo magnetico ed elettrico hanno rappresentazione
+\begin{equation*}
+	\left \{ \begin{array}{l}
+		\bold{E} = - \frac{1}{c}\frac{\partial \bold{A}}{\partial t}\\[0.3cm]
+		\bold{B} = \nabla \times \bold{A}
+	\end{array}\right.
+\end{equation*}
+che soddisfano le condizioni iniziali imposte. Dalle equazioni di Maxwell nel vuoto sappiamo che $\nabla \times \bold{B} = \frac{1}{c} \frac{\partial \bold{E}}{\partial t}$ e sostituendo la definizione di campo magnetico rispetto al potenziale vettore otteniamo
+\begin{equation}
+	\nabla \times (\nabla \times \bold{A}) = \frac{1}{c}\frac{\partial \bold{E}}{\partial t} \quad \iff \quad \nabla^2\bold{A} -\frac{1}{c^2}\frac{\partial^2 \bold{A}}{\partial t^2} = 0
+\end{equation}
+ottenendo in questo modo l'equazione delle onde, la cui soluzione \`e data da
+\begin{equation}
+	\bold{A} = \boldsymbol{\varepsilon} e^{i(\bold{k} \cdot \bold{x} - \omega t)} + \boldsymbol{\varepsilon}^*e^{-i(\bold{k} \cdot \bold{x} - \omega t)}
+\end{equation} 
+dove $\boldsymbol{\varepsilon}$ \`e il vettore di polarizzazione. Sostituendo l'equazione (5.87) nell'equazione (5.86) affinch\`e $\bold{A}$ sia soluzione \`e necessario impotte la condizione che 
+\begin{equation*}
+	\omega = c|\bold{k}|
+\end{equation*}
+La propriet\`a $\nabla \cdot \bold{A} =0$ \`e equivalente a chiedere che $\bold{k} \cdot \boldsymbol{\varepsilon}=0$ ovvero il vettore d'onda $\bold{k}$ \`e orotogonale al vettore di polarizzazione $\boldsymbol{\varepsilon}$. Per ogni $\bold{k}$ fissato possiamo scegliere una base di versori $\{\boldsymbol{\varepsilon}_1,\boldsymbol{\varepsilon}_2\}$, ortogonali a $\bold{k}$, rappresentanti le polarizzazioni indipendente dell'onda. La combinazione lineare degli elementi dell base ci restituisce tutti i possibili tipi di polarizzazione dell'onda.
+
+La soluzione generale del problema si ottiene considerando la sovrapposizione lineare delle soluzioni dell'equazione dell'onda piana
+\begin{equation}
+	\bold{A}(x,t) = \sum_{\bold{k}}\sum_{r=1}^2 A_{\bold{k}r}\boldsymbol{\varepsilon}_{\bold{k}r}e^{i(\bold{k} \cdot \bold{x}-\omega t)} + A^*_{\bold{k}r} \boldsymbol{\varepsilon}^*_{\bold{k}r}e^{-i(\bold{k}\cdot \bold{x} - \omega t)}
+\end{equation} 
+\newpage
+dove $A_{kr} \in \mathbb{C}$. Siccome $\bold{k}$ \`e una variabile continua, la sommatoria andrebbe pensata come un integrale, ma nel caso dei campi \`e pi\`u comodo pensare a delle variabili discrete. Infatti trasformiamo il problema nel discreto considerando le onde vincolare all'interno di una scatola di volume finito $V = L^3$ e per cui $\bold{A}$ soddisfa delle condizioni al contorno di periodicit\`a
+\begin{align*}
+	& \bold{A}(x,y,z,t) = \bold{A}(x+L,y,z,t) \\[0.3cm]
+	& \bold{A}(x,y,z,t) = \bold{A}(x,y+L,z,t) \\[0.3cm]
+	& \bold{A}(x,y,z,t) = \bold{A}(x,y,z+L,t) 
+\end{align*}
+Tali condizioni fanno s\`i che il vettore d'onda \`e esprimibile come
+\begin{equation*}
+	\bold{k} = \frac{2 \pi}{L}[n_x,n_y,n_z] \quad n_i \in \mathbb{Z}
+\end{equation*}
+In questo modo abbiamo che la radiazione ad un generico tempo $t$ e opportunamente normalizzata, pu\`o essere espressa come serie di Fourirer sull'intervallo [0,L]
+\begin{equation}
+	\bold{A}(\bold{x},t) = \sum_{\bold{k}} \sum_{r =1}^2 \left[ \frac{\hbar c^2}{2 \omega}\right]^{1/2} \left[ a_{\bold{k}r} \bold{u}_{\bold{k}r}(\bold{x})e^{-i \omega t}+ a_{\bold{k}r}^*\bold{u}_{\bold{k}r}^*(\bold{x})e^{i\omega t}\right]
+\end{equation}
+dove 
+\begin{equation*}
+	\bold{u}_{\bold{k}r}(\bold{x}) = \frac{1}{\sqrt{V}}\varepsilon_{\bold{k}r}e^{i\bold{k} \cdot \bold{x}}
+\end{equation*}
+sono gli elementi della base di Fourier e rappresentano delle onde ortonormali periodiche.
+\begin{equation*}
+	\int_V d\bold{x} \; \bold{u}_{\bold{k}r}^*\bold{u}_{\bold{k}'r'} = \delta_{\bold{k}\bold{k}'}\delta_{rr'}
+\end{equation*}
+L'informazione dinamica \`e data dagli elementi dipendenti dal tempo che garantiscono che $\bold{A}$ soddisfi l'equazione delle onde. Il sistema pu\`o essere interpretato come costituito da sottosistemi riconducibili alle equazioni di un oscillatore armonico poich\`e i coefficienti 
+\begin{equation*}
+	\sqrt{\frac{\hbar c^2}{2 \omega}}a_{\bold{k}r}e^{-i\omega t} = \mathcal{A}_{\bold{k}r}
+\end{equation*}
+soddisfano l'equazione 
+\begin{equation*}
+	\ddot{\mathcal{A}}_{\bold{k}r}+\omega^2 \mathcal{A}_{\bold{k}r} = 0 \quad \forall \bold{k},r
+\end{equation*}
+di conseguenza l'intero sistema evolve come una collezione di infiniti oscillatori armonici disaccoppiati tra loro.
+
+\subsection{Quantizzazione della radiazione degli oscillatori armonici}
+
+Prendiamo i termini $\mathcal{A}_{\bold{k}r}$ e li trasformiamo in oscillatori quantistici con frequenza angolare $\omega_{\bold{k}}$, dove le rispettive energie sono date dalla relazione
+\begin{equation*}
+	E_{\bold{k}r} = \hbar \omega_{\bold{k}}\left (n_{\bold{k}r} + \frac{1}{2}\right )
+\end{equation*}
+L'energia complessiva portata dal campo elettromagnetico sar\`a data da 
+\begin{equation*}
+	E = \sum_{\bold{k}}\sum_{r =1}^2 \hbar \omega_{\bold{k}}\left(n_{\bold{k}r}+\frac{1}{2}\right)
+\end{equation*}
+Se consideriamo l'energia portata dal campo elettromagnetico in fisica \`e espressa come
+\begin{equation*}
+	\mathcal{E} = \int_{V} d \bold{x} \; \frac{1}{2}(\bold{E}^2+\bold{B}^2)
+\end{equation*}
+nel sistema cgs normalizzato. Date le relazioni rispetto a cui campo magnetico ed elettrico sono espressi rispetto al vettore potenziale, possiamo derivarli direttamente sostituendo l'equazione (5.89) nelle rispettive espressioni per poi calcolare l'energia $\mathcal{E}$ in questo modo abbiamo 
+\begin{equation*}
+	\mathcal{E} = \frac{\hbar}{2}\sum_{\bold{k}}\sum_{r=1}^2 \omega_{\bold{k}}(a_{\bold{k}r}a^*_{\bold{k}r} + a_{\bold{k}r}^*a_{\bold{k}r})
+\end{equation*} 
+Se promuoviamo i coefficienti $a_{\bold{k}r}$ e $a_{\bold{k}r}^*$ a degli operatori il complesso coniugato deve essere espresso come $a_{\bold{k}r}^{\dag}$ e quindi l'energia pu\`o essere espressa come l'operatore Hamiltoniano
+\begin{equation*}
+	\hat{H} = \frac{\hbar}{2}\sum_{\bold{k}} \sum_{r=1}^2 \omega_{\bold{k}}(\hat{a}_{\bold{k}r}\hat{a}_{\bold{k}r}^{\dag} + \hat{a}_{\bold{k}r}^{\dag}\hat{a}_{\bold{k}r})
+\end{equation*}
+dove per lo stesso oscillatore 
+\begin{equation*}
+	[\hat{a}_{\bold{k}r},\hat{a}_{\bold{k}r}^{\dag}] = 1 \quad \forall \bold{k},r
+\end{equation*}
+mentre per oscillatori differenti
+\begin{equation*}
+	[\hat{a}_{\bold{k}r},\hat{a}_{\bold{k}'r'}^{\dag}] = \delta_{\bold{k}\bold{k}'}\delta_{rr'} \quad \forall\bold{k},\bold{k}',r,r'
+\end{equation*}
+usando le relazioni precedenti la Hamiltoniana \`e esprimibile come
+\begin{equation}
+	\hat{H} = \frac{1}{2}\sum_{\bold{k}}\sum_{r=1}^2 \hbar \omega_{\bold{k}}(2 \hat{a}_{\bold{k}r}^{\dag}\hat{a}_{\bold{k}r} + 1) = \sum_{\bold{k}}\sum_{r=1}^2 \hbar \omega_{\bold{k}}\left(\hat{a}_{\bold{k}r}^{\dag}\hat{a}_{\bold{k}r} + \frac{1}{2} \right)
+\end{equation}
+Per ciascun valore fissato di $\bold{k}$ abbiamo una Hamiltoniana associata a ciascun oscillatore quantistico, di conseguenza lo spazio di Hilbert del sistema complessivo \`e dato da $\mathcal{H} = \otimes_{\bold{k}r} \mathcal{H}_{\bold{k}r}$ dove $\mathcal{H}_{\bold{k}r}$ \`e lo spazio di Hilbert di un singolo oscillatore.
+
+Su ciascuno degli spazi agiscono gli operatori $\{\hat{a}_{\bold{k}r},\hat{a}_{\bold{k},r}^{\dag}\}$ ed esiste uno fondamentale $|0\rangle_{\bold{k}r} \in \mathcal{H}_{\bold{k}r}$.
+
+\newpage
+Se facciamo agire l'operatore $\hat{a}_{\bold{k}r}$ sullo stato fondamentale del corrispettivo oscillatore quantistico, abbiamo che 
+\begin{equation*}
+	\hat{a}_{\bold{k}r} |0 \rangle_{\bold{k}r} = 0 \quad \hat{a}_{\bold{k}r}^{\dag}|0 \rangle_{\bold{k}r} = \sqrt{1}|1\rangle_{\bold{k}r}
+\end{equation*}
+di conseguenza i due operatori agiscono come un operatore di innalzamento ed uno di abbassamento degli stati. In generale per gli stati eccitati vale la formula 
+\begin{equation*}
+	|n \rangle_{\bold{k}r} = \frac{(\hat{a}_{\bold{k}r}^{\dag})^n}{\sqrt{n}}|0 \rangle_{\bold{k}r}
+\end{equation*}
+e per l'operatore di abbassamento si ha che 
+\begin{equation*}
+	\hat{a}_{\bold{k}r} |n \rangle_{\bold{k}r} = \sqrt{n_{\bold{k}r}}|n_{\bold{k}r}-1 \rangle 
+\end{equation*}
+Lo stato del sistema complessivo dato dallo spazio $\mathcal{H}$ \`e espresso come prodotto tensoriale dei singoli stati di $\mathcal{H}_{\bold{k}r}$
+\begin{equation}
+	|n_{\bold{k}_1 r_1},n_{\bold{k}_2 r_2},\ldots \rangle = |n_{\bold{k}_1 r_1}\rangle \otimes |n_{\bold{k}_2 r_2}\rangle \otimes |n_{\bold{k}_3 r_3} \rangle \otimes \ldots
+\end{equation}
+e in linea di principio il prodotto tensoriale \`e costituito da un numero infinito di elementi.
+
+Se definiamo lo stato fondamentale del sistema nel suo complessivo come $|0 \rangle = \otimes_{\bold{k}r} |0 \rangle_{\bold{k}r}$, il generico stato \`e esprimibile come 
+\begin{equation}
+	|n_{\bold{k}_1 r_1},n_{\bold{k}_2 r_2},\ldots \rangle = \prod_{\bold{k}_i r_i} \frac{(\hat{a}_{\bold{k}_ir_i}^{\dag})^{n_{\bold{k}_i r_i}}}{\sqrt{n_{\bold{k}_i r_i}}}|0 \rangle 
+\end{equation}
+
+\subsection{Energia degli stati}
+
+Applicando la Hamiltoniana $\hat{H}$ allo stato fondamentale abbiamo che l'energia associata \`e data dall'espressione
+\begin{equation*}
+	\hat{H}|0 \rangle = \sum_{\bold{k}}\sum_{r=1}^2 \frac{\hbar \omega_{\bold{k}}}{2}|0 \rangle 
+\end{equation*}
+Interpretiamo lo stato $|0 \rangle $ come lo stato di vuoto in cui non \`e presente campo elettromagnetico. Se vogliamo vederlo dal punto di vista di una particella in questo stato non sono presenti fotoni. Formalmente avremmo che 
+\begin{equation*}
+	E = \sum_{\bold{k}}\sum_{r=1}^2 \frac{\hbar \omega_{\bold{k}}}{2} = + \infty
+\end{equation*}
+anche se il risultato \`e infinito in fisica siamo interessati alle differenze di energia. Per convezione poniamo l'energia dello stato fondamentale a zero $E = 0$.  Sperimentalmente possiamo lavorare a volume costante considerando un sistema di specchi a distanza L, in cui \`e presente un campo elettromagnetico. L'energia $E \to \infty$, ma possiamo calcolare $\Delta E$ per $L \to L + \Delta L$, dato che singolarmente le energie sono infinite, ma la loro differenza no. Infatti
+\begin{equation*}
+	\Delta E \simeq \frac{1}{L^3}
+\end{equation*}
+\newpage
+Tale risultato ci dice che il campo magnetico a causa dell'energia di punto zero dei suoi oscillatori  ha una sua energia in un volume finito la cui variazione pu\`o essere calcolata.
+La differenze di energia porta ad una forza $F \simeq 1/L^4 $ che prende il nome di forza di Kasimir.
+
+\subsubsection{Stati Eccitati}
+Consideriamo lo stato eccitato $|1 \rangle_{\bold{k}r}$ di un certo oscillatore armonico, l'energia associata \`e data da
+\begin{equation*}
+	\hat{H}|1 \rangle_{\bold{k}r} = \hbar \omega_{\bold{k}}|1 \rangle_{\bold{k}r} 
+\end{equation*}
+dato che $\omega_{\bold{k}} = c |\bold{k}|$ l'energia associata coincide con quella di un fotone. Se prendiamo il secondo stato eccitato dell'oscillatore $|2 \rangle_{\bold{k}r}$ si ha che 
+\begin{equation*}
+	\hat{H}|2 \rangle_{\bold{k}r} = 2 \hbar \omega_{\bold{k}}|2 \rangle_{\bold{k}r}
+\end{equation*}
+la cui energia corrisponde a quello di due fotoni con numero d'onda $\bold{k}$ e polarizzazione $r$. Ogni oscillatore descrive uno specifico tipo di fotone dato da numero d'onda e polarizzazione. In generale uno stato con due fotoni possiamo descriverlo nei seguenti modi:
+\begin{enumerate}
+	\item I due fotoni possiedono stessa polarizzazione e numero d'onda, allora 
+	\begin{equation*}
+		|2 \rangle_{\bold{k}r} = \frac{\hat{a}_{\bold{k}r}^{\dag}\hat{a}_{\bold{k}r}^{\dag}}{\sqrt{2}}|0 \rangle 
+	\end{equation*}
+Nel caso della fisica delle particele di operatori $\hat{a}_{\bold{k}r}$ e $\hat{a}_{\bold{k}r}^{\dag}$, vengono interpretati come il primo distrugge un fotone mentre il secondo crea un fotone eccitando l'oscillatore.
+\item I due fotoni hanno numero d'onda e polarizzazione distinte 
+\begin{equation*}
+	|2\rangle_{\bold{k}r} = \hat{a}_{\bold{k}_1 r_1}^{\dag}\hat{a}_{\bold{k}_2 r_2}^{\dag}|0 \rangle =\hat{a}_{\bold{k}_2 r_2}^{\dag}\hat{a}_{\bold{k}_1 r_1}^{\dag}|0 \rangle   
+\end{equation*}
+In questo caso non \`e necessario normalizzare lo stato, inoltre gli operatori commutano tra loro per numeri quantici distinti e da un punto di vista dei fotoni, ci dice che l'ordine di creazione di questi ultimi non ha rilevanza.
+\end{enumerate}
+Nel formalismo cos\`i costruito si ha che il campo elettromagnetico descritto dall'equazione (5.89) \`e diventato un operatore e la posizione $\bold{x}$ \`e interpretabile come un parametro che identifica in quale punto dello spazio di sta sondando il campo elettromagnetico, analogamente \`e da considerarsi parametro anche il tempo $t$.
+
+\subsection{Emissione Spontanea}
+
+Data la Hamiltoniana di un atomo con un solo elettrone soggetto a un campo elettromagnetico esterno dipendente dal tempo 
+\begin{equation*}
+	\hat{H}_{atom} = \frac{1}{2m} \left(\bold{p} - \frac{e}{c}\bold{A}\right)^2 +V(\bold{r})
+\end{equation*}
+dove $V(\bold{r})$ rappresenta il potenziale di legame con il nucleo. Espandendo il quadrato del termine di energia cinetica compaiono dei contributi per cui $\hat{H}_{atom} = \hat{H}_0 + \hat{H}_{para} + \hat{H}_{dia}$, dove 
+\begin{equation*}
+	\hat{H}_0 = \frac{\bold{p}^2}{2m} + V(\bold{r})
+\end{equation*}
+che descrive il sistema imperturbato, mentre 
+\begin{equation*}
+	\hat{H}_{para} = \frac{e}{mc}\bold{p} \cdot \bold{A}(t)
+\end{equation*}
+rappresenta il termine paramagnetico dipendente dal tempo che compari dall'interazione dell'elettrone con il campo elettromagnetico esterno. Per quanto riguarda il termine dimagnetico $\hat{H}_{dia} $ di ordine superiore al primo rispetto a $\bold{A}$, questo pu\`o essere trascurato nel caso in cui siamo interessati solo a descrivere l'assorbimento e l'emissione di fotoni, dato che fornisce un contributivo perturbativo trascurabile rispetto agli altri termini.
+
+Nelle sezioni precedenti abbiamo quantizzato il campo elettromagnetico trasformando un operatore rispetto agli operatori d'innalzamento e riduzione 
+\begin{equation}
+	\hat{\bold{A}}(\bold{x},t)= \sum_{\bold{k},r} \sqrt{\frac{\hbar c^2}{2V \omega_{\bold{k}}}} \boldsymbol{\varepsilon}_{\bold{k}r} [\hat{a}_{\bold{k}r} e^{i(\bold{k}\cdot \bold{x} -\omega t)}+\hat{a}_{\bold{k}r}^{\dag}e^{-i(\bold{k}\cdot \bold{x}-\omega t)}]
+\end{equation}
+Lo spazio di Hilbert  che descrive il sistema \`e dato dal prodotto tensoriale dello spazio di Hilbert che contiene lo stato $|\psi \rangle$ dell'elettrone e lo spazio di Hilbert dell campo magnetico quantizzato
+\begin{equation}
+	|\psi \rangle \otimes |n_{\bold{k}_1r_1},n_{\bold{k}_2r_2},\ldots \rangle 
+\end{equation} 
+dove $n_{\bold{k}_i r_i}$ rappresenta il numero di fotoni con vettore d'onda $\bold{k}_i$ e polarizzazione $r_i$.
+Per il generico stato descritto da (5.94) siccome nella Hamiltoniana compaiono i termini $\bold{p} = -i \hbar \frac{d}{dx}$ e $\bold{A}$ avremo che l'operatore momento agisce sull'elemento $|\psi \rangle$, mentre gli operatori $\{\hat{a}_{\bold{k}r},\hat{a}_{\bold{k}r}^{\dag}\}$ agiscono sul termine $|n_{\bold{k}_1r_1},n_{\bold{k}_2r_2},\ldots \rangle$. 
+
+Dato che l'operatore (5.93) dipende dal parametro $\bold{x}$, avremo che nel termine paramagnetico della Hamiltoniana l'operatore momento agisce anche sulle componenti esponenziali di $\hat{\bold{A}}$.
+
+La Hamiltoniana d'interazione \`e data da
+\begin{equation}
+	\hat{H} = - \frac{e}{mc} \sum_{\bold{k},r} \sqrt{\frac{\hbar c^2}{2V\omega_{\bold{k}}}}\Bigg[\Big(\bold{p} \cdot \boldsymbol{\varepsilon}_{\bold{k}r}\hat{a}_{\bold{k}r}e^{i \bold{k}\cdot \bold{x}}\Big)e^{-i\omega_{\bold{k}}t}+\Big(\bold{p} \cdot \boldsymbol{\varepsilon}_{\bold{k}r}\hat{a}_{\bold{k}r}^{\dag}e^{-i\bold{k} \cdot \bold{x}}\Big)e^{i \omega_{\bold{k}}t} \Bigg ]
+\end{equation} 
+dove rispettivamente possiamo associare ai due addendi della sommatoria l'operazione di distruzione o assorbimento di fotoni al primo, mentre al secondo l'emissione.
+Usando la teoria delle perturbazioni dipendenti dal tempo sinusoidali esprimiamo (5.95) come
+\begin{equation}
+	\hat{H} = \sum_{\bold{k},r} \Big( \frac{W_{\bold{k}r}}{2}e^{-i\omega_{\bold{k}}t} + \frac{W_{\bold{k}r}^\dag}{2}e^{i \omega_{k}t} \Big)
+\end{equation}
+
+\newpage
+\subsubsection{Processo di Assorbimento ed Emissione}
+Per descrivere il processo di assorbimento ed emissione di un fotone utilizziamo la regola d'oro di Fermi, corrispondente alla probabilit\`a di transizione.
+ Consideriamo l'assorbimento di un fotone con numero d'onda $\bold{k}$ e polarizzazione $r$. Assumiamo che nello stato iniziale ci sono $n_{\bold{k}r}$ fotoni  rispetto allo stato $|n \rangle_{\bold{k}r}$ allora dopo la transizione di stato ce ne saranno $n_{\bold{k}r}-1$. Dunque se lo stato iniziale \`e dato dato da $|i,n_{\bold{k}r} \rangle$ e lo stato finale da $|f,n_{\bold{k},r}-1\rangle$, l'ampiezza della probabilit\`a di transizione dipende dagli elementi di matrice 
+\begin{align*}
+	\langle f,n_{\bold{k}r}-1| W_{\bold{k}r} |i,n_{\bold{k}r}\rangle & = - \frac{2e}{m}\sqrt{\frac{\hbar}{2V\omega_\bold{k}}}\langle f,n_{\bold{k},t}-1|\bold{p} \cdot \boldsymbol{\varepsilon}_{\bold{k}r}e^{i \bold{k}\cdot \bold{x}}\hat{a}_{\bold{k}r}|i,n_{\bold{k}r} \rangle = \\[0.4cm] 
+	& = - \frac{2e}{m}\sqrt{\frac{\hbar n_{\bold{k}r}}{2V\omega_\bold{k}}}\langle f|\bold{p} \cdot \boldsymbol{\varepsilon}_{\bold{k}r}e^{i \bold{k}\cdot \bold{x}}|i \rangle
+\end{align*}
+dove l'ultimo termine di destra \`e stato ottenuto usando l'uguaglianza $\hat{a}_{\bold{k}r}|n_{\bold{k}r}\rangle = \sqrt{n_{\bold{k}r}}|n_{\bold{k},r}-1\rangle $. Analogamente possiamo calcolare gli elementi matriciali per il processo di emissione, che a differenza di quello di assorbimento avr\`a uno stato iniziale $|i,n_{\bold{k}r} \rangle$ con un numero di fotoni $n_{\bold{k}r}$ e uno stato finale $|f,n_{\bold{k}+1 }\rangle$  dove il numero di fotoni \`e cresciuto di una unit\`a.
