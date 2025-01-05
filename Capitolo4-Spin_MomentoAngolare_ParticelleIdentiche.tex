@@ -1354,12 +1354,132 @@ Per un moto monodimensionale gli stati fondamentali tendono ad avere il numero m
 
 In problemi di questo tipo la simmetria classica si rompe, in quanto \`e presente sia uno stato a minima energia non degenere che uno stato eccitato in cui la particella \`e simultaneamente  presente in tutte e due le buche. Nel caso dello stato degenere la differenza \`e definita a meno di un fattore di fase.
 
-\subsection{La molecola di ammoniaca $NH_3$ come sistema due stati}
+\subsection{La molecola di ammoniaca $NH_3$ come sistema a due stati}
+\begin{wrapfigure}{r}{0.4\textwidth} % r for right, l for left
+    \centering
+    \includegraphics[width=0.38\textwidth]{ammonia1} % Adjust width as needed
+\end{wrapfigure}
+La molecola di ammoniaca $NH_3$ \`e composta da quattro atomi, tre di idrogeno e uno di azoto e assume la forma di un tetraedro schiacciato dove i tre atomi di idrogeno formato la base triangolare e quello di azoto la punta. La molecola pu\`o trovarsi in due stati possibili dovuti alla transizione in cui l'atomo di azoto posto in cima al tetraedro viene ruotato finendo al di sotto del piano formato dalla base triangolare con ai vertici gli atomi di idrogeno. 
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 10cm]{ammoniaRotation}	
+\centering
+\vspace{0.1in}
+\caption{I due stati possibili della molecola di ammoniaca.}
+\end{figure}
+\newpage
 
+Il passaggio da uno stato all'altro pu\`o essere descritto da una rotazione della molecola. Possiamo descrivere la transizione da un punto di vista fisico considerando la rotazione della molecola attorno all'asse ortogonale alla base del tetraedro formata dall'idrogeneo, con N verso l'alto, dove la direzione verso l'alto \`e data dalla direzione del momento angolare. Analogamente la configurazione in N \`e verso il basso, si ha che il basso \`e dato dalla direzione opposta a quella del momento angolare della molecola.
 
+In meccanica classica i due stati possibili dell'ammoniaca sono degeneri rispetto l'energia. In meccanica quantistica se la barriera di potenziale \`e finita, la degenerazione dell'energia pu\`o essere spezzata. Un potenziale V(z) dato da un polinomio di quarto grado rappresenta il potenziale di configurazione della molecola di ammoniaca, inoltre possiede due punti di minimo che definiamo come $\pm z_0$ e che sono separati tra loro da una barriera molto larga.
 
-
-
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 7cm]{ammoniaState}	
+\centering
+\vspace{0.1in}
+\caption{V(z) rappresenta il potenziale a cui \`e soggetta la molecola di ammoniaca. Sono presenti due posizioni di equilibrio in senso classico $\pm z_0$. Al di sotto del potenziale sono rappresentati $\psi_g$ che descrive lo stato fondamentale e $\psi_{e}$ per il primo stato eccitato.}
+\end{figure}
+In un potenziale di questo tipo lo stato fondamentale, che \`e simmetrico, e il primo stato eccitato, che \`e antisimmetrico, sono quasi degeneri nell'energia quando la barriera \`e molto alta. Se la barriera di potenziale fosse infinita, i due possibili autostati sarebbero dati dalla funzione d'onda che descrive la posizione dell'azoto in $z_0$ e da quella che lo descrive nella posizione $-z_0$. Inoltre questi stati sarebbero degeneri rispetto l'energia. Nel nostro caso la barriera \`e larga, ma finita e quindi lo stato fondamentale \`e la funzione d'onda $\psi_g(z)$ rappresentata nella figura 4.8. 
   
+La funzione $\psi_g(z)$ \`e combinazione lineare delle funzioni di stato che identificano la molecola nei due stati fondamentali possibili localizzati in $\pm z_0$. Si ha una funzione pari, somma di due stati locali con lo stesso segno. Analogamente la funzione $\psi_e(z)$ che rappresenta il primo stato eccitato \`e combinazione lineare di funzioni d'onda localizzate in $\pm z_0$ e con segni discordi, infatti si ha che $\psi_e(z)$ \`e una funzione dispari.
+
+\subsubsection{Descrizione quantitativa}
+
+Indichiamo i due stati possibili come 
+\begin{equation*}
+	|\uparrow \rangle \quad \text{l'azoto \'e su} \quad |\downarrow \rangle \quad \text{l'azoto \`e gi\`u} 
+\end{equation*}
+Possiamo associare a $|\uparrow \rangle $ una funzione d'onda positiva localizzata in intorno di $z_0$ e a $|\downarrow \rangle$ una funzione d'onda sempre positiva definita in un intorno di $-z_0$. Per ipotesi supponiamo che la barriera di energia sia infinita. In questo caso i due autostati hanno come autovalore il medesimo livello di energia $E_0$
+\begin{equation*}
+	H |\uparrow \rangle = E_0 |\uparrow \rangle \quad \text{e} \quad H|\downarrow \rangle = E_0 |\downarrow \rangle 
+\end{equation*}
+Definiamo i due stati 
+\begin{equation*}
+	|\uparrow \rangle \equiv |1 \rangle \quad \text{e} \quad |\downarrow \rangle \equiv |2 \rangle
+\end{equation*}
+come elementi della base della Hamiltonina H che assume la forma di una matrice $2 \times 2$
+\begin{equation*}
+	H = \left [\begin{array}{cc}
+		E_0 & 0 \\ 0 & E_0
+	\end{array} \right]
+\end{equation*}
+La possibilit\`a di avere un effetto tunnel che permette ai due stati di comunicare \`e espresso dagli elementi off-diagonali della matrice della Hamiltoniana e dunque gli elementi $H_{12} = \langle 1|H|2\rangle \neq 0$. Dato che l'operatore Hamiltoniano \`e Hermitiano abbiamo che $H_{12} = H_{21}^*$. Per ipotesi scegliamo dei termini off-diagonali reali 
+\begin{equation*}
+	H_{12} =H_{21} = - \Delta, \quad \Delta > 0
+\end{equation*} 
+il segno negativo \`e per convenzione. La Hamiltoniana che tiene conto degli effetti perturbativi dati dalla comunicazione dei due stati per via di una barriera di potenziale finita \`e 
+\begin{equation*}
+	H = \left [ \begin{array}{cc}
+		E_0 & -\Delta \\ - \Delta & E_0 
+	\end{array}\right ]=E_0\mathbb{I} - \Delta \sigma_1
+\end{equation*}
+dove $\sigma_1$ \`e la matrice di Pauli. Procediamo a calcolare gli autovalori dell'operatore Hamiltoniano diagonalizzando la matrice che lo rappresenta
+\begin{equation*}
+	\left [ \begin{array}{cc}
+		E_0 - \lambda & -\Delta \\ -\Delta & E_0 - \lambda
+	\end{array}\right] = 0 \quad \Rightarrow \quad (E_0 - \lambda)^2 = \Delta^2 \quad \Rightarrow \quad \lambda_{\pm} = E_0 \pm \Delta
+\end{equation*}
+Gli autostati corrispondenti agli autovalori sono
+\begin{align}
+	& |G \rangle = \frac{1}{\sqrt{2}} \left [ \begin{array}{c}
+		1 \\ 1
+	\end{array}\right ] = \frac{1}{\sqrt{2}}(|\uparrow \rangle + |\downarrow \rangle), \quad E = E_0 - \Delta, \quad \text{Stato fondamentale} \\
+	& |E \rangle = \frac{1}{\sqrt{2}} \left [ \begin{array}{c}
+		1 \\ -1
+	\end{array}\right ] = \frac{1}{\sqrt{2}}(|\uparrow \rangle - |\downarrow \rangle), \quad E = E_0 + \Delta, \quad \text{Stato eccitato} 
+\end{align}
+
+Lo stato fondamentale $|G \rangle$ \`e sovrapposizione degli elementi della base con lo stesso segno, e analogamente lo stato eccitato $|E \rangle$, ma con segni opposti.
+
+Lo stato eccitato \`e equivalente allo stato di spin $\frac{1}{\sqrt{2}}(|+ \rangle - |-\rangle)$ che punta nella direzione $-x$, mentre lo stato fondamentale corrisponde allo stato di spin $\frac{1}{\sqrt{2}}(|+ \rangle + |-\rangle)$ che punta nella direzione +x.
+
+La differenza di energia tra i due autostati \`e $2 \Delta$, che per la molecola di ammoniaca ha valore
+\begin{equation*}
+	2 \Delta = 0.9872 \times 10^{-4} \;eV
+\end{equation*} 
+Se poniamo la differenza di energia uguale a quella di un fotone emesso durante la transizione si ha che 
+\begin{equation*}
+	2 \Delta = \hbar \omega = h \nu \quad \rightarrow \quad \nu = 23.870 \times 10^9 \; Hz =23.870 \;GHz
+\end{equation*}
+che corrisponde ad una lunghezza d'onda $\lambda$ 
+\begin{equation*}
+	\lambda = 1.2559 \;cm
+\end{equation*}
+Consideriamo l'evoluzione nel tempo della molecola di ammoniaca ipotizzando che al tempo $t = 0$ si trovi nello stato $|\uparrow \rangle$.  Utilizzando (4.18/19) lo stato iniziale \`e dato da 
+\begin{equation*}
+	|\Psi(0) \rangle = |\uparrow \rangle = \frac{1}{\sqrt{2}}(|G \rangle + |E \rangle)
+\end{equation*}
+e applicando l'operatore di evoluzione temporale si ha che lo stato al generico tempo $t$ \`e 
+\begin{equation*}
+	|\Psi(t) \rangle = \frac{1}{\sqrt{2}}(e^{-i(E-\Delta)t/\hbar}|G \rangle + e^{-i(E+\Delta)t/\hbar}|E \rangle )
+\end{equation*}
+che esplicitando i termini $|G \rangle$ e $|E \rangle $ abbiamo che l'equazione diventa 
+\begin{equation*}
+	\begin{aligned}
+|\Psi, t\rangle & =\frac{1}{\sqrt{2}}\left(e^{-i(E-\Delta) t / \hbar} \frac{1}{\sqrt{2}}(|\uparrow\rangle+|\downarrow\rangle)+e^{-i(E+\Delta) t / \hbar} \frac{1}{\sqrt{2}}(|\uparrow\rangle-|\downarrow\rangle)\right), \\[0.5cm]
+& =\frac{1}{2} e^{-i E t / \hbar}\left(e^{i \Delta t / \hbar}(|\uparrow\rangle+|\downarrow\rangle)+e^{-i \Delta t / \hbar}(|\uparrow\rangle-|\downarrow\rangle)\right), \\[0.5cm]
+& =e^{-i E t / \hbar}\left[\cos \left(\frac{\Delta t}{\hbar}\right)|\uparrow\rangle+i \sin \left(\frac{\Delta t}{\hbar}\right)|\downarrow\rangle\right] .
+\end{aligned}
+\end{equation*}
+Lo stato ottenuto dipendente dal tempo oscilla tra $|\uparrow \rangle$ e $|\downarrow \rangle $ con una frequenza angolare di $\omega = \Delta / \hbar \simeq 23  \;GHz$. La pobabilit\`a che la molecola di ammoniaca si trovi nello stato con azoto $| \uparrow \rangle $ o $|\downarrow \rangle $ \`e data da 
+\begin{equation*}
+	\begin{aligned}
+& P_{\uparrow}(t)=|\langle\uparrow \mid \Psi, t\rangle|^2=\cos ^2\left(\frac{\Delta t}{\hbar}\right), \\[0.5cm]
+& P_{\downarrow}(t)=|\langle\downarrow \mid \Psi, t\rangle|^2=\sin ^2\left(\frac{\Delta t}{\hbar}\right) .
+\end{aligned}
+\end{equation*}
+\newpage
+ 
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 8cm]{ammonyProb}	
+\centering
+\vspace{0.3in}
+\caption{Se l'atomo di azoto si trova nello stato iniziale $|\uparrow \rangle$ al tempo $t=0$  allora la probabilit\`a $P_{\uparrow}(t)$ (rappresentata come linea continua) oscilla tra zero e uno. La probabilit\`a che $P_{\downarrow}(t)$ che l'atomo di azoto si trova nello stato $|\downarrow \rangle$ \`e rappresentata dalle linee tratteggiate. Ovviamente $P_{\uparrow}(t) + P_{\downarrow}(t) =1$.}
+\end{figure}
+
+\subsection{Ione di Elio $H_2^+$ come sistema a due livelli}
+
 
 
