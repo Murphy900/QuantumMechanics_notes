@@ -1479,7 +1479,284 @@ Lo stato ottenuto dipendente dal tempo oscilla tra $|\uparrow \rangle$ e $|\down
 \caption{Se l'atomo di azoto si trova nello stato iniziale $|\uparrow \rangle$ al tempo $t=0$  allora la probabilit\`a $P_{\uparrow}(t)$ (rappresentata come linea continua) oscilla tra zero e uno. La probabilit\`a che $P_{\downarrow}(t)$ che l'atomo di azoto si trova nello stato $|\downarrow \rangle$ \`e rappresentata dalle linee tratteggiate. Ovviamente $P_{\uparrow}(t) + P_{\downarrow}(t) =1$.}
 \end{figure}
 
-\subsection{Ione di Elio $H_2^+$ come sistema a due livelli}
+\subsection{Ione di idrogeno $H_2^+$ come sistema a due livelli}
 
+\begin{wrapfigure}{r}{0.4\textwidth} % 'r' for right, width of the figure
+    \centering
+    \includegraphics[width=0.38\textwidth]{ionHydrogen} % Replace with your image file
+\end{wrapfigure}
+Una molecola d'idrogeno ionizzato \`e data da due protoni ed un elettrone che si muove tra di essi. Quando i due protoni sono molto distanti tra loro l'elettrone rimane vincolato ad uno dei due formando un atomo d'idrogeno  al suo stato energetico  pi\`u basso. Dato che i protoni presenti nel sistema sono due, si hanno due possibili configurazioni simmetriche tra loro; ovvero se etichettiamo i due protoni come A e B, avremo che nello stato $|1 \rangle $  l'elettrone si legata al protone A e lascia ionizzato B, il viceversa identifica lo stato $|2 \rangle$.
 
+A prescindere in quale dei due stati il sistema si trovi, l'energia di legame tra elettrone e protone \`e di $13,6 \; eV$ e corrisponde all'energia necessaria a strappare l'elettrone dal protone attorno a cui orbita. Fino a quando i due protoni sono sufficientemente distanti il protone "isolato" non ha sufficiente energia per slegare dell'elettrone dall'atomo d'idrogeno. 
 
+Quanto discusso \`e trattato da un punto di vista classico che quindi ritiene impossibili la transizione di stato, ma da un punto di vista quantistico la probabili\`a di passaggio esiste anche se minima.  Entrambi gli stati $|1 \rangle$ e $|2 \rangle $ hanno energia $E_0$ e quindi la Hamiltoniana che descrive il sistema \`e 
+\begin{equation*}
+	\hat{H}_{0} = \left  [\begin{array}{cc}
+		E_0 & 0 \\ 0 & E_0
+	\end{array}\right]
+\end{equation*}
+La possibilit\`a di passaggio dell'elettrone da un protone all'altro introduce dei termini perturbativi -A all'interno della Hamiltoniana occupando gli spazi off-diagonali di $H_0$  e quindi la Hamiltoniana del sistema perturbato \`e data da
+\newpage
+\begin{equation*}
+	\hat{H} = \left [ \begin{array}{cc}
+		E_0 & -A \\ -A & E_0
+	\end{array}\right]
+\end{equation*}
+
+Se consideriamo i due stati possibili trascurando la possibilit\`a che l'elettrone possa passare da uno stato all'altro questi si trovano alla medesima energia $E_0$. Proprio per la possibilit\`a di transizione di stato dell'elettrone abbiamo che i livello energetico si pu\`o separare i due livelli possibili. Maggiore sar\`a la separazione tra i due livelli e maggiore \`e la probabili\`a di transizione. Rispettivamente i due livelli energetici del sistema sono $E_0 + A$ e $E_0 -A$ associati agli stati 
+\begin{align*}
+	|I \rangle = \frac{1 }{\sqrt{2}}(|1 \rangle - |2 \rangle) \\[0.4cm]
+	|II \rangle = \frac{1}{\sqrt{2}}(|1 \rangle + |2 \rangle)
+\end{align*}
+Il termine A all'interno della Hamiltoniana definisce l'ampiezza di probabilit\`a della transizione di stato dell'elettrone e questa dipende dalla distanza D tra i due protoni. Essa diminuisce esponenzialmente rispetto a D. 
+
+Di conseguenza la probabili\`a aumenta all'aumentare della vicinanza tra i due protoni e quindi anche la separazione dei due livelli.
+
+\begin{wrapfigure}{l}{0.4\textwidth} % 'r' for right, width of the figure
+    \centering
+    \includegraphics[width=0.38\textwidth]{energyhydro} % Replace with your image file
+\end{wrapfigure}
+Se il sistema di trova nello stato $|I \rangle$ l'energia $E_0 +A$ aumenter\`a al diminuire della distanza , gli effetti quantistici che descrivono l'interazione dell'elettrone con il protone "isolato" producono una forza di natura repulsiva che mantiene distanti i protoni. 
+Partendo dalla stato $|II \rangle$ l'energia totale diminuisce quando i protoni si avvicinano e si ha una forza attrattiva tra i due protoni. 
+In questo modo otteniamo una spiegazione delle forze di legame che tengono insieme lo ione $H_2^+$.
+
+Oltre alle forze di legame dovute ai fenomeni quantistici si ha anche la presenza di una forza elettrostatica tra i due protoni, che risulta trascurabile a distanze sufficientemente grandi. Quando i due protoni sono molto vicini la forza di Coulomb influisce significativamente sul sistema e quindi fornisce un contributo energetico che deve essere incluso in $E_0$. Come conseguenza si ha che le energie di $E_{I}$ e $E_{II}$ varieranno in funzione della distanza interprotonica come in figura.
+\newpage
+
+\begin{wrapfigure}{r}{0.4\textwidth} % 'r' for right, width of the figure
+    \centering
+    \includegraphics[width=0.38\textwidth]{energyhydro2} % Replace with your image file
+\end{wrapfigure}
+Lo stato $|II \rangle$  ha un punto di minimo dell'energia e rappresenta la configurazione di equilibrio per lo ione d'idrogeno, ovvero la condizione in cui l'energia del sistema \`e minima. L'energia in questo punto \`e minore di quella di un protone e di uno ione d'idrogeno separati e il sistema \`e perci\`o legato.
+
+Se consideriamo un sistema in cui sono presenti due oggetti differenti anzich\`e i protoni, avremo che i due stati $|1 \rangle$ e $|2 \rangle$ non hanno pi\`u la medesima energia inziale se trascuriamo la possibilit\`a di transizione dell'elettrone, ovvero $E_1 \neq E_2$. Come conseguenza si ha uno splitting quadratico rispetto al termine perturbativo A.
+
+\begin{remark}
+In meccanica quantistica se si hanno delle simmetrie lo stato fondamentale \`e unico. 
+\end{remark}
+
+\section{Composizione dei momenti angolari}
+
+\subsection{Prodotto tensoriale tra ket e spazi di Hilbert}
+
+In meccanica quantistica il prodotto tensoriale \`e un operatore matematico che viene usato per combinare insieme spazi di Hilbert di diversa dimensione ottenendo un'unico spazio per il sistema composto. Per esempio, possiamo combinare gli spazi di Hilbert che descrivono due particelle distinte per ottenere un'unico spazio che descrive il sistema bi-particellare nel suo complesso; oppure si possono combinare momento orbital e spin di una singola particella.
+
+Ipotizziamo di avere due particelle distinguibili prive di spin che etichettiamo come 1 e 2, i corrispettivi spazi vettoriali sono $\mathcal{E}_1$ e $\mathcal{E}_2$. Entrambi sono spazi delle funzioni d'onda in tre dimensione 
+che descrivono lo stato delle singole particelle
+\begin{align*}
+	&\mathcal{E}_1 = \{\phi(\bold{r}), \text{particella 1}\}\\[0.4cm]
+	&\mathcal{E}_2 = \{\chi(\bold{r}), \text{particella 2}\}
+\end{align*}
+Lo spazio delle funzione d'onda che descrivono il sistema combinato a due particelle \`e un altro spazio, ovvero lo spazio $\mathcal{E}$ delle funzione d'onda definite sullo spazio combinato a sei dimensioni delle configurazioni rispetto ($\bold{r}_1,\bold{r}_2)$:
+\begin{equation*}
+	\mathcal{E} = \{\psi(\bold{r}_1,\bold{r}_2) \}
+\end{equation*}
+
+Un caso speciale di una funzione d'onda che descrive un sistema a due particelle \`e quando questa \`e esprimibile come prodotto delle funzioni d'onda che descrivono i singoli oggetti
+\begin{equation*}
+	\psi(\bold{r}_1,\bold{r}_2) = \phi(\bold{r}_1)\chi(\bold{r}_2)
+\end{equation*}
+ In generale ogni funzione d'onda a due particelle pu\`o essere scritta come combinazione lineare del prodotto delle funzioni d'onda che descrivono le singole particelle. Se introduciamo la base $\{u_n(\bold{r})\}$ per lo spazio $\mathcal{E}_1$ e la base $\{v_m(\bold{r})\}$ per $\mathcal{E}_2$, allora una fuzione d'onda per un sistema a due particelle pu\`o essere espressa come 
+ \begin{equation*}
+ 	\psi(\bold{r}_1,\bold{r}_{2}) = \sum_{n,m}c_{nm}u_{n}(\bold{r}_1)v_{m}(\bold{r}_2)
+ \end{equation*}
+ dove i termii $c_{nm}$ sono i coefficienti di espansione. In sostanza il prodotto degli elementi della base degli spazi a singola particella formano una base per lo spazio a due particelle. 
+ 
+ Nella costruzione della nostra funzione d'onda dello spazio $\mathcal{E}$ possiamo desumere che $\mathcal{E}$ sia il \textit{prodotto tensoriale} degli spazi $\mathcal{E}_1$ e $\mathcal{E}_2$, e quindi \`e esprimibile come
+ \begin{equation*}
+ 	\mathcal{E} = \mathcal{E}_1 \otimes \mathcal{E}_2
+ \end{equation*}
+ In senso lato, possiamo dire che lo spazio tensoriale ottenuto \`e lo spazio il cui span \`e dato dal prodotto delle funzioni d'onda dei singoli spazi costituenti.
+ 
+ Oltre al prodotto di spazi vettoriali, possiamo definire lo spazio tra ket. Per esempio data $|\psi \rangle \in \mathcal{E}$, questa pu\`o essere scritta come 
+ \begin{equation*}
+ 	|\psi \rangle = |\phi \rangle \otimes |\chi \rangle
+ \end{equation*}
+ Nella notazione fisica alcune volte l'operatore $\otimes$ non \`e espresso esplicitamente e si scrive $|\psi \rangle = |\phi \rangle |\chi \rangle $.
+ 
+ Formalmente possiamo dire che dato lo spazio $\mathcal{E}_1$ la cui base \`e $\{|u_n \rangle\} $, e $\mathcal{E}_2$ con base $\{|v_{m} \rangle\}$. Il prodotto tensoriale $\mathcal{E}_1 \otimes \mathcal{E}_2$ ha una base data da $\{|u_n \rangle \otimes |v_m \rangle\} $. Se gli spazi $\mathcal{E}_1$ e $\mathcal{E}_2$ hanno una dimensione finita, allora anche $\mathcal{E}$ \`e finito dimensionale e ha dimensione
+ \begin{equation*}
+ 	\text{dim} \,\mathcal{E} = (\text{dim} \,\mathcal{E}_1)(\text{dim} \,\mathcal{E}_2) 
+ \end{equation*}
+Similmente se $\mathcal{E}_1$ e $\mathcal{E}_2$ hanno dimensione l'insieme $\mathcal{E}$ \`e infinito dimensionale.
+\subsection{Prodotto tensoriale di operatori}
+
+Supponiamo di avere un operatore $\hat{A}_1$ che agisce sullo spazio vettoriale $\mathcal{E}_1$ e un altro operatore $\hat{A}_2$ che agisce su $\mathcal{E}_2$ e sia $\mathcal{E} = \mathcal{E}_1 \otimes \mathcal{E}_2$.  Possiamo definire un operatore $\hat{A}_1 \otimes \hat{A}_2$, la cui azione su un elemento di $\mathcal{E}$ \`e data da
+\begin{equation}
+	(\hat{A}_1 \otimes \hat{A}_2)(|\alpha \rangle_{1} \otimes |\beta \rangle_2) = (\hat{A}_1|\alpha \rangle_{1}) \otimes (\hat{A}_2|\beta \rangle_2)
+\end{equation}
+dove $|\alpha \rangle_1  \in \mathcal{E}_1$ e $|\beta \rangle_2 \in \mathcal{E}_2$. Dato che un qualsiasi vettore di $\mathcal{E}$ pu\`o essere espresso come combinazione lineare del prodotto tensoriale di vettori di $\mathcal{E}_1$ e $\mathcal{E}_2$, possiamo usare il principio di sovrapposizione per estendere l'equazione (4.20)  definendo un azione di $\hat{A}_1 \otimes \hat{A}_2$ su un generico elemento di $\mathcal{E}$.
+
+Un caso speciale \`e dato quando uno dei due operatori coincide con l'identit\`a, per sempio posto $\hat{A}_2 = \mathbb{I}$ si ha che 
+\begin{equation*}
+	(\hat{A}_1 \otimes \mathbb{I})(|\alpha \rangle_1 \otimes |\beta \rangle_2) = (\hat{A}_1|\alpha \rangle_1 )\otimes |\beta \rangle_2
+\end{equation*}
+\newpage
+
+Operatori di questo tipo che agiscono sullo spazio tensoriale $\mathcal{E}$, commutano sempre tra di loro
+\begin{equation*}
+	[\hat{A}_1 \otimes 1,1 \otimes \mathcal{A}_2] = [\mathcal{A}_1,\mathcal{A}_2] =0
+\end{equation*}
+$\mathcal{A}_1 $ e $\mathcal{A}_1$ commutano perch\`e agiscono su spazi differenti.
+
+\subsection{Somma di momenti angolari arbitrari}
+
+Ipotizziamo si avere due spazi vettoriali $\mathcal{E}_1$ e $\mathcal{E}_2$ su ciascuno dei quali agisce un operatore di momento angolare $\bold{J}_1$ e $\bold{J}_2$ e che soddisfano le relazioni di commutazione
+\begin{equation*}
+	[J_i,J_j] = i \hbar \varepsilon_{ijk}J_k 
+\end{equation*}
+per entrambi gli spazi vettoriali \`e definita una base standard $\{|k_i,j_i,m_i \rangle\}$. Definiamo con $\mathcal{E}_{1_{k_1j_1}}$ e $\mathcal{E}_{2_{k_2j_2}}$ i sottospazi vettoriali irriducibili di rispettivamente $\mathcal{E}_1$ e $\mathcal{E}_2$, il cui span \`e definito dagli elementi della base standard per $k_i$ e $j_i$ fissati. Ciascuno di questi sottospazi ha dimensione $(2j_i+1)$ e sono ortogonali tra loro, di conseguenza possiamo esprimere gli spazi $\mathcal{E}_1$ e $\mathcal{E}_2$ come loro somma diretta 
+\begin{align*}
+	& \mathcal{E}_1 = \sum_{k_1j_1} \oplus \, \mathcal{E}_{1_{k_1j_1}} \\[0.4cm]
+	& \mathcal{E}_2 = \sum_{k_2j_2} \oplus \, \mathcal{E}_{2_{k_2j_2}}
+\end{align*} 
+
+Costruiamo lo spazio tensoriale $\mathcal{E} = \mathcal{E}_1 \otimes \,\mathcal{E}_2$ e definiamo il momento angolare totale come un operatore agente su $\mathcal{E}$ 
+\begin{equation*}
+	\bold{J} = \bold{J}_1 \otimes \mathbb{I} + \mathbb{I} \otimes \bold{J}_{2} = \bold{J}_1 + \bold{J}_2
+\end{equation*}
+dove l'espressione finale \`e in una notazione convenzionale. Notare che per quanto definito nella sezione precedente gli operatori $\bold{J}_1 $ e $\bold{J}_2$ commutano tra di loro
+\begin{equation*}
+	[\bold{J}_1,\bold{J}_2] = 0
+\end{equation*}
+dato che agiscono su spazi differenti. Analogamente ai singoli spazi costituenti che possono essere scritti come somma diretta di sottospazi ortogonali, anche lo spazio tensoriale $\mathcal{E}$ ottenuto pu\`o essere decomposto in somma diretta di sottospazi irriducibili, ciscuno caratterizzato da valori di $j$. Quindi abbiamo che per $\mathcal{E}$ esiste una base standard $|k,j,m \rangle$. Il problema della somma dei momenti angolari consiste nel trovare i valori di $j$ possibili per lo spazio $\mathcal{E}$ e la loro molteplicit\`a, insieme al determinare un metodo per costruire la base standard $|k,j,m \rangle $.
+
+\subsection{Riduzione del problema }
+
+Per risolvere il problema \`e sufficiente considerare il caso in cui $\mathcal{E}_1$ e $\mathcal{E}_2$ consistono in un singolo sottospazio irriducibile, ovvero fissiamo $k_i$ e $j_i$. Possiamo partire da questa assunzione in quanto lo spazio prodotto $\mathcal{E}$ \`e somma diretta del prodotto tensoriale dei sottospazi irriducibili $\mathcal{E}_{1_{k_1j_1}}$ e  $\mathcal{E}_{2_{k_2j_2}}$, 
+\newpage
+
+e prodotti tensoriali ottenuti possono essere analizzati uno alla volta. Dunque
+\begin{equation*}
+	\mathcal{E} = \mathcal{E}_1 \otimes \mathcal{E}_2 = \sum_{\substack{k_1,j_1 \\[0.2cm] k_2,j_2}} \oplus (\mathcal{E}_{1_{k_1j_1}} \otimes \mathcal{E}_{2_{k_2j_2}})
+\end{equation*}
+Dunque in quanto segue restringeremo $\mathcal{E}_1$ ad uno dei suo sottospazi $\mathcal{E}_{1_{k_1j_1}}$ e $\mathcal{E}_2$ ad uno dei sottospazi $\mathcal{E}_{2_{k_2j_2}}$, e quindi $\mathcal{E} = \mathcal{E}_1 \otimes \mathcal{E}_2$ si riduce ad uno solo degli elementi dei termini della sommatoria in (4.21).
+
+Lo spazio ristretto $\mathcal{\tilde{E}}_{1}$ e $\mathcal{\tilde{E}}_2$ avranno rispettivamente dimensione $(2j_1 +1)$ e $(2j_2+1)$, e con basi $\{|j_1m_1\rangle\}$ e $\{|j_2m_2 \rangle \}$. Gli indici $k_1$ e $k_2$ li possiamo tralasciare in quanto consideriamo un solo sottospazio irriducibile. Analogamente $j_1$ e $j_2$ sono fissati e caratterizzano i sottospazi $\mathcal{\tilde{E}}_1$ e $\mathcal{\tilde{E}}_2$. Lo spazio $\mathcal{\tilde{E}}$ ha dimensione 
+\begin{equation*}
+	\text{dim}\, \mathcal{\tilde{E}} = (2j_1+1)(2j_2+1)
+\end{equation*}
+In questo caso in cui ci siamo ristretti ai singoli sottospazi di $\mathcal{E}_1$ e $\mathcal{E}_2$ il problema della somma dei momenti angolari si riduce a determinare i valori che $j$ pu\`o assumere sullo spazio tensore $\mathcal{\tilde{E}} = \mathcal{\tilde{E}}_1 \otimes \mathcal{\tilde{E}}_2$ e con quale moltiplicit\`a rispetto ai parametri $j_1 $ e $j_2$, inoltre si vuole sempre determinare un metodo efficace per costruire la base di $\mathcal{\tilde{E}}$.
+
+\subsection{Base in $\mathcal{\tilde{E}}$}
+
+Gli elementi della base standard di $\mathcal{\tilde{E}}_1$, dati da $|j_1m_1 \rangle$ sono autovettori degli operatori $J^2_1$ e $J_{1z}$ con autovalori $j_1(j_1+1)\hbar^2$ e $m_1\hbar$ rispettivamente, analogamente per lo spazio $\mathcal{\tilde{E}}_2$ gli elementi della sua base standard $|j_2 m_2 \rangle $. Il prodotto tensoriale degli elementi delle basi formano una base dello spazio $\mathcal{\tilde{E}} = \mathcal{\tilde{E}}_1 \otimes \mathcal{\tilde{E}}_2$. Gli elementi della base $\mathcal{\tilde{E}}$ li indichiamo come 
+\begin{equation*}
+	|j_1j_2m_1m_2 \rangle = |j_1m_1 \rangle \otimes |j_2m_2\rangle 
+\end{equation*} 
+dove $m_1 = -j_1,\ldots,j_1$ e $m_2 = -j_2,\ldots,j_2$. La base $\{|j_1j_2m_1m_2 \rangle\}$ di $\mathcal{\tilde{E}}$ prende il nome di \textit{base del prodotto tensoriale}. La base standard rispetto a $\mathcal{\tilde{E}}$ indica con $\{ |jm \rangle \}$ prende il nome di \textit{base legata}. Siamo interessati nel costruire la matrice unitaria che collega glie elementi della base legata a quella del prodotto tensoriale.
+
+\subsection{Valori permessi di j e m}
+
+I ket della base standard di $\mathcal{\tilde{E}}$, $|jm\rangle$, sono autovettori dell'operatore $J^2 = (\bold{J}_1 + \bold{J}_2)^2$ e $J_z = J_{1z} + J_{2z}$ con autovalori associati $j(j+1)\hbar^2$ e $m\hbar$. Vogliamo determinare quali valori possono assumere $j$ e $m$.
+
+Per farlo determiniamo gli autostati di $J_z$. Questi corrispondono ai vettori della base di prodotto tensoriale con autovalori associati $(m_1 +m_2)\hbar$:
+\begin{equation*}
+	J_z|j_1j_2m_1m_2 \rangle = (J_{1z} + J_{2z})|j_1m_1 \rangle|j_2m_2 \rangle = (m_1 + m_2)\hbar |j_1j_2m_1m_2 \rangle  = m\hbar |j_1j_2m_1m_2 \rangle 
+\end{equation*}
+\newpage
+e quindi abbiamo che 
+\begin{equation*}
+	m = m_1 +m_2
+\end{equation*}
+Lo spettro di $J_z$ ha un range che va dal valore massimo di $m_1 +m_2$, che \`e $j_1 + j_2$, al suo valore di minimo dato da $-(j_1+j_2)$.  
+  
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 7.5cm]{tensor}	
+\centering
+\vspace{0.1in}
+\caption{Ogni punto in figura rappresenta i vettori della base di prodotto tensoriale $|j_1j_2m_1m_2 \rangle = |j_1m_1\rangle |j_2m_2\rangle $.  Le linee tratteggiate rappresentano la condizione al contorno $m = m_1 + m_2$.  }
+\end{figure}
+
+Gli autovettori di $J_z$ sono in generale degeneri. Se prendiamo $j_1 = 5/2$ e $j_2 = 1$, avremo che la dimensione di $\mathcal{\tilde{E}}_1$ \`e $(2j_1 +1) = 6$ e quella di $\mathcal{\tilde{E}}_2$ \`e $(2j_2 +1) = 3$. Di conseguenza essendo gli spazi finto dimensionali la dimensione dello spazio di prodotto tensoriale $\mathcal{\tilde{E}} = \mathcal{\tilde{E}}_1 \otimes \mathcal{\tilde{E}}_2$ \`e data da $6 \times 3 = 18$. \`E utile definire un grafico come in figura 4.10  rispetto al piano $m_1-m_2$ degli elementi della base di prodotto tensoriale, disegnando un punto per ogni valore di $m_1 $ e $m_2$ permesso. Le linee tratteggiate passate per i punti in figura definiscono il numero di ket della base di prodotto tensoriale con determinato valore $m$; in figura osserviamo che per ciascuna valore di $m$ la degenerazione degli stati varia da uno a tre, come riassunto nella seguente tabella.
+
+\begin{figure}[!ht]
+\includegraphics[width = 6.6cm]{degentable}	
+\centering
+\caption{La prima colonna \`e data dai valori possibili del numero quantio $m$ dell'operatore $J_z$; la seconda colonna $g(m)$ definisce la degenerazione rispetto ad $m$; le colonne 3 e 4 descrivono il numero di elementi per ciascun vettore $|jm\rangle $ della base standard  con i valori $j$ e $m$ dati. }
+\end{figure}
+\newpage
+
+Prendiamo in considerazione lo spazio di dimensione 2 corrispondente al numero quantico $5/2$. Questo spazio ha come span i vettori della base di prodotto tensoriale per cui $(m_1,m_2) = (5/2,0)$ e $(3/2,1)$. Di conseguenza il vettore $|\frac{7}{2} \frac{5}{2}\rangle$ della base standard appartiene a tale spazio. Consideriamo un ket generico $|x \rangle $ ortogonale a $|\frac{7}{2} \frac{5}{2}\rangle$. Sicuramente $|x \rangle$ \`e autovettore di $J_z$ con autovalore $5/2$ e quindi \`e anche autostato di $J^2$. Qual \`e il valore di j ? Certamente non possiamo avere $j < 5/2$, dato che verrebbe violata la condizione $m \leq j$.  Tantomeno $j > 5/2$ poich\`e se avessimo $j = 7/2$, per esempio, per lo stato $|x \rangle$, si otterrebbero due stati linearmente indipendenti entrambi con $m = 5/2$ e $j = 7/2$. Se applicchiamo l'operatore $J_+$ su entrambi gli stati abbiamo due stati linearmente indipendenti con $m = 7/2$ e $j = 7/2$. Il problema che come vediamo dalla tabella esiste un solo stato $m = 7/2$ e quindi l'unico caso \`e che $j = 5/2$ per lo stato $|x \rangle$ e quindi coincide al ket $|\frac{5}{2}\frac{5}{2} \rangle$ della base standard. Applicando l'operatore di abbassamento $J_{-}$  otteniamo tutti e 6 i vettori $|\frac{5}{2}m \rangle$, indicati nella quarta colonna della tabella. Applichiamo la medesima procedura per lo spazio di dimensione 3 corrispondente a $m = 3/2$ , e otteniamo quattro vettori $|\frac{3}{2}m \rangle$ della base standard.
+
+Lo spazio di prodotto tensoriale $\mathcal{\tilde{E}}$ \`e somma diretta dei tre spazi irriducibili dati da $j = \frac{3}{2},\frac{5}{2}$ e $\frac{7}{2}$ e ciascuno di questi $j$ ha molteplicit\`a uno. Tale risultato si riassume nella notazione
+\begin{equation*}
+	\frac{5}{2} \otimes 1 = \frac{3}{2} \oplus \frac{5}{2} \oplus \frac{7}{2}
+\end{equation*}
+che corrisponde ad una dimensione
+\begin{equation*}
+	18 = 6 \times 3 = 4 + 6 + 8
+\end{equation*}
+Utilizzando diagrammi di questo tipo diventa pi\`u semplice definire il caso generale in cui si combinando momenti angolari arbitrari $j_1$ e $j_2$. Il risultato \`e 
+\begin{equation*}
+	j_1 \otimes j_2 = |j_1 -j_2| \oplus |j_1-j_2| +1 \oplus \ldots \oplus j_1+j_2
+\end{equation*}
+di conseguenza i valori di $j$ in $j_1 \otimes j_2$ variano in un range a valori discreti con un minimo dato da $|j_1-j_2|$ ad un massimo di $j_1 +j_2$. Ciascun valore di $j$ \`e assunto una sola volta. Dato che la dimensione dei sottospazi si somma fino a coincidere con la dimensione dello spazio di prodotto tensoriale si ha l'identit\`a
+\begin{equation*}
+	\sum_{j = |j_1-j_2|}^{j_1+j_2}(2j+1) = (2j_1+1)(2j_2+1)
+\end{equation*}
+
+\subsection{Accenno sui Coefficienti di Clebsch-Gordan}
+
+Per lo spazio di prodotto tensoriale $\mathcal{E} = \mathcal{E}_1 \otimes \mathcal{E}_2$ abbiamo due basi, una \`e quella dello spazio di prodotto tensoriale $|j_1j_2m_1m_2 \rangle$ con $-j_1 \leq m_1 \leq j_1$ e $-j_2 \leq m_2 \leq j_2$,  e l'altra \`e la base standard $|jm \rangle$ con $|j_1-j_2| \leq j \leq j_1 +j_2$ e $-j \leq m \leq j$. Le due basi sono connesse tra loro da una matrice unitaria, le cui componenti sono il prodotto scalare dei vettori di una base con i vettori dell'altra. Si ha quindi 
+\begin{equation*}
+	|jm \rangle = \sum_{m_1 = -j_1}^{j_1}\sum_{m_2 = -j_2}^{j_2}|j_1j_2m_1m_2 \rangle \langle j_1 j_2m_1m_2 |jm\rangle
+\end{equation*}
+\newpage
+\begin{equation*}
+	|j_1j_2m_1m_2\rangle = \sum_{j = |j_1-j_2|}^{j_1+j_2}\sum_{m=-j}^{j}|jm \rangle \langle jm|j_1j_2m_1m_2 \rangle
+\end{equation*}
+I coefficienti dell'espansione $\langle j_1j_2m_1m_2|jm\rangle$ o $\langle jm|j_1j_2m_1m_2 \rangle$ sono chiamati \textit{coefficienti di Clebsch-Gordan}. Di solito il loro valore \`e tabulato.
+
+\subsection{Esempio: particelle di spin 1/2}
+
+Consideriamo un sistema in cui sono presenti due particelle con $j_1 = 1/2$ e $j_2 = 1/2 $ di conseguenza $m_1 = \pm 1/2$ e $m_2 = 1/2$. Definiamo $\mathcal{E}_1$ e $\mathcal{E}_2$ gli spazi vettoriale che descrivono lo stato delle singole particelle che hanno dimensione 2 e sono costituiti dai vettori $\{|+\rangle_1 ,|-\rangle_1\}$ e $\{|+\rangle_2 ,|-\rangle_2\}$. Lo spazio vettoriale che descrive il sistema nel suo complesso \`e dato da $\mathcal{E} = \mathcal{E}_1 \otimes \mathcal{E}_2$ e ha dimensione 4, la base del prodotto tensoriale \`e data dagli elementi $|j_1j_2m_1m_2 \rangle $ e che per comodit\` a i singoli elementi indichiamo come $\{|++\rangle,|+-\rangle,|- +\rangle, |--\rangle \}$. Per quanto discusso nelle precedenti sezioni i valori che pu\`o assumere j sono $j=0,1$ e $m = -1,0,1$ per gli elementi della base standard $\{|jm \rangle\}$. I valori possibili sono espressi nella seguente tabella   
+
+\begin{center}
+\vspace{0.5cm} 
+\begin{tabular}{c|cc}
+\hline
+$(m_1,m_2)$ & $|jm \rangle $ & $m = m_1 + m_2$ \\ \hline
+$|++\rangle $ & $|11\rangle$ & 1 \\ 
+$|+-\rangle, |-+\rangle$ & $|10\rangle,|00 \rangle$ & 0 \\ 
+$|-- \rangle$ & $|1-1\rangle$ & -1
+\end{tabular}
+\vspace{0.5cm}
+\end{center}
+Osserviamo che applicando l'operatore di abbassamento $J_-$ sugli elementi della matrice standard si ha che 
+\begin{equation*}
+	|11 \rangle \quad \to \quad |10 \rangle \quad \to \quad |1-1 \rangle 
+\end{equation*}
+deduciamo quindi che questi elementi della base sono legati tra loro. Dall'espressione
+\begin{equation*}
+	J_- = \hbar \sqrt{j(j+1)-m(m-1)}|j\,m-1\rangle
+\end{equation*}
+deduciamo che 
+\begin{equation*}
+	J_- |11 \rangle = \hbar \sqrt{2} |10 \rangle
+\end{equation*}
+e quindi possiamo esprimere 
+\begin{equation*}
+	|10 \rangle = \frac{1}{\hbar \sqrt{2}}(J_-|11\rangle) = \frac{1}{\hbar \sqrt{2}}(J_-^{(1)} + J_-^{(2)})|++\rangle 
+\end{equation*}
+gli operatori $J_-^{(1)}$ e $J_-^{(2)}$ agiscono sugli elementi della base del prodotto tensoriale nel seguente modo
+\begin{equation*}
+	J_-^{(k)} |+ \rangle = \hbar \sqrt{\frac{1}{2} \left(\frac{1}{2}+1 \right) - \frac{1}{2} \left( \frac{1}{2}-1 \right)}|- \rangle = \hbar|-\rangle
+\end{equation*}
+e quindi possiamo esprimere $|10 \rangle$ rispetto agli elementi della base del prodotto tensoriale come
+\newpage
+\begin{equation*}
+|10 \rangle = \frac{1}{\hbar \sqrt{2}}(\hbar|-+\rangle + \hbar |+-\rangle) = \frac{1}{\sqrt{2}}(|-+ \rangle + |+- \rangle)
+\end{equation*}
+Analogamente abbiamo che 
+\begin{equation*}
+	|11 \rangle = |++ \rangle \quad \text{e} \quad |1-1\rangle =|--\rangle
+\end{equation*}
+gli stati cos\`i determinati sono per $j=1$. Per $j=0$ abbiamo un unico stato dato da 
+\begin{equation*}
+	|00 \rangle = \frac{1}{\sqrt{2}}(|+- \rangle - |- +\rangle)
+\end{equation*}
+I tre stati per $j=1$ vengono definiti \textit{tripletto} mentre per $j=0$ lo stato viene definito $singoletto$.
+
+\section{Particelle identiche }
