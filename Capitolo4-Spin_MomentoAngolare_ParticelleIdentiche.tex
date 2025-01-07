@@ -1760,3 +1760,293 @@ gli stati cos\`i determinati sono per $j=1$. Per $j=0$ abbiamo un unico stato da
 I tre stati per $j=1$ vengono definiti \textit{tripletto} mentre per $j=0$ lo stato viene definito $singoletto$.
 
 \section{Particelle identiche }
+Due particelle si definiscono \textit{identiche} se le loro propriet\`a intrinseche (massa, spin,carica, momento magnetico, ecc...) sono gli stessi e quindi nessun esperimento permette di distringuerle. Certamente due particelle identiche posso avere diverse quantit\`a di moto, energia e momento angolare. Per esempio tutti i gli elettroni sono identici, come anche protoni, neutrini e atomi d'idrogeno.
+
+\subsection{Particelle identiche in meccanica classica }
+In meccanica classica possiamo etichettare due particelle e seguirne l'evoluzione dinamica. Ipotizziamo di avere due casi possibili 
+\begin{enumerate}
+	\item Caso 1: Risolviamo la dinamica e troviamo
+	\begin{align*}
+		& \bold{r}_1(t) = \bold{r}(t) \quad \text{con} \quad \bold{r}(t_0) = \bold{r}_0 \\[0.3cm]
+		& \bold{r}_2(t) = \bold{r}'(t) \quad \text{con} \quad \bold{r}'(t_0) = \bold{r}'_0
+	\end{align*}
+	\item Caso 2: Dato che le particelle sono identiche anche le rispettive Hamiltoniana coincidono
+	\begin{equation*}
+		H(\bold{r}_1,\bold{p}_1,\bold{r}_2,\bold{p}_2) = H(\bold{r}_2,\bold{p}_2,\bold{r}_1,\bold{p}_1)
+	\end{equation*}
+	in questo caso quando si risolve per 
+	\begin{align*}
+		& \bold{r}_1(t) = \bold{r}(t) \quad \text{con} \quad \bold{r}(t_0) = \bold{r}_0 \\[0.3cm]
+		& \bold{r}_2(t) = \bold{r}'(t) \quad \text{con} \quad \bold{r}'(t_0) = \bold{r}'_0
+	\end{align*}
+\end{enumerate}
+Le due descrizioni ottenute sono equivalenti tra loro. Di conseguenza i risultati ottenuti per la descrizione del sistema sono indipendenti dal modo in cui indichiamo la particella, \`e la possibilit\`a di determinare lo stato dinamico della particella che ci permette di identificarle come se fossero distinte tra loro.
+
+\subsection{Particelle identiche in meccanica quantistica}
+In meccanica quantistica non \`e possibile determinare le due particelle in modo distinto, dato che la misurazione perturba il sistema. Ovvero consideriamo il seguente esempio:
+
+ 
+ Ipotizziamo di avere due particelle di spin $1/2$ rispettivamente ciascuna appartiene ad uno spazio vettoriale $\mathcal{E}_1$ e $\mathcal{E}_2$ di dimensione 2 i cui elementi sono $\{|+\rangle_{(1)},|-\rangle_{(2)}\}$ e $\{|+\rangle_{(2)},|-\rangle_{(2)}\}$. Il sistema complessivo \`e descritto dallo spazio di prodotto tensoriale tra i sistemi delle singole particelle $\mathcal{E} = \mathcal{E}_1 \otimes \mathcal{E}_2$, che ha dimensione 4 e la sua base di prodotto tensoriale \`e formata dal prodotto tensoriale degli elementi delle basi dei sottospazi. Se vogliamo descrivere lo stato di spin del sistema a due particelle, essendo le particelle identiche, abbiamo due stati possibili
+ \begin{equation*}
+ 	|+\rangle_{(1)} \otimes |- \rangle_{(2)} \quad \text{o} \quad |-\rangle_{(1)} \otimes |+\rangle_{(2)}
+ \end{equation*}
+ che descrivono la medesima configurazione e quindi si ha un indeterminazione sullo stato del sistema. Anche se consideriamo i due stati equivalenti l'ambiguit\`a non viene risolta. Se i due stati  fossero equivalenti tra loro dovremmo considerare che anche gli stati 
+ \begin{equation*}
+ 	|\psi \rangle = \alpha |+\rangle \otimes |- \rangle + \beta |-\rangle \otimes |+\rangle
+ \end{equation*}
+con $|\alpha|^2 + |\beta|^2 =1 $ sono equivalenti. Questa ambiguit\`a presente nella descrizione dei sistemi a particelle identiche prende il nome di $\textit{degenerazione di scambio}$.
+
+Per esempio se volessimo calcolare la prorbabili\`a che che la particelle si trovino nello stato 
+\begin{align*}
+	|\psi_0 \rangle & = \frac{1}{\sqrt{2}}(|+ \rangle_{(1)} + |-\rangle_{(1)}) \otimes \frac{1}{\sqrt{2}}(|+\rangle_{(2)}+|-\rangle_{(2)}) = \\[0.4cm]
+	&=\frac{1}{2}\left(|+\rangle_{(1)} \otimes|+\rangle_{(2)}+|+\rangle_{(1)} \otimes|-\rangle_{(2)}+|-\rangle_{(1)} \otimes|+\rangle_{(2)}+|-\rangle_{(1)} \otimes|-\rangle_{(2)}\right)  
+\end{align*}
+e la probabili\`a \`e 
+\begin{equation*}
+	\left|\left\langle\psi_0 \mid \psi\right\rangle\right|^2=\left|\frac{1}{2}(\alpha+\beta)\right|^2
+\end{equation*}
+di conseguenza si ha un enorme ambiguit\`a dato che i valori scelti per $\alpha $ e $\beta $ determinano la probabili\`a.
+
+\subsection{Postulato d'indistinguibilit\`a }
+
+In un sistema con N particelle identiche  gli stati che fisicamente sono realizzabili non sono arbitrari, ma si suddividono in completamente simmetrici rispetto allo scambio e in questo caso le particelle vengono definite $bosoni$ oppure sono completamente antisimmetrici rispetto allo scambio  e le particelle vengono definite $fermioni$.
+\begin{align*}
+	& \frac{|\psi \rangle \otimes |\phi \rangle + |\psi \rangle \otimes |\psi \rangle}{\sqrt{2}} \quad \quad \text{Bosoni}\\[0.5cm]
+	& \frac{|\psi \rangle \otimes |\phi \rangle - |\phi \rangle \otimes |\psi \rangle }{\sqrt{2}}\quad \quad \text{Fermioni}
+\end{align*}
+\begin{enumerate}
+	\item Il postulato descrive il comportamento statistico dei bosoni e dei fermioni. 
+	\item Il teorema della statistica dello spin della teoria quantistica dei campi dimostra che i bosoni sono particelle con spin intero(0,1,2,...) mentre i fermioni sono particelle con spin semi-intero (1/2,3/2,...).
+	\item il postulato d'indistinguibilit\`a   risolve il problema della degenerazione di scambio.
+\end{enumerate}
+
+\subsection{Atomo di Elio}
+
+La Hamiltoniana che descrive il modello dell'atomo di Elio \`e 
+\begin{equation*}
+	\hat{H} = \hat{H}_1 + \hat{H}_2 + \frac{e^2}{4 \pi \varepsilon_0|\bold{r}_1 - \bold{r}_2|}
+\end{equation*} 
+dove 
+\begin{equation*}
+	\hat{H}_i = \frac{\hat{p}_i^2}{2 \mu} - \frac{2e^2}{4\pi\varepsilon_0 r_i}
+\end{equation*}
+La Hamiltoniana \`e simmetrica rispetto alle permutazione di indice 1 e 2 che identificano i due elettroni. In questo caso dato che i due elettroni sono particelle identiche non ha rilevanza su quale delle due si applicano le etichette.
+
+La condizione di simmetria \`e data da
+\begin{equation*}
+	\hat{H}(1,2) = \hat{H}(2,1)
+\end{equation*}
+Supponiamo che 
+\begin{equation*}
+	\hat{H}(1,2) \psi (1,2) =E_{12} \psi(1,2)
+\end{equation*}
+scambiando le etichette si ha 
+\begin{equation*}
+	\hat{H}(2,1)\psi(2,1) = E_{21}\psi(2,1)
+\end{equation*}
+Utilizzando la condizione di simmetria possiamo scrivere che 
+\begin{equation*}
+	\hat{H}(1,2)\psi(2,1) = E_{21} \psi(2,1)
+\end{equation*}
+e quindi possiamo concludere che $\psi(1,2)$ e $\psi(2,1)$ sono autofunzioni che hanno il medesimo autovalore 
+$E = E_{12} = E_{21}$ come anche una loro qualsiasi combinazione lineare. In particolare la funzione d'onda normalizzata sia simmetrica che antisimmetrica 
+\begin{equation*}
+	|\psi \rangle_{\pm} \equiv \frac{1}{\sqrt{2}}[\psi(1,2) \pm \psi(2,1)] 
+\end{equation*}
+sono autofunzioni con autovalore.
+
+Se introduciamo un operatore di scambio delle particelle $P_{12}$, che agisce nel seguente modo
+\begin{equation*}
+	P_{12}\psi(1,2) = \psi(1,2)
+\end{equation*}
+e quindi le combinazioni simmetriche e antisimmetriche sono autofunzione di $P_{12}$ con autovalori $\pm 1$
+\begin{equation*}
+	P_{12}|\psi \rangle_{\pm} = \pm |\psi \rangle_{\pm}
+\end{equation*}
+Dato che $|\psi \rangle_{\pm}$ sono contemporaneamente sia autofunzioni di $\hat{H}$ che di $P_{12}$ si ha che $[H,P_{12}] = 0$ e quindi la simmetria delle funzioni d'onda \`e una costante del moto.
+
+\subsubsection{Funzione d'onda per un sistema a due elettroni}
+
+Per un sistema a due elettroni (ovvero particelle con spin $1/2$) abbiamo visto che gli stati rispetto alla base standard dello spazio tensoriale sono dati dalla tripletta
+\begin{align*}
+	& |11 \rangle = |++\rangle \\[0.3cm]
+	& |10 \rangle = \frac{1}{\sqrt{2}}(|+- \rangle + |-+\rangle) \\[0.3cm]
+	& |1-1\rangle = |--\rangle 
+\end{align*}
+e il singoletto
+\begin{equation*}
+	|00 \rangle = \frac{1}{\sqrt{2}}(|+- \rangle -|- + \rangle )
+\end{equation*}
+Gli stati appartenenti alla tripletta sono $simmetrici$ rispetto all'operatore di scambio $P_{12}$, mentre il singoletto \`e $simmetrico$. Siccome dobbiamo bisogno che per delle particelle fermioniche le funzioni d'onda che ne rappresentano gli stati devono essere antisimmetriche rispetto allo scambio, di conseguenza la funzione d'onda che descrive lo stato del sistema a due elettroni deve avere una forma generale 
+\begin{equation*}
+	\Psi(1,2) = \psi(\bold{r}_1,\bold{r}_2) \cdot \chi_s
+\end{equation*}
+dove $\chi_s$ \`e un placheholder che identifica uno degli elementi della base standard. In generale possiamo avere le seguenti combinazioni affinch\`e lo stato  $\Psi$ sia antisimmetrico.
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{c|c|c|c}
+         & simmetria di $\chi_s$ & simmetria di $\psi$& simmetria di $\Psi$ \\ \hline
+        $s=0$ (singoletto) & a & s & a \\ 
+        $s=1$ (tripletta) & s & a & a \\ \hline
+    \end{tabular}
+\end{table}
+
+La funzione d'onda $\psi$ che descrive la parte spaziale dello stato \`e $antisimmetria$ se i due elettroni si trovano in uno degli stati della tripletta dello spin, ma \`e $simmetrica$ se invece il loro stato coincide con il singoletto.
+
+\subsubsection{Stati dell'atomo di Elio}
+
+Ipotizziamo di trascurare per il momento lo spin degli elettroni  e la loro interazione repulsiva Coulombiana.  In sostanza consideriamo un sistema in cui i due elettroni si muovono indipendente all'interndo del campo elettrico del nucleo. La Hamiltonia del sistema si riduce a 
+\begin{equation*}
+	\hat{H} = \hat{H}_1 + \hat{H}_2 \quad \text{dove} \quad \hat{H}_i = \frac{\hat{p}_i^2}{2 \mu}-\frac{2e^2}{4 \pi \varepsilon_0 r_i}
+\end{equation*}  
+\newpage
+
+Sappiamo gi\`a che le autofunzioni e gli autovalori di $\hat{H}_1$ e $\hat{H}_2$ sono dati da
+\begin{align*}
+	\hat{H}_1 \varphi_{n_1l_1m_1} = E_{n_1}\varphi_{n_1l_1m_1}(\bold{r}_1) \\[0.4cm]
+	\hat{H}_2 \varphi_{n_2l_2m_2} = E_{n_2}\varphi_{n_2l_2m_2}(\bold{r}_2)
+\end{align*}
+di conseguenza \`e facile vedere che le autofunzioni di $\hat{H}$ non sono altro che il prodotto delle autofunzioni delle Hamiltonia che descrivono il sistema a singolo elettrone
+\begin{align*}
+	\hat{H}\varphi_{n_1l_1m_1}(\bold{r}_1)\varphi_{n_2l_2m_2}(\bold{r}_2) & \equiv (\hat{H}_1 + \hat{H}_1)\varphi_{n_1l_1m_1}(\bold{r}_1)\varphi_{n_2l_2m_2}(\bold{r}_2) \\[0.4cm]
+	&=(E_{n_1} + E_{n_2}) \varphi_{n_1l_1m_1}(\bold{r}_1)\varphi_{n_2l_2m_2}(\bold{r}_2) \equiv E_n \varphi_{n_1l_1m_1}(\bold{r}_1)\varphi_{n_2l_2m_2}(\bold{r}_2)
+\end{align*}
+Dunque gli autovalore dell'energia sono 
+\begin{equation*}
+	E_n = E_{n_1} + E_{n_2} \quad \text{dove} \quad E_{n_i} = - \frac{\mu}{2\hbar^2}\left(\frac{Ze^2}{4 \pi \varepsilon_0}\right)^2 \frac{1}{n_i^2}
+\end{equation*}
+
+\subsubsection{Stato fondamentale}
+In questo modello basilare l'energia di stato fondamentale \` e data da 
+\begin{equation*}
+	E_{n=1} = E_{n_1 =1} + E_{n_2 =1} = 2 E_{n_1=1}
+\end{equation*}
+Posto $Z =2$ nella formula di Bohr dell'energia abbiamo che lo stato fondamentale del sistema complessivo \`e di 
+\begin{equation*}
+	E_1 = 8 \times (-13.6 \,eV) = - 108.8 \, eV
+\end{equation*}
+decisamente maggiore rispetto al valore che si trova sperimentalmente di $-78.957 \, eV$.
+
+La funzione d'onda che descrive la parte spaziale dello stato fondamentale \`e data da $n_1 =n_2 =1$ e $l_1 =l_2 = m_1 = m_2 =0$, ovvero
+\begin{equation*}
+	\varphi_{100}(\bold{r}_1)\varphi_{100}(\bold{r}_2)
+\end{equation*}
+Se ora consideriamo lo spin all'interno del nostro modello, la funzione d'onda che descrive il sistema deve contenere anche una parte che descrive lo spin, inoltre deve avere il corretto tipo di simmetria in base alla tipologia delle particelle identiche, che nel nostro caso sono fermioni. Dato che la funzione d'onda ottenuta \`e $simmetrica$ possiamo combinarla solo con una funzione d'onda $antisimmetrica$ e quindi con il singoletto della funzione di spin.  Quindi la funzione d'onda che descrive il sistema a 2-elettroni \`e
+\begin{equation*}
+	|\Psi \rangle_{0} = \varphi_{100}(\bold{r}_1)\varphi_{100}(\bold{r}_2)|00\rangle = \varphi_{100}(\bold{r}_1)\varphi_{100}(\bold{r}_2) \frac{1}{\sqrt{2}}(|+- \rangle - |-+ \rangle)
+\end{equation*}
+Dato che $l_1 = l_2 = 0$ il numero quantico associato al momento angolare orbitale nella configurazione di stato fondamentale \`e  $l = l_1 + l_2 = 0$. Come conseguenza nello stato fondamentale non si ha n\`e momento angolare orbitale e n\`e spin.
+
+\subsubsection{Primo stato eccitato}
+
+Il primo stato eccitato corrisponde  ad uno dei due elettroni che si sposta dallo stato 2s a 2p, mentre uno rimane nello stato 1s. La configurazione elettronica cos\`i ottenuta \`e denotata come (1s)(2s) e (1s)(2p). In questo caso l'energia \`e degenere per via del fatto che $E_i \sim 1/n_i^2$ ed inoltre \`e possibile costruire delle funzione d'onda che sono sia $simmetriche$ che $antisimmetriche $ date da 
+\begin{align*}
+\Psi^{singoletto}(1,2) = \frac{1}{\sqrt{2}}(\varphi_{100}(\bold{r}_1)\varphi_{2lm_l}(\bold{r}_2)	 + \varphi_{100}(\bold{r}_2)\varphi_{2lm_l}(\bold{r}_1))|00\rangle	\\[0.4cm]
+\Psi^{tripletta}(1,2) = \frac{1}{\sqrt{2}}(\varphi_{100}(\bold{r}_1)\varphi_{2lm_l}(\bold{r}_2)	 - \varphi_{100}(\bold{r}_2)\varphi_{2lm_l}(\bold{r}_1))\chi_{1,m_s}
+\end{align*}
+
+\subsection{Principio di esclusione di Pauli}
+
+I risultati che abbiamo ottenuto dalla trattazione dell'atomo di elio, conducono a un risultato pi\`u generale del principio d'indeterminabilit\`a (o del teorema della statistica di spin) dato dal \textit{principio di esclusione di Pauli} che afferma 
+\begin{center}
+	\text{Due fermioni non posso possedere lo stesso stato quantistico}
+\end{center}
+Per esempio:
+\begin{enumerate}
+	\item Nello stato fondamentale abbiamo visto che entrambi gli elettroni hanno $n=1$ e $l=m_l =0$ e si trovano nello stato 1s, entrambi appartengono ad uno stato di spin dato dal singoletto, il che vuol dire che se uno elettrone ha spin $\alpha$ l'altro deve avere spin $\beta$. I due elettroni non possono avere gli stessi numeri quantistici; se entrambi avessero lo stesso stato di spin, lo stato di spin del sistema a 2-elettroni dovrebbe appartenere al trippletto degli stati e non soddisferebbe il princio d'indeterminabilit\`a;
+	\item In ogni stato eccitato, entrambi gli elettroni possono avere lo stesso spin $\alpha$, corrispondente allo stato delle triplette, ma la funzione d'onda che descrive la parte spaziale \`e obbligatoriamente $antisimmetrica$, quindi i numeri quantici $n,l$ e $m_l$ devono essere differenti tra i due elettroni altrimenti la funzione d'onda spaziale sarebbe nulla.
+\end{enumerate}
+Per bosoni non esistono restrizioni e un numero qualsiasi di essi pu\`o occupare lo stesso stato quantico.
+
+\subsection{Esempio: Problema dello scattering}
+
+Consideriamo un sistema in cui si hanno delle collisioni elastiche rispetto al riferimento del centro di massa. A differenza del caso dell'atomo di elio nella discussione del sistema dovremo considerare  l'evoluzione del sistema nel tempo partendo da uno stato $|\psi_i \rangle$ a quando effettuiamo la misura in un tempo $t$. 
+
+Nello stato iniziale come in figura il sistema \`e data da due particelle identiche con quantit\`a di moto eguali e contrarie. Scegliamo l'asse Ox  come direzione dei momenti  e li identifichiamo con un modulo $p$. Rispettivamente le due particelle hanno momenti $|p\bold{e}_x \rangle$ e $|-p \bold{e}_x \rangle$.
+\newpage
+
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 11cm]{collision}	
+\centering
+\end{figure}
+
+Dato che le particelle sono identiche il sistema pu\`o trovarsi in due stati possibili $|p \bold{e}_x \rangle \otimes |-p \bold{e}_x \rangle$ oppure $|-p\bold{e}_x \rangle \otimes |p\bold{e}_x \rangle $ e quindi lo stato iniziale che descrive il sistema ha bisogno di essere simmetrizzato o antisimmetrizzato, ovvero
+\begin{equation*}
+	|\psi_i \rangle = \frac{1}{\sqrt{2}}(|p \bold{e}_x \rangle \otimes |-p \bold{e}_x \rangle + \varepsilon |-p \bold{e}_x \rangle \otimes |p \bold{e}_x \rangle)
+\end{equation*}
+dove il termine 
+\begin{equation*}
+	\varepsilon = \left \{ \begin{array}{l}
+	1 \quad \text{bosoni} \\[0.2cm]
+	-1 \quad \text{fermioni} \\[0.2cm]
+	0 \quad \text{particelle diverse}
+	\end{array}\right.
+\end{equation*}
+Il sistema \`e descritto da una Hamiltonia per un sistema formato da due particelle libere 
+\begin{equation*}
+	\hat{H} = \frac{\bold{p}_1^2}{2m} + \frac{\bold{p}_2^2}{2m} + \frac{q^2}{|\bold{r}_1-\bold{r}_2|}
+\end{equation*}
+invariante rispetto all'operatore di scambio $P_{12}$. Dato l'operatore di evoluzione temporale $U(t) = e^{i/\hbar \hat{H}t}$, abbiamo che lo stato del sistema al tempo $t$ \`e dato da
+\begin{equation*}
+	|\psi(t) \rangle = U(t)|\psi_i \rangle
+\end{equation*}
+Dato che la Hamiltoniana \`e simmetrica abbiamo che l'operatore di evoluzione commuta con l'operatore di scambio $P_{12}$
+\begin{equation*}
+	[U,P_{12}]=0
+\end{equation*}
+Calcoliamo ora l'ampiezza di probabili\`a che le particelle dopo la collisione siano scatterate lungo l'asse On con versi opposti rispetto al versore $\bold{n}$. Denotiamo lo stato finale del sistema come
+\begin{equation*}
+	|\psi_{f} \rangle = \frac{1}{\sqrt{2}}(|p \bold{n} \rangle \otimes |-p \bold{n} \rangle + \varepsilon |-p \bold{n} \rangle \otimes |p \bold{n} \rangle)
+\end{equation*}
+L'ampiezza di probabilit\`a cercata \`e dunque data da 
+\begin{align*}
+	& \langle \psi_{f} \mid U(t) \mid \psi_{i} \rangle = \\[0.4cm]
+	& \frac{1}{\sqrt{2}}(\langle p\bold{n} ,-p \bold{n}\mid U \mid -p \bold{e}_x , p\bold{e}_x\rangle + \varepsilon^2 \langle -p\bold{n},p\bold{n} \mid U \mid-p\bold{e}_x, p\bold{e}_x\rangle + \varepsilon\langle -p\bold{n},p\bold{n} \mid U \mid p\bold{e}_x, -p\bold{e}_x\rangle +   \ldots 
+\end{align*}
+\begin{align}
+	+ \varepsilon \langle -p\bold{n},p\bold{n} \mid U \mid p\bold{e}_x, -p\bold{e}_x\rangle) = \underbrace{\langle p\bold{n},-p\bold{n} \mid U \mid p\bold{e}_x, -p\bold{e}_x\rangle}_{f(\theta)} + \varepsilon \underbrace{\langle -p\bold{n},p\bold{n} \mid U \mid p\bold{e}_x, -p\bold{e}_x\rangle}_{f(\pi-\theta  )}
+\end{align}
+
+\begin{figure}[!ht]
+\vspace{0.1in}
+\includegraphics[width = 11cm]{rilevator}	
+\centering
+\vspace{0.4in}
+\end{figure}
+Il primo termine dell'espressione (4.21) rappresenta la particella che finisce nel rilevatore in alto, mentre il secondo termine definisce la particella nel secondo rilevatore in basso,inoltre prende il nome di \textit{termine di scambio}.
+
+La probabilit\`a \`e data da 
+\begin{equation*}
+	P = |\langle \psi_{f}\mid U \mid \psi_i \rangle|^2 = |f(\theta) + \varepsilon f(\pi - \theta)|^2
+\end{equation*}
+che distingue sperimentalmente gli scattering tra fermioni o bosoni. Per esempio se prendiamo $\theta = \pi /2$ si ha che 
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|c|c}
+
+Particella & $\varepsilon$ & Probabilit\`a \\ \hline
+Bosoni            & 1            & $4|f(\pi/2)|^2$            \\ 
+Fermioni            & -1            & 0           \\ 
+Diverse          & 0            & $2|f(\pi/2)|^2$            \\ 
+\end{tabular}
+\end{table}
+
+Nel caso dei fermioni non \`e presente scattering (questo \`e un risultato approssimato perch\`e la realt\`a \`e molto pi\`u complicata).
+
+\section{Esercizi ed Esempi}
+
+\subsection{Esercizio 1}
+Date due particelle legate da un potenziale d'interazione 
+\begin{equation*}
+	V(x_1,x_2) = \frac{1}{2}m \omega^2(5x_1^2+5x_2^2 +8x_1x_2)
+\end{equation*}
+Determinare 
+\begin{enumerate}
+	\item Livelli di energia e degenerazione
+	\item Valore medio di $x_1^2-x_2^2$ e $(x_1-x_2)^4$ per lo stato fondamentale 
+\newpage
+
+\begin{proof}
+	
+\end{proof}
