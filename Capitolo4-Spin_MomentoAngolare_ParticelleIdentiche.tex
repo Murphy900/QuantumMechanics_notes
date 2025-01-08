@@ -2048,3 +2048,190 @@ Determinare
 \end{enumerate}
 \newpage
 
+\begin{proof}
+	1) Il potenziale dato dal problema coincide con quello di un oscillatore armonico accoppiato, dobbiamo riscriverlo come una Hamiltoniana separabile, per farlo diagonalizziamo la matrice associata
+\begin{equation*}
+	V \simeq  [x_1,x_2] \underbrace{\left[\begin{array}{cc}
+		5 & 4 \\ 4 & 5
+	\end{array}\right]}_{=U}\left [\begin{array}{l}
+		x_1 \\ x_2
+	\end{array}\right]
+\end{equation*}
+Calcoliamo il polinomio caratteristico $P(\lambda) = \text{det}(U - \lambda I) = 0$ che ha come soluzione $\lambda_1 = 1$ e $\lambda_2 = 9$ e i cui autovalori associati sono
+\begin{equation*}
+	\bold{v}_1 = \frac{1}{\sqrt{2}}\left[\begin{array}{l}
+		1 \\ -1
+	\end{array}\right] \quad 	\bold{v}_2 =\frac{1}{\sqrt{2}} \left[\begin{array}{l}
+		1 \\ 1
+	\end{array}\right]
+\end{equation*}
+di conseguenza possiamo riscrivere il potenziale come
+\begin{equation*}
+	V = \underbrace{\bold{x}R^T}_{\bold{x}'} \left[\begin{array}{cc}
+		1 & 0 \\ 0 & 9 
+	\end{array}\right]\underbrace{R \bold{x}}_{\bold{x}'}
+\end{equation*} 
+dove 
+\begin{equation*}
+	R = \left[\begin{array}{cc}
+		\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} 
+	\end{array}\right] \quad R^T = \left[\begin{array}{cc}
+		\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} 
+	\end{array}\right] 
+\end{equation*}
+quindi
+\begin{equation*}
+	\left \{ \begin{array}{l}
+		x_1' = \frac{1}{\sqrt{2}}(x_1 + x_2)\\[0.3cm]
+		x_2' = \frac{1}{\sqrt{2}}(x_1-x_2)
+	\end{array}\right.
+\end{equation*}
+Il potenziale rispetto alla nuova base \`e dato da 
+\begin{equation*}
+	V' = \frac{1}{2}m\omega^2[x_1'^2+9x_2'^2]
+\end{equation*}
+Per i singoli sottoinsiemi si ha $\omega_1 = \omega$ e $\omega_2 = 3\omega$.
+
+Separando la Hamiltoniana per sottoinsiemi abbiamo che i livelli di energia sono:
+\begin{equation*}
+	E_{n_1n_2} = E_{n_1} + E_{n_2}
+\end{equation*}
+ovvero sono somma delle energie dei singoli sistemi, inoltre gli autovalori sono dati da
+\begin{equation*}
+	|n_1,n_2 \rangle = \varphi_{n_1}(x_1')\varphi_{n_2}(x_2') = \varphi_{n_1n_2}(x_1',x_2')
+\end{equation*}
+Gli autovalori associati ai singoli sistemi sono
+\begin{equation*}
+	E_{n_1} = \hbar \omega_1 \left(n_1 + \frac{1}{2}\right) = \hbar \omega \left (n_1 + \frac{1}{2}\omega \right) \quad E_{n_2}= \hbar \omega_2\left (n_2 + \frac{1}{2}\omega \right) = \hbar \omega \left (3n_2 + \frac{3}{2}\omega \right)
+\end{equation*}
+di conseguenza l'energia totale \`e 
+\begin{equation*}
+	E_{n_1n_2} = \hbar \omega(n_1 + 3n_2 +2)
+\end{equation*}
+Il livello fondamentale di energia \`e dato da $|00\rangle$ con $E_{00} = 2 \hbar \omega$, il primo livello di energia degenere che incontriamo \`e dato da $|01 \rangle $ e $|30 \rangle$ che hanno come autovalore comune $E = 5 \hbar \omega$.
+\newline
+
+2) Riscriviamo il valore medio $\langle x_1^2-x_2^2 \rangle$ rispetto al cambio di base 
+\begin{equation*}
+	\left \{ \begin{array}{l}
+		x_1 = \frac{1}{\sqrt{2}}(\tilde{x}_1 + \tilde{x}_2) \\[0.3cm]
+		x_2 = \frac{1}{\sqrt{2}}(\tilde{x}_1 - \tilde{x}_2)
+	\end{array}\right.
+\end{equation*}
+facendo alcuni calcoli algebrici otteniamo che 
+\begin{equation*}
+	x_1^2-x_2^2 = 2 \tilde{x}_1\tilde{x}_2
+\end{equation*}
+e quindi il valore medio rispetto alla base di partenza possiamo riscriverlo nel seguente modo
+\begin{equation*}
+	\langle x_1^2-x_2^2 \rangle = 2 \langle \tilde{x}_1\tilde{x}_2 \rangle = 2 \langle 00 \mid \tilde{x}_1 \tilde{x}_2 \mid 00 \rangle = 2\langle 0 \mid \tilde{x}_1 \mid 0 \rangle \langle 0 \mid \tilde{x}_2 \mid 0 \rangle  = 0
+\end{equation*}
+per dispari\`a dei singoli operatori. Analogamente per 
+\begin{equation*}
+	\langle (x_1-x_2)^4 \rangle = \langle 4 \tilde{x}_2^4 \rangle = 4 \langle 00 \mid \tilde{x}_2^4 \mid 00 \rangle  = 4 \langle 0 \mid \tilde{x}_2^4 \mid 0 \rangle = \;? 
+\end{equation*}
+Riscriviamo l'operatore $\tilde{x}_2$ rispetto agli operatori d'innalzamento e abbassamento
+\begin{equation*}
+	\tilde{x}_2^4 = \left ( \frac{\hbar}{2m \omega_2}\right)^2 (a_2 +a_2^\dag)^4
+\end{equation*}
+dato che $a$ e $a^\dag$ non sono Hermitiani la potenza quartica della loro somma contiene 16 termini, buona parte dei quali danno contributo nullo, brevemente si ha che 
+\begin{equation*}
+	\frac{\hbar^2}{m^2 \omega^2}\langle 0 \mid \ldots | 0 \rangle = \frac{3\hbar^2}{m^2\omega^2}
+\end{equation*}
+
+Se al potenziale aggiungiamo un termine lineare 
+\begin{equation*}
+	V = \frac{1}{2}m \omega^2(5x_1^2+5x_2^2+8x_1x_2) - \varepsilon(x_1 +x_2)
+\end{equation*}
+i risultati precedentemente ottenuti al punto 1) diventano:
+\begin{equation*}
+	V' = \frac{1}{2}m \omega^2(\tilde{x}_1^2 + 9 \tilde{x}_2^2) - \varepsilon \sqrt{2} \tilde{x}_1
+\end{equation*}
+Per il sottosistema che descrive la particella due non si ha nessun cambiamento mentre per la particella uno si ha un sistema con un potenziale
+\begin{equation*}
+	\tilde{V}_1(\tilde{x}_1) = \frac{1}{2}m\omega_1^2\tilde{x}_1^2 - \sqrt{2} \varepsilon \tilde{x}_1
+\end{equation*}
+se completiamo il quadrato del potenziale 
+\begin{align*}
+	\tilde{V}(\tilde{x}_1) & = \frac{1}{2}m \omega_1^2 \left(\tilde{x}_1^2 - \frac{\sqrt{2} \varepsilon }{m \omega_1^2}\tilde{x}_1 + \frac{2 \varepsilon^2}{m^2 \omega_1^4}\right) - \frac{\varepsilon^2}{m \omega^2} =  \\[0.5cm]
+	&=\frac{1}{2}m \omega_1^2 \left( \tilde{x}_1^2 - \frac{\sqrt{2} \varepsilon}{m \omega_1^2}\right)^2 - \frac{\varepsilon^2}{m \omega_1^2}
+\end{align*}
+in questo modo l'oscillatore che rappresenta la particella uno non \`e pi\`u centrato nell'origine sel sistema di riferimento.
+
+Se andiamo a calcolare il valore medio di
+\begin{equation*}
+	\langle x_1^2 -x_2^2 \rangle = 2 \langle 0 \mid \tilde{x}_1^2 - \frac{\sqrt{2} \varepsilon}{m \omega_1^2}|0 \rangle \langle 0|\tilde{x}_2^2 |0 \rangle = 0
+\end{equation*} 
+Se scriviamo $\tilde V(q) = \frac{1}{2}m \omega_1^2q^2 - \frac{\varepsilon^2}{m \omega^2}$ avremo che siccome il potenziale cambia solo per una traslazione dal centro, i termini di energia cinetica del sistema non cambiano
+\begin{equation*}
+	H_1(q) = - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial q^2} + \tilde{V}(q) \quad \Rightarrow \quad H_1(t)|\psi(q) \rangle = \left [ \hbar \omega_1^2 \left(n_1 + \frac{1}{2} \right) - \frac{\varepsilon^2}{m \omega_1^2}\right]
+\end{equation*}
+di conseguenza i livelli energetici traslano solo di un fattore $\frac{\varepsilon^2}{m \omega_1^2}$.
+\end{proof}
+
+\subsection{Esercizio 2}
+
+Consideriamo un sistema di due particelle con spin 1/2 e Hamiltoniana associata
+\begin{equation*}
+	H = \mathcal{A}(S_{1,z}+S_{2,z}) + B \;\bold{S}_1 \cdot \bold{S}_2
+\end{equation*}
+Determinare i livelli energetici del sistema.
+\newline
+
+\noindent\textbf{Soluzione:}
+\newline
+
+	Riscriviamo il prodotto scalare tra gli spin delle due particelle come
+\begin{equation*}
+	\bold{S}_1 \cdot \bold{S}_2 = \frac{1}{\sqrt{2}}[(\bold{S}_1 + \bold{S}_2)^2 - S_1^2 -S_2^2] = \frac{1}{2}(S_T^2 - S_1^2-S_2^2)
+\end{equation*}
+dove i termini in forma matriciale sono $S_i^2 = 3/4 \hbar ^4  \mathbb{I}$. Riscriviamo la Hamiltoniana rispetto ai nuovi cambiamenti
+\begin{equation*}
+	H = \mathcal{A}S_{T,z} + \frac{B}{2}\left(S^2_T - \frac{3}{4}\hbar^2 \mathbb{I} - \frac{3}{4}\hbar^2 \mathbb{I}\right)
+\end{equation*}
+\newpage
+Gli autostati della Hamiltoniana sono dati da 
+\begin{align*}
+	&|00 \rangle \quad \to \quad - \frac{3}{4}B\hbar^2 \\[0.4cm]
+	&|11 \rangle \quad \to \quad - \frac{3}{4}B \hbar^2 + \frac{B^2}{2}2\hbar^2 + \hbar A \\[0.4cm]
+	&|10 \rangle \quad \to \quad - \frac{3}{4}B \hbar^2 + \frac{B^2}{2}2\hbar^2  \\[0.4cm]
+	&|1-1 \rangle \quad \to \quad - \frac{3}{4}B \hbar^2 + \frac{B^2}{2}2\hbar^2 - \hbar A \\
+\end{align*}
+
+
+\subsection{Esercizio 3}
+
+Date due particelle di spin 1/2 dove $S_{1x}  = \hbar/2$ e $S_{2y} = -\hbar /2$.
+
+Determinare la probabilit\`a che lo spin totale sia $s=1$ e $m_{s} = 0$, ovvero $|10\rangle$.
+
+\begin{proof}
+	Per gli spin delle rispettive particelle si hanno i seguenti autovalori associati
+	\begin{equation*}
+		S_{1x} \quad \to \quad \frac{1}{\sqrt{2}}\left[\begin{array}{l}
+			1 \\ 1
+		\end{array}\right] \quad S_{2y} \quad \to \quad \frac{1}{\sqrt{2}}\left[\begin{array}{l}
+			1 \\ -1
+		\end{array}\right] 
+	\end{equation*}
+Sappiamo che uno stato definito rispetto allo spin totale del sistema pu\`o essere espresso rispetto agli elementi della base dello spin complessivo e questa \`e formata dal prodotto tensoriale degli elementi della base dei suoi sottospazi, quindi definiamo lo statodi partenza come
+\begin{align*}
+	|\psi_i \rangle & = \frac{1}{\sqrt{2}}\left[\begin{array}{l}
+			1 \\ 1
+		\end{array}\right] \otimes \frac{1}{\sqrt{2}}\left[\begin{array}{l}
+			1 \\ -1
+		\end{array}\right]  = \frac{|+\rangle - | - \rangle}{\sqrt{2}} \otimes \frac{|+ \rangle - i|-\rangle }{\sqrt{2}} = \\[0.5cm]
+		& = \frac{|++\rangle - i |+-\rangle +|-+ \rangle -i |--\rangle}{\sqrt{2}} = \\[0.5cm]
+		& = \frac{1}{2} \left[|11 \rangle -i\left(\frac{|00\rangle +|10 \rangle}{\sqrt{2}}\right) + \left(\frac{|10 \rangle -|00 \rangle }{\sqrt{2}}\right)-i|1-1\rangle \right] = \\[0.5cm]
+		& = \frac{1}{2} \left[|11 \rangle -\frac{(1+i)}{\sqrt{2}}|00\rangle + \frac{(1-i)}{\sqrt{2}}|10\rangle - |1-1\rangle   \right]
+\end{align*}	
+di conseguenza la probabilit\`a che il sistema si trovi nello stato $|10\rangle $ \`e data da
+\begin{equation*}
+	\mathcal{P}(|10\rangle) = |\langle 10|\psi_i \rangle|^2 = \frac{|1-i|^2}{8} = \frac{1}{4}
+\end{equation*}
+\end{proof}
+
+\newpage
+
+\subsection{Esercizio 4}
+
