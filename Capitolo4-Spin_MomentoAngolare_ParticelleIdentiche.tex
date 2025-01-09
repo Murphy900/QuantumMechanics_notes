@@ -2235,3 +2235,182 @@ di conseguenza la probabilit\`a che il sistema si trovi nello stato $|10\rangle 
 
 \subsection{Esercizio 4}
 
+Date due particelle di spin $1/2$ e una Hamiltoniana 
+\begin{equation*}
+	H = - \mu_1 \bold{B} \cdot S_{1z} - \mu_2 \bold{B} \cdot S_{2z}
+\end{equation*}
+dove $\bold{B} $ \`e il campo magnetico lungo la direzione $\hat{z}$. Al tempo $t=0$ ci sitrova nello stato di singoletto. Calcolare la probabili\`a che al tempo t il sistema si trovi in uno stato di tripletto.
+
+\begin{proof}
+	Lo stato iniziale \`e dato da 
+	\begin{equation*}
+		|\psi(0) \rangle = \frac{|+-\rangle - |-+\rangle}{\sqrt{2}}
+	\end{equation*}
+applichiamo l'operatore di evoluzione temporale $U(t) = e^{-i/\hbar Ht }$ allo stato iniziale, ottenendo
+\begin{align*}
+	|\psi(t) \rangle & = \frac{1}{\sqrt{2}}|+-\rangle e^{i(\mu_1-\mu_2)/2Bt} - \frac{1}{\sqrt{2}}|-+\rangle e^{-i(\mu_1-\mu_2)/2Bt}= \\[0.5cm]
+	& = \frac{\cos(\mu_1-\mu_2)Bt}{2} \underbrace{\left(\frac{|+- \rangle - |-+\rangle}{\sqrt{2}}\right)}_{= |00\rangle} +i \frac{\sin(\mu_1-\mu_2)Bt}{2} \underbrace{ \left(\frac{|+-\rangle + |-+\rangle}{\sqrt{(2)}}\right)}_{= |11 \rangle }
+\end{align*}
+Dunque la probabili\`a \`e data da 
+\begin{equation*}
+	P(|11\rangle) = |\langle 11 |\psi(t) \rangle|^2 = \frac{\sin^2(\mu_1-\mu_2)Bt}{2}
+\end{equation*}
+
+\end{proof}
+
+\subsection{Esercizio 5}
+
+Consideriamo una particella di spin 1/2  il cui stato \`e rappresentanto dalla funzione d'onda 
+\begin{equation*}
+	\psi(r,\theta,\phi) = \mathcal{A} e^{r/r_0} \left[\begin{array}{l}
+		1 \\ \sin(\phi) 
+	\end{array}\right]
+\end{equation*}
+Quali valori del momento angolare $\bold{J} = \bold{L}+\bold{S}$ si possono misurare lungo z ? e qual \`e la probabilit\`a di ottenere $J_z$ ?
+
+\begin{proof}
+	Per una particella di spin 1/2 riscriviamo la funzione d'onda rispetto agli elementi della base dello spin $\{|+\rangle,|- \rangle \}$.
+	\begin{equation*}
+		\left[\begin{array}{l}
+			\psi_1 \\ \psi_2
+		\end{array}\right] = \psi_1 \left[\begin{array}{l} 1 \\ 0 
+		\end{array}\right] +\psi_2\left[\begin{array}{l} 0 \\ 1 
+		\end{array}\right] = \psi_1|+\rangle + \psi_2 |-\rangle 
+	\end{equation*}
+I singoli termini $\psi_1$ e $\psi_2$ si sviluppano in armoniche sferiche. Inoltre per $J_z = L_z + S_z$ si ha che  il momento angolare orbitale $L_z = - i \hbar \frac{\partial}{\partial \phi}$  le cui autofunzioni sono $|m\rangle =\frac{1}{\sqrt{2 \pi}}e^{im\phi}$  con autovalori $\hbar m$.
+\newpage
+
+Riscriviamo la funzione d'onda nel seguente modo
+\begin{align*}
+	\psi(r,\theta,\varphi) & = f(r) \left(1|+\rangle + \frac{e^{i\phi}-e^{i\phi})}{2i}|-\rangle\right) = \\[0.5cm]
+	& = f(r)cost \left(1|0+\rangle + \frac{1}{2i}|1-\rangle - \frac{1}{2i}|-1-\rangle \right)
+\end{align*}
+Applicando il momento totale lungo $\hat{z}$ alla funzione d'onda si ha che
+\begin{align*}
+	J_z \psi = L_z \psi +S_z\psi & = f(r)cost \left[0 + \frac{\hbar}{2}|0+\rangle + \frac{1}{2i}\left(\hbar - \frac{\hbar}{2}\right)|1-\rangle - \frac{1}{2i}\left(\hbar - \frac{\hbar}{2}\right)|-1-\rangle \right] = \\[0.5cm]
+	& = f(r)cost \left[\underbrace{2i|0+\rangle + |1-\rangle - |-1-\rangle}_{= \varphi} \right]
+\end{align*} 
+normalizziamo $\varphi $ scrivendo $\tilde{\varphi} = \frac{1}{\sqrt{6}}\varphi$. Infine le probabilita\`a richieste sono
+\begin{equation*}
+	P\left(J_z = -\frac{3}{2}\hbar \right) = \frac{1}{6} \quad P \left(J_z = \frac{\hbar}{2}\right) = \frac{1}{6} + \frac{4}{6} = \frac{5}{6}
+\end{equation*}
+Notare che se viene chiesto il momento lungo $\hat{z}$ non \`e necessario sviluppare in armoniche sferiche, ma \`e sufficiente conoscere la dipendenza $\phi$.
+	
+\end{proof}
+
+\subsection{Esercizio 6}
+
+Supponiamo di avere un potenziale monodimensionale con un certo numero di livelli energetici e due particelle non interagenti. Determinare energia e degenerazione per i primi due livelli nel caso di:
+\begin{enumerate}
+	\item Particelle non identiche di spin 1/2;
+	\item bosoni identici di spin 0
+	\item fermioni identici di spin 1/2
+\end{enumerate}
+\begin{proof}
+	1) Consideriamo entrambe le particelle sul livello di energia $E_1$, di conseguenza l'energia totale \`edata da $E = 2E_1$ e l'autostato associato \`e $\varphi_1(x_1)\varphi_2(x_2)$ con stati di spin possibili $\{|++\rangle, |+-\rangle,|-+\rangle,|--\rangle \}$ e quindi si ha un grado di degenerazione pari a 4.
+	
+	Per il primo stato eccitato posizioniamo una particella sul livello $E_1$ e un'altra sul livello $E_2$ di conseguenza l'energia totale \`e data da $E = E_1 + E_2$ con autostati associati $\varphi_1(x_1) \varphi_2(x_2)|\pm \pm \rangle$ e $\varphi_1(x_2)\varphi_2(x_2)|\pm \pm \rangle $. Complessivamente si ha una degenerazione pari a 8.
+\newline
+
+	3) Il principio di Pauli richiedere antisimmetria nello scambio delle 2 particelle, ipotizziamo che entrambi si trovino sullo stato $E_1$ e quindi l'energia totale \`e $E = 2E_1$, l'autostato associato \`e $\varphi_1(x_1)\varphi_2(x_2) |00\rangle $. L'energia ha un grado di degenerazione 1.
+\newpage
+
+Il primo stato eccitato \`e dato da 
+\begin{align*}
+	& \frac{\varphi_1(x_1)\varphi_2(x_2)+\varphi_2(x_2)\varphi_1(x_1)}{\sqrt{2}} \quad \leftarrow \quad \text{Simmetrico} \\[0.5cm] 
+	& \frac{\varphi_1(x_1)\varphi_2(x_2) - \varphi_2(x_1)\varphi_1(x_2)}{\sqrt{2}} \quad \leftarrow \quad \text{Antisimmetrico} 
+\end{align*}
+Riscriviamo lo stato in modo che da simmetrico diventi antisimmetrico e quindi introduciamo una direzione di spin $|00\rangle$, ottenendo
+\begin{equation*}
+	\frac{\varphi_1(x_1)\varphi_2(x_2) + \varphi_1(x_2)\varphi_2(x_1)}{\sqrt{2}}|00\rangle \quad \leftarrow \quad \text{Antisimmetrico}
+\end{equation*}
+che \`e ortogonale allo stato 
+\begin{equation*}
+	\frac{\varphi_1(x_1)\varphi_2(x_2)-\varphi_2(x_1)\varphi_1(x_2)}{\sqrt{2}}|1m \rangle 
+\end{equation*}
+con degenerazione $g = 1 + 3 = 4$.
+\newline
+
+2) Analogamente a 3) consideriamo l'energia totale $E = 2E_1$ il cui autostato associato \`e $\varphi_1(x_1)\varphi_2(x_2)$ simmetrica rispetto allo scambio. Dato che lo spin \`e 0 la degenerazione \`e 1.
+
+Il primo stato eccitato \`e dato da $E = E_1 +E_2$ con autostato associato
+\begin{equation*}
+	\frac{\varphi_1(x_1)\varphi_2(x_2)+\varphi_2(x_1)\varphi_1(x_2)}{\sqrt{2}}
+\end{equation*}
+e ha degenerazione.
+
+\end{proof}
+
+\subsection{Esercizio 7}
+
+Consideriamo due particelle identiche soggette ad un potenziale
+\begin{equation*}
+	V = \frac{1}{2}m \omega^2(x_1^2+x_2^2) + \frac{1}{2}mk^2(x_1-x_2)^2
+\end{equation*}
+Calcolare i primi tre livelli nel caso in cui le due particelle sono:
+\begin{enumerate}
+	\item generiche;
+	\item bosoni (spin 0);
+	\item fermioni (spin 1/2).
+\end{enumerate}
+
+\begin{proof}
+	1) Abbiamo un potenziale con dei termini accoppiati tra le posizioni delle due particelle, vogliamo porci in una base in cui si hanno due potenziali rispetto a ciascuna particella. Procediamo a diagonalizzare la matrice associata a V, data da 
+	\begin{equation*}
+		V = \frac{m}{2}[x_1,x_2] \left[\begin{array}{cc}
+			\omega^2+k^2 & -k^2 \\ -k^2 & \omega^2 + k^2
+		\end{array} \right] \left[ \begin{array}{l}
+			x_1 \\ x_2
+		\end{array}\right]
+	\end{equation*}
+\newpage 
+Identifichiamo la matrice come $V = (\omega^2 + k^2) \mathbb{I} -k^2 \sigma_1$ e che ha come autovalori e autovettori
+\begin{equation*}
+	\omega^2 \to \frac{1}{\sqrt{2}}\left[\begin{array}{l}
+		1 \\1
+	\end{array}\right] \quad \quad  \omega^2+k^2 \to \frac{1}{\sqrt{2}}\left[\begin{array}{l}
+		1 \\ -1
+	\end{array}\right]
+\end{equation*}
+Rispetto alla nuova base le coordinate diventano 
+\begin{equation*}
+	\left \{ \begin{array}{l}
+	\tilde{x}_1 = \frac{x_1 + x_2}{\sqrt{2}} \\[0.3cm]
+	\tilde{x}_2 = \frac{x_1-x_2}{\sqrt{2}}
+	\end{array}\right.
+\end{equation*}
+e quindi il potenziale rispetto alla nuova base si riscrive come
+\begin{equation*}
+	\tilde{V} = \frac{m}{2}\omega^2\tilde{x}_1^2 + \frac{m}{2}(\omega^2+2k^2)\tilde{x}_2^2
+\end{equation*}
+1) L'energia associata al sistema \`e data dalla somma di energia rispetto a singoli oscillatori armonici
+\begin{equation*}
+	E = \hbar \omega \left(n_1 + \frac{1}{2}\right) + \hbar \sqrt{\omega^2 + 2k^2}\left(n_2 + \frac{1}{2}\right)
+\end{equation*}
+con autostati associati, che indichiamo come $|n_1 n_2 \rangle$ e sono:
+\begin{align*}
+	&|00\rangle \quad \to \quad \varphi_0\left(\frac{x_1+x_2}{\sqrt{2}}\right)\tilde{\varphi}_0 \left(\frac{x_1 -x_2}{\sqrt{2}}\right) \\[0.5cm]
+	&|10 \rangle \quad \to \quad \varphi_1\left(\frac{x_1+x_2}{\sqrt{2}}\right) \tilde{\varphi}_0\left(\frac{x_1 -x_2}{\sqrt{2}}\right) \\[0.5cm]
+	&|01 \rangle \quad \to \quad \varphi_0\left(\frac{x_1+x_2}{\sqrt{2}}\right)\tilde{\varphi}_1\left(\frac{x_1 -x_2}{\sqrt{2}}\right)
+\end{align*}
+2) Consideriamo due particelle identiche come bosoni. Notare che per poter parlare di particelle identiche nello scambio \`e necessario che il potenziale sia invariante rispetto allo scambio.
+
+Le funzioni $\varphi_0$ e $\tilde{\varphi}_0$ sono delle funzioni Gaussiana e quindi funzioni pari.
+Le funzioni $\varphi_1$ e $\tilde{\varphi}_1$ sono funzioni dispari. Riprendendo gli stati descritti in 1), notiamo che per $\varphi_0$ e $\varphi_1$ le funzioni d'onda sono invarianti rispetto allo scambio di $x_1$ e $x_2$ per simmetria dell'argomento. 
+
+Inoltre il terzo livello eccitato nel caso di Bosoni \`e 
+\begin{equation*}
+	|20 \rangle \quad \to \quad \varphi_2\left(\frac{x_1+x_2}{\sqrt{2}}\right)\tilde{\varphi}_0\left(\frac{x_1 -x_2}{\sqrt{2}}\right)
+\end{equation*}
+Nel caso dei bosoni tutti i livelli eccitati in modo dispari scompaiono.
+
+3) Per i fermioni con spin 1/2 agli stati definiti in 1) bisogna aggiungere il termine di spin.
+\newpage
+\begin{align*}
+	&|00\rangle \quad \to \quad \varphi_0\left(\frac{x_1+x_2}{\sqrt{2}}\right)\tilde{\varphi}_0 \left(\frac{x_1 -x_2}{\sqrt{2}}\right)|00\rangle_s \\[0.5cm]
+	&|10 \rangle \quad \to \quad \varphi_1\left(\frac{x_1+x_2}{\sqrt{2}}\right) \tilde{\varphi}_0\left(\frac{x_1 -x_2}{\sqrt{2}}\right)|00\rangle_s \\[0.5cm]
+	&|01 \rangle \quad \to \quad \varphi_0\left(\frac{x_1+x_2}{\sqrt{2}}\right)\tilde{\varphi}_1\left(\frac{x_1 -x_2}{\sqrt{2}}\right)|1m\rangle_T \quad m=-1,0,1
+\end{align*}
+Il principio d'indistinguibilit\`a \`e fondamentale per studiare strutture atomiche, molecolari,ecc... Fino a quando si hanno solo due particelle \`e facile descrivere la simmetria, ma il problema si complica quando il loro numero aumenta. Il problema \`e equivalente a classificare la simmetria di un tensore.
+
+\end{proof}
