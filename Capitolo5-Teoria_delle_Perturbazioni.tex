@@ -2105,3 +2105,40 @@ dove abbiamo usato la relazione $J_{z} = \frac{\hbar }{2} \sigma_3$. Se compiano
 \newpage
 
 \section{Esempi ed Esercizi}
+
+\subsection{Esercizio 1: Atomo di idrogeno in un campo elettrico}
+
+Consideriamo un atomo di idrogeno immerso in un campo elettrico $E_z = E e^{-t/\tau}$ nello stato fondamentale 1s al tempo $t=0$.
+\begin{enumerate}
+	\item Determinare la probabilit\`a che a $t \gg 1$ lo stato fondamentale finisca in 2s, al primo ordine perturbativo.
+	\item Determinare quali sono i livelli possibili partendo dallo stato fondamentale e arrestandosi al primo ordine perturbativo.
+\end{enumerate}
+
+\begin{proof}
+	In generale abbiamo che la probabilit\`a di passaggio di stato \`e data da
+	\begin{equation*}
+		\mathcal{P}_{|i\rangle \to |f \rangle}(t)  = \frac{1}{\hbar^2} \left| \int_{t_{in}}^{t}e^{i\omega_{fi}\overline{t}}\,W_{fi}(\overline{t})d\overline{t}\right|^2   
+	\end{equation*}
+\end{proof}
+posti $W_{fi} =\langle f | W|i\rangle$ e $\omega_{fi} = \frac{E_{f}-E_{i}}{\hbar}$ con $W = -qzE_z$ per il campo elettrico, definiamo la probabilit\`a come 
+\begin{align*}
+	\mathcal{P}_{|i\rangle \to |f \rangle}(t) &= \frac{q^2E^2}{\hbar^2} \left | \int_{0}^{+\infty} d\overline{t} \; e^{\frac{i}{\hbar}(E_f-E_i)^2 \overline{t}-\frac{\overline{t}}{\tau}}\langle f \mid z\mid i \rangle \right|^2 = \frac{q^2E^2}{\hbar^2}\frac{|\langle f \mid z\mid i \rangle|^2}{|\frac{1}{\tau} - \frac{i}{\hbar}(E_f-E_i)|^2} = \\[0.5cm]
+	& =  \frac{q^2E^2|\langle f \mid z\mid i \rangle|^2}{\hbar^2(\frac{1}{\tau^2} + \frac{(E_f-E_i)^2}{\hbar^2})}
+\end{align*}
+Rispondendo alla domanda 1) abbiamo che gli stati richiesto sono
+\begin{align*}
+	1s \quad \to \quad |100\rangle = |i\rangle \\[0.3cm]
+	2s \quad \to \quad |200\rangle = |f \rangle 
+\end{align*}
+il termine 
+\begin{equation*}
+	\langle f \mid z \mid i\rangle = \langle 200  \mid z \mid 100 \rangle = \int dz \; Y_{00} ^*\;z\;Y_{00} \sim \int dz\; z = 0
+\end{equation*}
+essendo una funzione dispari su domini simmetrici. Di conseguenza si ha che 
+\begin{equation*}
+	\mathcal{P}_{|i\rangle \to |f \rangle}(t) = 0
+\end{equation*}
+con approssimazione al $I^\circ $ ordine.
+\newline
+
+2) 
