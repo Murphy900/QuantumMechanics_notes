@@ -2141,4 +2141,33 @@ essendo una funzione dispari su domini simmetrici. Di conseguenza si ha che
 con approssimazione al $I^\circ $ ordine.
 \newline
 
-2) 
+2) Gli unici livelli ammessi sono quelli in cui $\langle nlm \mid z \mid 100 \rangle \neq 0$. Riscrivendo z rispetto ad una funzione armonica abbiamo che $z \sim Y_{10}$ e quindi possiamo riscrivere il problema come 
+\begin{equation*}
+	\langle nlm \mid Y_{l_1m_1} \mid l_2m_2 \rangle \sim \int d\Omega \; Y_{lm}^*Y_{l_1m_1}Y_{l_2m_2} \neq 0
+\end{equation*}
+ricercando la parti\`a della funzione integranda. Quale parti\`a hanno le armoniche sferiche ?
+
+Dato un verso unitario rispetto che considera $(\theta,\varphi)$ possiamo scrivere le armoniche sferiche come 
+\begin{equation*}
+	Y_{lm}(-\hat{n}) = (-1)^lY_{lm}(\hat{n})
+\end{equation*}
+Quando $\hat{n} \to - \hat{n}$ l'argomento dell'integrale $ Y_{lm}^*Y_{l_1m_1}Y_{l_2m_2} $ ha una parit\`a complessiva di 
+\begin{equation*}
+	(-1)^{l}(-1)^{l_1}(-1)^{l_2} = (-1)^{l+l_1+l_2}
+\end{equation*}
+Abbiamo inoltre una seconda condizione data dalla conservazione del momento angolare orbitale lungo z $\hat{L}_z$. Dato che $Y_{lm} \sim e^{im\varphi}$ abbiamo che 
+\begin{equation*}
+	\langle lm \mid Y_{l_1m_1} \mid l_2m_2 \rangle \sim \int_0^{2\pi} d \varphi \; e^{-im\varphi}e^{im_1\varphi}e^{im_2 \varphi} \neq 0
+\end{equation*}
+se  $m = m_1 +m_2$. 
+
+Infine la terza condizione ci \` e data dalla conservazione del momento angolare totale $\bold{\hat{L}}$: dove per la composizione di due momenti angolari
+\begin{equation*}
+	|l_1-l_2| \leq l \leq l_1 + l_2
+\end{equation*}
+Partendo dallo stato $1s$ fissiamo $l_2 = 0 $ e $m_2 = 0 $ ci\`o implica dalla condizione due e tre che $m = m_1$ e $l = l _1$, siccome $z \sim Y_{10}$ si ha che $l = 1$ e $m= 0$ e quindi i livelli possibili sono $|n10\rangle $. 
+
+\section{Esercizio 2}
+
+\subsection{Ripasso perturbazioni dipendenti dal tempo}
+
